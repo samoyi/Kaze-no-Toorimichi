@@ -1,0 +1,85 @@
+/*
+Syntax error: Invalid CSS after "  0": expected ")", was ": ("
+        on line 64 of ../../../scss/_variables.scss
+        from line 26 of docs.scss
+
+59: 
+60: $spacer:                     1rem !default;
+61: $spacer-x:                   $spacer !default;
+62: $spacer-y:                   $spacer !default;
+63: $spacers: (
+64:   0: (
+65:     x:   0,
+66:     y:   0
+67:   ),
+68:   1: (
+69:     x:   $spacer-x,
+
+Backtrace:
+../../../scss/_variables.scss:64
+docs.scss:26
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/scss/parser.rb:1147:in `expected'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/script/lexer.rb:199:in `expected!'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/script/parser.rb:476:in `assert_tok'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/script/parser.rb:426:in `paren'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/script/parser.rb:411:in `special_fun'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/script/parser.rb:406:in `raw'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/script/parser.rb:330:in `funcall'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/script/parser.rb:319:in `ident'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/script/parser.rb:228:in `unary_not'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/script/parser.rb:228:in `unary_div'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/script/parser.rb:228:in `unary_minus'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/script/parser.rb:228:in `unary_plus'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/script/parser.rb:209:in `times_div_or_mod'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/script/parser.rb:209:in `plus_or_minus'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/script/parser.rb:209:in `relational'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/script/parser.rb:209:in `eq_or_neq'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/script/parser.rb:209:in `and_expr'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/script/parser.rb:209:in `or_expr'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/script/parser.rb:298:in `space'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/script/parser.rb:283:in `interpolation'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/script/parser.rb:246:in `expr'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/script/parser.rb:470:in `assert_expr'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/script/parser.rb:49:in `parse'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/scss/parser.rb:1022:in `sass_script'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/scss/parser.rb:514:in `variable'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/scss/parser.rb:553:in `block_child'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/scss/parser.rb:546:in `block_contents'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/scss/parser.rb:82:in `stylesheet'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/scss/parser.rb:27:in `parse'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/engine.rb:344:in `_to_tree'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/engine.rb:276:in `to_tree'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/tree/visitors/perform.rb:225:in `visit_import'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/tree/visitors/base.rb:37:in `visit'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/tree/visitors/perform.rb:100:in `visit'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/tree/visitors/base.rb:53:in `map'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/tree/visitors/base.rb:53:in `visit_children'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/tree/visitors/base.rb:37:in `block in visit'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/tree/visitors/perform.rb:128:in `visit_root'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/tree/visitors/base.rb:37:in `visit'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/tree/visitors/perform.rb:100:in `visit'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/tree/visitors/perform.rb:7:in `visit'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/tree/root_node.rb:20:in `render'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/engine.rb:317:in `_render'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/engine.rb:264:in `render'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/plugin/compiler.rb:362:in `update_stylesheet'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/plugin/compiler.rb:203:in `block in update_stylesheets'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/plugin/compiler.rb:201:in `each'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/plugin/compiler.rb:201:in `update_stylesheets'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/plugin.rb:81:in `update_stylesheets'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/exec.rb:443:in `watch_or_update'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/exec.rb:326:in `process_result'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/exec.rb:41:in `parse'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/lib/sass/exec.rb:21:in `parse!'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.2.13/bin/scss:13:in `<top (required)>'
+C:/Ruby22-x64/bin/scss:23:in `load'
+C:/Ruby22-x64/bin/scss:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Invalid CSS after \"  0\": expected \")\", was \": (\"\A         on line 64 of ../../../scss/_variables.scss\A         from line 26 of docs.scss\A \A 59: \A 60: $spacer:                     1rem !default;\A 61: $spacer-x:                   $spacer !default;\A 62: $spacer-y:                   $spacer !default;\A 63: $spacers: (\A 64:   0: (\A 65:     x:   0,\A 66:     y:   0\A 67:   ),\A 68:   1: (\A 69:     x:   $spacer-x,"; }
