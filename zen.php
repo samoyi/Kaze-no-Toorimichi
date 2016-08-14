@@ -8,7 +8,8 @@
 	$summaryJPN = '这里说的禅并非是佛教的宗派'; // 该主题日文简介
 
     $aListGroupTitle = array("艺术", "禅院", "茶", "料理", "职人", "特产");
-    $aListGroupDes = array("艺术简介", "禅院简介", "茶简介", "料理简介", "职人简介", "特产简介");
+    $aListGroupDesCHN = array("艺术简介", "禅院简介", "茶简介", "料理简介", "职人简介", "特产简介");
+    $aListGroupDesJPN = array("艺术简介日语", "禅院简介日语", "茶简介日语", "料理简介日语", "职人简介日语", "特产简介日语");
 
     $sStylesheet = ''; // 该页可选样式表
 
@@ -21,7 +22,7 @@
 
 	$subjectPage->displayHead($namespace, $sStylesheet);
 	$subjectPage->displayJumbotron($jumbotronImgUrl, $jumbotronImgAlt, $summaryCHN, $summaryJPN);
-	$subjectPage->displayListGroup( $aListGroupTitle, $aListGroupDes );
+	$subjectPage->displayListGroup( $aListGroupTitle, $aListGroupDesCHN, $aListGroupDesJPN );
 	$subjectPage->displayFoot();
 
 ?>
