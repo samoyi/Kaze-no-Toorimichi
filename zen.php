@@ -2,7 +2,7 @@
 
 //页面信息设置----------------------------------------------------------------------------------------------------------
 
-    $jumbotronImgUrl = 'http://127.0.0.1/lining/nippon/image/jumbotron_nature.jpg'; // 横幅图片地址
+    $jumbotronImgUrl = 'http://127.0.0.1/lining/Kaze-no-Toorimichi/image/jumbotron_nature.jpg'; // 横幅图片地址
     $jumbotronImgAlt = '禅与佛 禅と仏'; // 横幅图片alt
 	$summaryCHN = '这里说的禅并非是佛教的宗派'; // 该主题中文简介
 	$summaryJPN = '这里说的禅并非是佛教的宗派'; // 该主题日文简介

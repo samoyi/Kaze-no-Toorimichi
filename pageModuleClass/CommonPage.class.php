@@ -51,7 +51,7 @@ class CommonPage
 				$active = ' active';
 			}
 			$sLists .= '<li class="nav-item">
-					<a class="nav-link' . $active . '" href="http://127.0.0.1/lining/nippon/' . $this->aNavLinkFileName[$i] . '.php">' . $this->aNavLinkName[$i] . '</a>
+					<a class="nav-link' . $active . '" href="http://127.0.0.1/lining/Kaze-no-Toorimichi/' . $this->aNavLinkFileName[$i] . '.php">' . $this->aNavLinkName[$i] . '</a>
 			</li>';
 			$active = '';
 		}
@@ -70,8 +70,8 @@ class CommonPage
 						<meta name="keywords" content="' . $this->keywords . '">
 						<meta name="description" content="' . $this->description . '">
 						<title>' . $this->title . '</title>
-						<link href="http://127.0.0.1/lining/nippon/bootstrap-4.0.0-alpha.2/css/bootstrap.css" type="text/css" rel="stylesheet" />
-						<link href="http://127.0.0.1/lining/nippon/css/common.css" type="text/css" rel="stylesheet" />
+						<link href="http://127.0.0.1/lining/Kaze-no-Toorimichi/bootstrap-4.0.0-alpha.2/css/bootstrap.css" type="text/css" rel="stylesheet" />
+						<link href="http://127.0.0.1/lining/Kaze-no-Toorimichi/css/common.css" type="text/css" rel="stylesheet" />
 						' . $sStylesheet . '
 						</head>
 						<body>
@@ -101,10 +101,10 @@ class CommonPage
 					<footer>底部底部底部底部底部底部底部底部底部底部底部底底部底部底部底部底部底部底部部底部底部底部底部底部底部底部底部底部底部底部底部底部底部底部底部</footer>
 				</section>
 				</body>
-				<script src="http://127.0.0.1/lining/nippon/bootstrap-4.0.0-alpha.2/dependencies/jquery-2.2.4.min.js"></script>
-                <script src="http://127.0.0.1/lining/nippon/bootstrap-4.0.0-alpha.2/dependencies/tether.min.js"></script>
+				<script src="http://127.0.0.1/lining/Kaze-no-Toorimichi/bootstrap-4.0.0-alpha.2/dependencies/jquery-2.2.4.min.js"></script>
+                <script src="http://127.0.0.1/lining/Kaze-no-Toorimichi/bootstrap-4.0.0-alpha.2/dependencies/tether.min.js"></script>
   				<script data-main="js/main" src="js/require.js"></script>
-  				<script src="http://127.0.0.1/lining/nippon/bootstrap-4.0.0-alpha.2/js/bootstrap.js"></script>
+  				<script src="http://127.0.0.1/lining/Kaze-no-Toorimichi/bootstrap-4.0.0-alpha.2/js/bootstrap.js"></script>
 				</html>';
 		echo $footer;
 	}
