@@ -35,17 +35,6 @@ class SubjectPage extends CommonPage
     public function displayListGroup( $aListGroupTitle, $aListGroupDesCHN, $aListGroupDesJPN )
     {
          echo '<div class="list-group">';
-         /*function displayTitleAndDes( $value, $key, $aListGroupDesCHN, $aListGroupDesJPN )
-         {
-             echo '<a href="#" class="list-group-item list-group-item-action"><h5 class="list-group-item-heading">';
-             echo $value;
-             echo '</h5><p class="list-group-item-text">';
-             echo $aListGroupDesCHN[$key];
-             echo '</p><p class="list-group-item-text">';
-             echo $aListGroupDesJPN[$key];
-             echo '</p></a>';
-         }
-         array_walk($aListGroupTitle, "displayTitleAndDes", $aListGroupDesCHN, $aListGroupDesJPN);*/
          foreach( $aListGroupTitle as $key=>$value)
          {
              echo '<a href="#" class="list-group-item list-group-item-action"><h5 class="list-group-item-heading">';
