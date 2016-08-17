@@ -32,12 +32,14 @@ class SubjectPage extends CommonPage
 
     //显示无序列表
     //第一个参数是所有列表项的标题数组，第二个是对应的描述数组
-    public function displayListGroup( $aListGroupTitle, $aListGroupDesCHN, $aListGroupDesJPN )
+    public function displayListGroup( $aListGroupTitle, $aListGroupUrl, $aListGroupDesCHN, $aListGroupDesJPN )
     {
          echo '<div class="list-group">';
          foreach( $aListGroupTitle as $key=>$value)
          {
-             echo '<a href="#" class="list-group-item list-group-item-action"><h5 class="list-group-item-heading">';
+             echo '<a href="';
+			 echo $aListGroupUrl[$key];
+			 echo '" class="list-group-item list-group-item-action"><h5 class="list-group-item-heading">';
              echo $value;
              echo '</h5><p class="list-group-item-text chinese">';
              echo $aListGroupDesCHN[$key];

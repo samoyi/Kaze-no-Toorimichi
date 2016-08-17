@@ -8,6 +8,7 @@
 	$summaryJPN = '自然民俗にかんれんする伝説'; // 该主题日文简介
 
     $aListGroupTitle = array("妖怪", "観光地", "料理", "活动|行事", "土産");
+	$aListGroupUrl = array("url0", "url1", "url2", "url3", "url4");
     $aListGroupDesCHN = array("妖怪简介", "観光地简介", "料理简介", "活动简介", "土産简介");
     $aListGroupDesJPN = array("妖怪简介日语", "観光地简介日语", "料理简介日语", "活动简介日语", "土産简介日语");
 
@@ -22,7 +23,7 @@
 
 	$subjectPage->displayHead($namespace, $sStylesheet);
 	$subjectPage->displayJumbotron($jumbotronImgUrl, $jumbotronImgAlt, $summaryCHN, $summaryJPN);
-	$subjectPage->displayListGroup( $aListGroupTitle, $aListGroupDesCHN, $aListGroupDesJPN );
+	$subjectPage->displayListGroup( $aListGroupTitle, $aListGroupUrl, $aListGroupDesCHN, $aListGroupDesJPN );
 	$subjectPage->displayFoot();
 
 ?>

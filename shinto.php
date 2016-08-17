@@ -8,6 +8,7 @@
 	$summaryJPN = '日本神話と呼ばれる伝承はほとんどが、『古事記』、『日本書紀』および各『風土記』の記述による。そのため高天原の神々が中心となっているが、出典となる文献は限られる。'; // 该主题日文简介
 
     $aListGroupTitle = array("神話", "場所", "祭り", "風俗", "職業", "特産品");
+	$aListGroupUrl = array("url0", "url1", "url2", "url3", "url4", "url5");
     $aListGroupDesCHN = array("所谓日本神话的传承，是以《古事记》《日本书纪》和各地《风土记》为主。因此情节主要是围绕着高天原的众神展开，有来源的文献很有限。", "场所简介", "祭简介", "民俗简介", "职业简介", "特产简介");
     $aListGroupDesJPN = array("日本神話と呼ばれる伝承はほとんどが、『古事記』、『日本書紀』および各『風土記』の記述による。そのため高天原の神々が中心となっているが、出典となる文献は限られる。", "场所简介", "祭简介", "民俗简介", "职业简介", "特产简介");
 
@@ -22,7 +23,7 @@
 
 	$subjectPage->displayHead($namespace, $sStylesheet);
 	$subjectPage->displayJumbotron($jumbotronImgUrl, $jumbotronImgAlt, $summaryCHN, $summaryJPN);
-	$subjectPage->displayListGroup( $aListGroupTitle, $aListGroupDesCHN, $aListGroupDesJPN );
+	$subjectPage->displayListGroup( $aListGroupTitle, $aListGroupUrl, $aListGroupDesCHN, $aListGroupDesJPN );
 	$subjectPage->displayFoot();
 
 ?>
