@@ -7,7 +7,7 @@
 	$summaryCHN = '自然'; // 该主题中文简介
 	$summaryJPN = '自然'; // 该主题日文简介
 
-    $aListGroupTitle = array("村落", "建筑|建物", "料理", "庭園", "土産", "姓氏|名字");
+    $aListGroupTitle = array("天文学", "農業", "气候");
 	$aListGroupUrl = array("url0", "url1", "url2", "url3", "url4");
     $aListGroupDesCHN = array("天文学简介", "農業简介", "气候简介");
     $aListGroupDesJPN = array("天文学简介日语", "農業简介日语", "気候简介日语");
