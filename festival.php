@@ -7,8 +7,8 @@
 	$summaryCHN = '祭'; // 该主题中文简介
 	$summaryJPN = '祭 https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E3%81%AE%E7%A5%AD%E4%B8%80%E8%A6%A7'; // 该主题日文简介
 
-    $aListGroupTitle = array("村落", "建筑|建物", "料理", "庭園", "土産", "姓氏|名字");
-	$aListGroupUrl = array("url0", "url1", "url2", "url3", "url4");
+    $aListGroupTitle = array("北海道地方", "東北地方", "関東地方", "中部地方", "近畿地方", "中国地方", "四国地方", "九州地方");
+	$aListGroupUrl = array("url0", "url1", "url2", "url3", "url4", "url5", "url6", "url7");
     $aListGroupDesCHN = array("北海道地方", "東北地方", "関東地方", "中部地方", "近畿地方", "中国地方", "四国地方", "九州地方");
     $aListGroupDesJPN = array("北海道地方", "東北地方", "関東地方", "中部地方", "近畿地方", "中国地方", "四国地方", "九州地方");
 

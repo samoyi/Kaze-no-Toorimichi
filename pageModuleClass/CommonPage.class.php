@@ -8,8 +8,8 @@ class CommonPage
 	protected $title = "風の通り道";
 	protected $keywords = "日本文化, 日本民俗, 日本自然";
 	protected $description = "日本自然民俗文化资料库データベース";
-	protected $aNavLinkFileName = array("index", "basic", "zen", "shinto", "legend", "custom", "festival", "nature", "tour", "bbs");
-	protected $aNavLinkName = array("首页|トップ", "基礎知識", "禅", "神道", "传说|伝説", "風物", "祭", "自然", "旅行", "BBS");
+	protected $aNavLinkFileName = array("index", "basic", "shinto", "zen", "legend", "custom", "festival", "nature", "tour", "bbs");
+	protected $aNavLinkName = array("首页|トップ", "基礎知識","神道", "禅", "传说|伝説", "風物", "祭", "自然", "旅行", "BBS");
 
 
     //通用函数、构造函数等———————————————————————————————————————————————————————————————————————————————————————
