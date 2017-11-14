@@ -14,19 +14,9 @@ let server = http.createServer(function(req, res){
         oQuery = oURL.query;
 
 
-    if( sMethod==='GET' && oQuery.item!==undefined ){
+    if( sMethod==='GET' && oQuery.index!==undefined ){
         res.setHeader('Content-Type', 'text/html; charset=utf-8');
-        let item = fetchItem(req, oQuery.item);
-        if(item){
-            res.setHeader('Content-Length', Buffer.byteLength(item));
-            res.statusCode = 200;
-            res.write( item );
-        }
-        else{
-            res.statusCode = 404;
-            res.write( 'Not found' );
-        }
-        res.end();
+        respondGetItem(res, oQuery.index);
     }
     else if( sMethod==='POST' && oQuery.act==='addItem' ){
         addItem(req, oQuery, (bAddResult)=>{
@@ -36,7 +26,7 @@ let server = http.createServer(function(req, res){
         });
     }
     else if(sMethod==='POST' && oQuery.act==='deleteItem'){
-        respondDeleteItem(req);
+        respondDeleteItem(req, res);
     }
     else{
         res.end();
@@ -69,76 +59,103 @@ server.listen(3000);
 console.log('server start');
 
 
+function respondGetItem(res, index){
+     let result = fetchItem(index);
+     respond(result);
 
-function fetchItem(req, index){
-    return aItems[index] ? aItems[index] : null;
-}
+     function fetchItem(index){
+         return aItems[index] ? aItems[index] : null;
+     }
+
+     function respond(result){
+         if(result){
+             res.setHeader('Content-Length', Buffer.byteLength(result));
+             res.statusCode = 200;
+             res.write( result );
+         }
+         else{
+             res.statusCode = 404;
+             res.end( 'Not found' );
+         }
+     }
+ }
 
 
-function addItem(req, oQuery, callback){
-    req.setEncoding('utf8');
+ function addItem(req, oQuery,callback){
 
+     req.setEncoding('utf8');
+
+     let sData = '';
+
+     req.on('data', chunk=>{
+         sData += chunk;
+     });
+
+     req.on('end', ()=>{
+         aItems.push(qs.parse(sData).item);
+         fs.writeFile('items.json', JSON.stringify(aItems), (err)=>{
+             if(err){
+                 callback(false);
+             }
+             else{
+                 callback(true);
+             }
+         });
+     });
+ }
+
+ function respondDeleteItem(req, res){
+
+     receiveData(req, (sData)=>{
+         let nIndex =Number.parseInt( qs.parse(sData).index );
+         let result = deleteItem(nIndex);
+         respond(res, result);
+     });
+
+     function deleteItem(nIndex){
+         if( Number.isNaN(nIndex) ){
+             return NaN;
+         }
+         else if(aItems[nIndex]===undefined){
+             return null;
+         }
+         else{
+             aItems.splice(nIndex, 1);
+             fs.writeFile('items.json', JSON.stringify(aItems), (err)=>{
+                 if(err){
+                     console.log(err);
+                 }
+             });
+             return true;
+         }
+     }
+
+     function respond(res, result){
+         if(result){
+             res.end('success');
+         }
+         else if(result===null){
+             res.end('Item not found');
+         }
+         else if(result===NaN){
+             res.status = 400;
+             res.end('Invalid item id');
+         }
+         else{
+             res.status = 500;
+             res.end('Server Error');
+         }
+     }
+ }
+
+
+
+function receiveData(req, fnCallback){
     let sData = '';
-
     req.on('data', chunk=>{
         sData += chunk;
     });
     req.on('end', ()=>{
-        aItems.push(qs.parse(sData).item);
-        fs.writeFile('items.json', JSON.stringify(aItems), (err)=>{
-            if(err){
-                callback(false);
-            }
-            else{
-                callback(true);
-            }
-        });
+        fnCallback(sData);
     });
-}
-
-
-function respondDeleteItem(req, res){
-    let result = deleteItem(req, result=>{
-        if(result){
-            res.end('success');
-        }
-        else if(result===null){
-            res.end('Item not found');
-        }
-        else if(result===NaN){
-            res.status = 400;
-            res.end('Invalid item id');
-        }
-        else{
-            res.status = 500;
-            res.end('Server Error');
-        }
-    });
-
-    function deleteItem(req, fnCallback){
-        let sData = '';
-        req.on('data', chunk=>{
-            sData += chunk;
-        });
-        req.on('end', ()=>{
-            let nIndex = Number.parseInt( qs.parse(sData).index );
-            if( Number.isNaN(nIndex) ){
-                fnCallback(NaN);
-            }
-            else if(aItems[nIndex]===undefined){
-                fnCallback(null);
-            }
-            else{
-                aItems.splice(nIndex, 1);
-                console.log('aItems');
-                console.log(aItems);
-                fs.writeFile('items.json', JSON.stringify(aItems), (err)=>{
-                    if(err){
-                        console.log(err);
-                    }
-                });
-                fnCallback(true);
-            }
-        });
-    }
 }
