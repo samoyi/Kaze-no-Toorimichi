@@ -1,18 +1,29 @@
 
-// 用来获取title最后一个字
-function lastChar(str){
-    let aChar = [...str];
-    return aChar[aChar.length-1];
-}
 
 // 检查是否是合理的title
 function validTitle(sTitle){
-    if(sTitle.includes('編集') || sTitle.includes('の一覧')){
+    if(sTitle.includes('編集')
+        || sTitle.includes('の一覧')
+        || sTitle.includes('Category')
+        || sTitle==='拡大')
+    {
         return false;
     }
 
     let str = sTitle.replace(/\(.+\)/g, '').trim();
-    return !aExcludedTitleEndChar.includes(lastChar(str));
+
+    let result = null;
+    if(aIncludeTitleEndChars.length){
+        result = aIncludeTitleEndChars.some(chars=>{
+            return str.endsWith(chars);
+        });
+    }
+    else{
+        result = !aExcludedTitleEndChars.some(chars=>{
+            return str.endsWith(chars);
+        });
+    }
+    return result;
 }
 
 // 获取一个节点自身和它后代的所有title
@@ -38,10 +49,11 @@ function getTitles(node){
 
 // 直接按照类别分类
 function cataMode(aNode){
+
     let oCata = {}; // 分类后的结果。类别是h2中的标题
     let sCata = ''; // 遍历过程中，当前的类别名
     aNode.forEach(node=>{
-        if(node.nodeName === 'H2'){
+        if(node.nodeName === cata_node_name){
             sCata = node.textContent.slice(0, -4);
             oCata[sCata] = [];
         }
@@ -63,7 +75,7 @@ function attrMode(aNode, sTaxonomyName){
     oItem = {},
     sCata = ''; // 遍历过程中，当前的类别名
     aNode.forEach(node=>{
-        if(node.nodeName === 'H2'){
+        if(node.nodeName === cata_node_name){
             sCata = node.textContent.slice(0, -4);
             oItem[sTaxonomyName] = sCata;
         }
@@ -71,7 +83,7 @@ function attrMode(aNode, sTaxonomyName){
             let titles = getTitles(node);
             let items = titles.filter((title)=>{
                 // 过滤掉不合理的title
-                return !aExcludedTitleEndChar.includes(lastChar(title))
+                return validTitle(title);
             }).map((title)=>{
                 oItem.name = title;
                 // 新加一个对象
