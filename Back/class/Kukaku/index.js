@@ -1,12 +1,5 @@
 'use strict';
 
-const fs = require('fs');
-
-// 从地方级别直到县下一级(aValidDivision)的所有区划单位
-const oToCityLevel = JSON.parse(fs.readFileSync('./data/oToCityLevel.json'));
-const aValidDivision = ['市', '郡', '区', '庁'];
-
-
 
 /**
  * 分析一个地名是属于aValidDivision中哪个行政区划的
@@ -26,20 +19,22 @@ function getDivision(sPlace, aValidDivision){
 
 
 
-function JPGeo(oToCityLevel){
+function Kukaku(oToCityLevel, aValidDivision){
+    this.oToCityLevel = oToCityLevel;
+    this.aValidDivision = aValidDivision;
 
     // Check argument
     let sArgType = Object.prototype.toString
-                        .call(oToCityLevel).slice(8,-1);
+                        .call(this.oToCityLevel).slice(8,-1);
     if(sArgType!=='Object'){
         throw new TypeError('Argument expects a plain object, '
                                 +sArgType+  ' given.')
     }
 
     // Check duplicate
-    for(let chihou in oToCityLevel){
-        for(let ken in oToCityLevel[chihou]){
-            let aDuplicate = oToCityLevel[chihou][ken].filter((place,index,arr)=>{
+    for(let chihou in this.oToCityLevel){
+        for(let ken in this.oToCityLevel[chihou]){
+            let aDuplicate = this.oToCityLevel[chihou][ken].filter((place,index,arr)=>{
                 if(index===arr.indexOf(place)
                         && index!==arr.lastIndexOf(place)){
                     return true;
@@ -52,36 +47,62 @@ function JPGeo(oToCityLevel){
     }
 
     // Init
-    // this.chihouNames = Object.keys(oToCityLevel);
+    // this.chihouNames = Object.keys(this.oToCityLevel);
     this.provinceNames = (()=>{
         let arr = [];
-        for(let chihou in oToCityLevel){
-            arr = arr.concat( Object.keys(oToCityLevel[chihou]) );
+        for(let chihou in this.oToCityLevel){
+            arr = arr.concat( Object.keys(this.oToCityLevel[chihou]) );
         }
         return arr;
     })();
-    // console.log(this.chihouNames);
-    // console.log(this.provinceNames);
+
+
+    // Define properties
+    function getChihous(oToCityLevel){
+        return Object.keys(oToCityLevel);
+    }
+    function getProvinces(oToCityLevel){
+        let obj = {};
+        for(let chihou in oToCityLevel){
+            obj[chihou] = Object.keys(oToCityLevel[chihou]);
+        }
+        return obj;
+    }
+    function getProvinceCata(oToCityLevel){
+        let obj = {};
+        for(let chihou in oToCityLevel){
+            for(let pro in oToCityLevel[chihou]){
+                obj[pro] = oToCityLevel[chihou][pro];
+            }
+        }
+        return obj;
+    }
+    Object.defineProperties(Kukaku.prototype, {
+        chihous: {value: getChihous(this.oToCityLevel)},
+        // chihouNames: {value: this.hihouNames.concat(Object.keys(this.hihouNames).map(item=>item+'地方')},
+        provinces: {value: getProvinces(this.oToCityLevel)},
+        provinceCata: {value: getProvinceCata(this.oToCityLevel)},
+    });
 }
 
-JPGeo.prototype = {
+Kukaku.prototype = {
     allPlaces(){
         let oResult = {},
             total = 0;
-        for(let chihou in oToCityLevel){
+        for(let chihou in this.oToCityLevel){
             oResult[chihou] = {};
-            for(let ken in oToCityLevel[chihou]){
+            for(let ken in this.oToCityLevel[chihou]){
                 oResult[chihou][ken] = {};
-                aValidDivision.forEach(division=>{
+                this.aValidDivision.forEach(division=>{
 
                     oResult[chihou][ken][division] = [];
                 });
-                oToCityLevel[chihou][ken].forEach(place=>{
-                    let index = getDivision(place, aValidDivision);
+                this.oToCityLevel[chihou][ken].forEach(place=>{
+                    let index = getDivision(place, this.aValidDivision);
                     if(index === -1){
                         throw new Error(place + ' is not a valid place');
                     }
-                    oResult[chihou][ken][aValidDivision[index]].push(place);
+                    oResult[chihou][ken][this.aValidDivision[index]].push(place);
                     ;
                 });
 
@@ -127,7 +148,7 @@ JPGeo.prototype = {
 
         // 如果地方名和省级名冲突，则返回null
         if(sChihou && sProvince){
-            if(!(sProvince in oToCityLevel[sChihou])){
+            if(!(sProvince in this.oToCityLevel[sChihou])){
                 return null;
             }
         }
@@ -153,7 +174,7 @@ JPGeo.prototype = {
                 oMatch = {};
             this.provinces[sChihou].forEach(pro=>{
                 // pro省的所有市
-                aCitiesInProvince = oToCityLevel[sChihou][pro]
+                aCitiesInProvince = this.oToCityLevel[sChihou][pro]
                                         .filter(city=>sPlace.includes(city));
                 // 如果当前省中有两个城市都包含在测试字符串中
                 if(aCitiesInProvince.length>1){
@@ -182,32 +203,32 @@ JPGeo.prototype = {
 };
 
 
-// Define properties
-function getChihous(){
-    return Object.keys(oToCityLevel);
-}
-function getProvinces(){
-    let obj = {};
-    for(let chihou in oToCityLevel){
-        obj[chihou] = Object.keys(oToCityLevel[chihou]);
-    }
-    return obj;
-}
-function getProvinceCata(){
-    let obj = {};
-    for(let chihou in oToCityLevel){
-        for(let pro in oToCityLevel[chihou]){
-            obj[pro] = oToCityLevel[chihou][pro];
-        }
-    }
-    return obj;
-}
-Object.defineProperties(JPGeo.prototype, {
-    chihous: {value: getChihous()},
-    // chihouNames: {value: this.hihouNames.concat(Object.keys(this.hihouNames).map(item=>item+'地方')},
-    provinces: {value: getProvinces()},
-    provinceCata: {value: getProvinceCata()},
-});
+// // Define properties
+// function getChihous(oToCityLevel){
+//     return Object.keys(oToCityLevel);
+// }
+// function getProvinces(oToCityLevel){
+//     let obj = {};
+//     for(let chihou in oToCityLevel){
+//         obj[chihou] = Object.keys(oToCityLevel[chihou]);
+//     }
+//     return obj;
+// }
+// function getProvinceCata(oToCityLevel){
+//     let obj = {};
+//     for(let chihou in oToCityLevel){
+//         for(let pro in oToCityLevel[chihou]){
+//             obj[pro] = oToCityLevel[chihou][pro];
+//         }
+//     }
+//     return obj;
+// }
+// Object.defineProperties(Kukaku.prototype, {
+//     chihous: {value: getChihous()},
+//     // chihouNames: {value: this.hihouNames.concat(Object.keys(this.hihouNames).map(item=>item+'地方')},
+//     provinces: {value: getProvinces()},
+//     provinceCata: {value: getProvinceCata()},
+// });
 
 
 
@@ -217,7 +238,7 @@ function getChihouByProvince(sProvince){
 //         sProvince = sProvince.slice(0, -2);
 //     }
 // console.log(sProvince);
-    const oProvince = JPGeo.prototype.provinces;
+    const oProvince = Kukaku.prototype.provinces;
     let result = '';
     for(let chihou in oProvince){
         if(oProvince[chihou].includes(sProvince)){
@@ -229,23 +250,7 @@ function getChihouByProvince(sProvince){
 
 
 
-const geo = new JPGeo(oToCityLevel);
-// let result = geo.allPlaces();
-console.log(geo.getDivisions('滋賀県蒲生郡竜王町'));
-console.log(geo.getDivisions('京都府長岡京市'));
-console.log(geo.getDivisions('愛知県大府市'));
-console.log(geo.getDivisions('北海道中標津町'));
-console.log(geo.getDivisions('兵庫県神戸市'));
-console.log(geo.getDivisions('岡山県津山市'));
-console.log(geo.getDivisions('滋賀県大津市'));
-console.log(geo.getDivisions('愛知県名古屋市'));
-console.log(geo.getDivisions('京都府京都市上京区'));
-console.log(geo.getDivisions('沖縄県那覇市'));
-console.log(geo.getDivisions('愛知県名古屋市緑区'));
-console.log(geo.getDivisions('鳥取県西伯郡大山町'));
-console.log(geo.getDivisions('岐阜県垂井町'));
-console.log(geo.getDivisions('大分県中津市'));
-console.log(geo.getDivisions('長野県大町市'));
+module.exports = Kukaku;
 
 
 
