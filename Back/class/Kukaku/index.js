@@ -1,74 +1,64 @@
 'use strict';
 
-
+// 构造函数
 /**
- * 分析一个地名是属于aValidDivision中哪个行政区划的
- *
- * @param  {String}  sPlace          aValidDivision级别的地名
- * @param  {Array}   aValidDivision  合理的区划名称组成的数组。每个数组项为一个字符
- * @return {Object}                  该地名的区划字符在aValidDivision中的序号
+ * @param  {Object}  oToCityLevel    地方——县——市 三级行政区划数据
+ * @param  {Array}   aValidDivision  合理的市级区划名称组成的数组
  */
-function getDivision(sPlace, aValidDivision){
-    let aPlace = [...sPlace],
-        nBracket = aPlace.indexOf('('),
-        nIndex = nBracket===-1 ? aPlace.length-1 : nBracket-1,
-        sDivision = aPlace[nIndex];
-    return aValidDivision.indexOf(sDivision);
-}
-
-
-
-
 function Kukaku(oToCityLevel, aValidDivision){
-    this.oToCityLevel = oToCityLevel;
-    this.aValidDivision = aValidDivision;
 
-    // Check argument
-    let sArgType = Object.prototype.toString
-                        .call(this.oToCityLevel).slice(8,-1);
-    if(sArgType!=='Object'){
-        throw new TypeError('Argument expects a plain object, '
-                                +sArgType+  ' given.')
+    // Freeze datas
+    Object.freeze(oToCityLevel);
+    Object.freeze(aValidDivision);
+
+
+    // Check arguments
+    // Check types
+    let sArg1Type = Object.prototype.toString
+                        .call(oToCityLevel).slice(8,-1);
+    if(sArg1Type!=='Object'){
+        throw new TypeError('Argument "oToCityLevel" expects a plain object, '
+                                +sArg1Type+  ' given.')
+    }
+    let sArg2Type = Object.prototype.toString
+                        .call(aValidDivision).slice(8,-1);
+    if(sArg2Type!=='Array'){
+        throw new TypeError('Argument "aValidDivision" expects an array, '
+                                +sArg2Type+  ' given.')
     }
 
-    // Check duplicate
-    for(let chihou in this.oToCityLevel){
-        for(let ken in this.oToCityLevel[chihou]){
-            let aDuplicate = this.oToCityLevel[chihou][ken].filter((place,index,arr)=>{
-                if(index===arr.indexOf(place)
-                        && index!==arr.lastIndexOf(place)){
-                    return true;
-                }
-            });
+    // Check duplicate cities
+    for(let chihou in oToCityLevel){
+        for(let ken in oToCityLevel[chihou]){
+            let aDuplicate = oToCityLevel[chihou][ken].filter(
+                (place,index,arr)=>{
+                    if(index===arr.indexOf(place)
+                    && index!==arr.lastIndexOf(place)){
+                        return true;
+                    }
+                });
             if(aDuplicate.length){
                 throw new Error('Duplicate place: ' + aDuplicate.toString());
             }
         }
     }
 
-    // Init
-    // this.chihouNames = Object.keys(this.oToCityLevel);
-    this.provinceNames = (()=>{
-        let arr = [];
-        for(let chihou in this.oToCityLevel){
-            arr = arr.concat( Object.keys(this.oToCityLevel[chihou]) );
-        }
-        return arr;
-    })();
-
 
     // Define properties
-    function getChihous(oToCityLevel){
+    // 获得所有的地方名称。“北海道”、“东北”、“四国”等。
+    function getChihous(){
         return Object.keys(oToCityLevel);
     }
-    function getProvinces(oToCityLevel){
+    // 按地方分类，获得每个地方之下的省级行政区划名称
+    function getProvinceNames(){
         let obj = {};
         for(let chihou in oToCityLevel){
             obj[chihou] = Object.keys(oToCityLevel[chihou]);
         }
         return obj;
     }
-    function getProvinceCata(oToCityLevel){
+    // 按省级行政区划名称分类，获得每个省级行政区划之下的市级行政区划名称
+    function getCityNames(){
         let obj = {};
         for(let chihou in oToCityLevel){
             for(let pro in oToCityLevel[chihou]){
@@ -77,121 +67,184 @@ function Kukaku(oToCityLevel, aValidDivision){
         }
         return obj;
     }
+    // 所有省级行政区划名称组成的数组
+    function getAllProvinceNames(){
+        let arr = [];
+        for(let chihou in oToCityLevel){
+            arr = arr.concat( Object.keys(oToCityLevel[chihou]) );
+        }
+        return arr;
+    }
     Object.defineProperties(Kukaku.prototype, {
-        chihous: {value: getChihous(this.oToCityLevel)},
-        // chihouNames: {value: this.hihouNames.concat(Object.keys(this.hihouNames).map(item=>item+'地方')},
-        provinces: {value: getProvinces(this.oToCityLevel)},
-        provinceCata: {value: getProvinceCata(this.oToCityLevel)},
+        toCityLevel: {value: oToCityLevel},
+        validDivision: {value: aValidDivision},
+        chihouNames: {get: getChihous},
+        provinceNames: {get: getProvinceNames},
+        cityNames: {get: getCityNames},
+        allProvinceNames: {get: getAllProvinceNames},
     });
 }
 
+
+
+// 原型
 Kukaku.prototype = {
+    constructor: Kukaku,
+
+
+    /**
+     * 分析一个地名是属于aValidDivision中哪个行政区划的
+     *
+     * @param  {String}  sPlace          aValidDivision级别的地名
+     * @return {Object}                  该地名的区划字符在aValidDivision中的序号
+     */
+    whichDivision(sPlace){
+        let aPlace = [...sPlace],
+            nBracket = aPlace.indexOf('('),
+            nIndex = nBracket===-1 ? aPlace.length-1 : nBracket-1,
+            sDivision = aPlace[nIndex];
+        return this.validDivision.indexOf(sDivision);
+    },
+
+
+    /**
+     * 对oToCityLevel参数中的市级再按照aValidDivision分类
+     *
+     * @return {Object}    分类后的对象。不改变oToCityLevel和this.toCityLevel
+     */
     allPlaces(){
         let oResult = {},
             total = 0;
-        for(let chihou in this.oToCityLevel){
+        for(let chihou in this.toCityLevel){
             oResult[chihou] = {};
-            for(let ken in this.oToCityLevel[chihou]){
+            for(let ken in this.toCityLevel[chihou]){
                 oResult[chihou][ken] = {};
-                this.aValidDivision.forEach(division=>{
-
+                this.validDivision.forEach(division=>{
                     oResult[chihou][ken][division] = [];
                 });
-                this.oToCityLevel[chihou][ken].forEach(place=>{
-                    let index = getDivision(place, this.aValidDivision);
+                this.toCityLevel[chihou][ken].forEach(place=>{
+                    let index = this.whichDivision(place, this.validDivision);
                     if(index === -1){
                         throw new Error(place + ' is not a valid place');
                     }
-                    oResult[chihou][ken][this.aValidDivision[index]].push(place);
-                    ;
+                    oResult[chihou][ken][this.validDivision[index]].push(place);
                 });
-
             }
         }
         return oResult;
     },
 
+
     /**
-     * 分析一个地名的行政区划，详细到aValidDivision级别
+     * 根据省级名获得所在地方名
      *
+     * @param  {String}  sProvince    省级名
+     * @return {String}               省级名所在的地方名。如果没有找到返回空字符串
+     */
+    getChihouByProvince(sProvince){
+        sProvince = sProvince.trim();
+        let result = '';
+        for(let chihou in this.provinceNames){
+            if(this.provinceNames[chihou].includes(sProvince)){
+                result = chihou;
+            }
+        }
+        return result;
+    },
+
+
+    /**
+     * 分析一个地名的地方——省——市三级行政区划
      *
+     * @param  {String}  sPlace    地名字符串
+     * @return {Object|Null}       如果匹配到则返回 地方——省——市 三级行政区划键值对
+     *                               对象，如果没有匹配到则返回null
      */
     getDivisions(sPlace){
-        // 算上带“地方”的地方名
-        const aChihou = this.chihous.concat(this.chihous.map(item=>item+'地方'));
 
-        // 不分类的省级行政区名
-        let aProvince = [];
-        for(let pro in this.provinces){
-            aProvince = aProvince.concat(this.provinces[pro]);
-        }
-
-
+        // 要返回的三项数据
         let sChihou = '',
             sProvince = '',
             sCity = '';
 
+        // 获取地方名
         // 如果sPlace中包含一个地方名，则暂定该地方名
         // 如果没有地方名，则暂时不决定
         // 如果有多个地方名，则返回null
-        let aMatchChihou = aChihou.filter(name=>sPlace.includes(name));
+        let aMatchChihou =  this.chihouNames.filter(name=>sPlace.includes(name));
         if(aMatchChihou.length===1) sChihou=aMatchChihou[0];
         if(aMatchChihou.length>1) return null;
-
-
+        // 获取省级名
         // 如果sPlace中包含一个省级名，则暂定该省级名
         // 如果没有省级名，则暂时不决定
         // 如果有多个省级名，则返回null
-        let aMatchProvince = aProvince.filter(name=>sPlace.includes(name));
+        let aMatchProvince = this.allProvinceNames.filter(
+                                        name=>sPlace.includes(name));
         if(aMatchProvince.length===1) sProvince=aMatchProvince[0];
         if(aMatchProvince.length>1) return null;
-
         // 如果地方名和省级名冲突，则返回null
         if(sChihou && sProvince){
-            if(!(sProvince in this.oToCityLevel[sChihou])){
+            if(!(this.provinceNames[sChihou].includes(sProvince))){
                 return null;
             }
         }
 
-        // 下面匹配市级名
-        // 如果有省级名，则从该省级之下的市匹配
+        // 获取市级名
+        // 如果有省级名，则从该省级之下的市级区划名称匹配
         if(sProvince){
-            let aMatchCity = this.provinceCata[sProvince]
+            let aMatchCity = this.cityNames[sProvince]
                                         .filter(name=>sPlace.includes(name));
-            if(aMatchCity.length===1){
-                sCity=aMatchCity[0];
-            };
+            if(aMatchCity.length===1) sCity=aMatchCity[0];
             if(aMatchCity.length>1) return null;
-
-            if(!sChihou){
-                sChihou = getChihouByProvince(sProvince);
+            if(!sChihou){ // 如果之前没有获得地方名，这里可以根据省级名获得
+                sChihou = this.getChihouByProvince(sProvince);
             }
-
         }
-        // 如果没有省级名只有地方名，则从该地方之下的所有市中匹配
+        // 如果没有省级名只有地方名，则从该地方之下的所有市级名中匹配
         else if(sChihou){
-            let aCitiesInProvince = [],
-                oMatch = {};
-            this.provinces[sChihou].forEach(pro=>{
-                // pro省的所有市
-                aCitiesInProvince = this.oToCityLevel[sChihou][pro]
+            // 因为可能有多个省级有同名市级的情况，所以结果不一定只有一个
+            let oMatch = {};
+            this.provinceNames[sChihou].forEach(pro=>{
+                let aCitiesInProvince = []; // pro省级之下的所有市级名
+                aCitiesInProvince = this.cityNames[pro]
                                         .filter(city=>sPlace.includes(city));
-                // 如果当前省中有两个城市都包含在测试字符串中
-                if(aCitiesInProvince.length>1){
-                    return null;
-                }
+                // 如果当前省级中有两个及以上市级名都包含在测试字符串中
+                if(aCitiesInProvince.length>1) return null;
+                // sChihou地方的pro省级有该市级名
                 if(aCitiesInProvince.length===1){
                     oMatch[pro] = aCitiesInProvince[0];
                 }
             });
-            // 有些省有同名市，则oMatch会包含多个省，每个省都有该市，则不能确定
+            // 有些省有同名市，则oMatch会包含多个省，则不能确定
             let aProvinces = Object.keys(oMatch);
+            if(aProvinces.length>1) return null;
             if(aProvinces.length===1) {
                 sProvince = aProvinces[0];
                 sCity = oMatch[sProvince];
-
             };
+        }
+        else{ // 省级名和地方名都没有
+            let oMatch = {};
+            for(let pro in this.cityNames){
+                let aCitiesInProvince = []; // pro省级之下的所有市级名
+                aCitiesInProvince = this.cityNames[pro]
+                                        .filter(city=>sPlace.includes(city));
+                // 如果当前省级中有两个及以上市级名都包含在测试字符串中
+                if(aCitiesInProvince.length>1) return null;
+                // pro省级有该市级名
+                if(aCitiesInProvince.length===1){
+                    oMatch[pro] = aCitiesInProvince[0];
+                }
+            }
+            // 有些省有同名市，则oMatch会包含多个省，则不能确定
+            let aProvinces = Object.keys(oMatch);
             if(aProvinces.length>1) return null;
+            if(aProvinces.length===0) return null;
+            if(aProvinces.length===1) {
+                sProvince = aProvinces[0];
+                sChihou = this.getChihouByProvince(sProvince);
+                sCity = oMatch[sProvince];
+            };
         }
 
         return {
@@ -203,60 +256,5 @@ Kukaku.prototype = {
 };
 
 
-// // Define properties
-// function getChihous(oToCityLevel){
-//     return Object.keys(oToCityLevel);
-// }
-// function getProvinces(oToCityLevel){
-//     let obj = {};
-//     for(let chihou in oToCityLevel){
-//         obj[chihou] = Object.keys(oToCityLevel[chihou]);
-//     }
-//     return obj;
-// }
-// function getProvinceCata(oToCityLevel){
-//     let obj = {};
-//     for(let chihou in oToCityLevel){
-//         for(let pro in oToCityLevel[chihou]){
-//             obj[pro] = oToCityLevel[chihou][pro];
-//         }
-//     }
-//     return obj;
-// }
-// Object.defineProperties(Kukaku.prototype, {
-//     chihous: {value: getChihous()},
-//     // chihouNames: {value: this.hihouNames.concat(Object.keys(this.hihouNames).map(item=>item+'地方')},
-//     provinces: {value: getProvinces()},
-//     provinceCata: {value: getProvinceCata()},
-// });
-
-
-
-function getChihouByProvince(sProvince){
-    sProvince = sProvince.trim();
-//     if(sProvince.includes('地方'));{
-//         sProvince = sProvince.slice(0, -2);
-//     }
-// console.log(sProvince);
-    const oProvince = Kukaku.prototype.provinces;
-    let result = '';
-    for(let chihou in oProvince){
-        if(oProvince[chihou].includes(sProvince)){
-            result = chihou;
-        }
-    }
-    return result;
-}
-
-
 
 module.exports = Kukaku;
-
-
-
-// console.log(geo.chihous);
-// console.log(geo.provinces);
-// console.log(geo.provinceCata);
-// console.log(geo.chihouNames);
-
-// fs.writeFileSync('cities.json', JSON.stringify(geo.provinceCata), 'utf-8');
