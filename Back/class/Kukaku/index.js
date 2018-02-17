@@ -87,25 +87,27 @@ function Kukaku(oToCityLevel, aValidDivision){
 
 
 
+// 私有方法
+/**
+ * 分析一个地名是属于aValidDivision中哪个行政区划的
+ * 用来匹配oToCityLevel中aValidDivision的地名
+ *
+ * @param  {String}  sPlace          aValidDivision级别的地名
+ * @return {Object}                  该地名的区划字符在aValidDivision中的序号
+ */
+function whichCityLevelDivision(sPlace, aValidDivision){
+    let aPlace = [...sPlace],
+        nBracket = aPlace.indexOf('('),
+        nIndex = nBracket===-1 ? aPlace.length-1 : nBracket-1,
+        sDivision = aPlace[nIndex];
+    return aValidDivision.indexOf(sDivision);
+}
+
+
+
 // 原型
 Kukaku.prototype = {
     constructor: Kukaku,
-
-
-    /**
-     * 分析一个地名是属于aValidDivision中哪个行政区划的
-     *
-     * @param  {String}  sPlace          aValidDivision级别的地名
-     * @return {Object}                  该地名的区划字符在aValidDivision中的序号
-     */
-    whichDivision(sPlace){
-        let aPlace = [...sPlace],
-            nBracket = aPlace.indexOf('('),
-            nIndex = nBracket===-1 ? aPlace.length-1 : nBracket-1,
-            sDivision = aPlace[nIndex];
-        return this.validDivision.indexOf(sDivision);
-    },
-
 
     /**
      * 对oToCityLevel参数中的市级再按照aValidDivision分类
@@ -123,7 +125,7 @@ Kukaku.prototype = {
                     oResult[chihou][ken][division] = [];
                 });
                 this.toCityLevel[chihou][ken].forEach(place=>{
-                    let index = this.whichDivision(place, this.validDivision);
+                    let index = whichCityLevelDivision(place, this.validDivision);
                     if(index === -1){
                         throw new Error(place + ' is not a valid place');
                     }
@@ -174,6 +176,7 @@ Kukaku.prototype = {
         let aMatchChihou =  this.chihouNames.filter(name=>sPlace.includes(name));
         if(aMatchChihou.length===1) sChihou=aMatchChihou[0];
         if(aMatchChihou.length>1) return null;
+
         // 获取省级名
         // 如果sPlace中包含一个省级名，则暂定该省级名
         // 如果没有省级名，则暂时不决定
@@ -198,6 +201,13 @@ Kukaku.prototype = {
             if(aMatchCity.length>1) return null;
             if(!sChihou){ // 如果之前没有获得地方名，这里可以根据省级名获得
                 sChihou = this.getChihouByProvince(sProvince);
+            }
+            // 去掉括号再匹配一次，有可能待匹配的地名没有带应该带的括号
+            if(aMatchCity.length===0){
+                aMatchCity = this.cityNames[sProvince].filter(name=>{
+                    return sPlace.includes(name.replace(/\(.+\)/, ''))
+                });
+                if(aMatchCity.length===1) sCity=aMatchCity[0];
             }
         }
         // 如果没有省级名只有地方名，则从该地方之下的所有市级名中匹配

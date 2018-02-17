@@ -75,6 +75,9 @@ function attrMode(aNode, sTaxonomyName){
         oItem = {}, // 每一个主题
         sCata = ''; // 遍历过程中，当前的类别名
     aNode.forEach(node=>{
+        let aMatch = node.innerHTML.match(/（([^）]+)）/);
+        let temp = aMatch ? aMatch[1] : '';
+        oItem[sTaxonomyName] = temp.replace(/<a[^>]+>|<\/a>/g, '');
         if(node.nodeName === cata_node_name){
             // 如果当前节点是类别名节点
             sCata = node.textContent.slice(0, -4);
@@ -105,8 +108,8 @@ function removeDuplicateForAttrMode(aItem){
         nIndex = null,
         nLastIndex = null;
 
-    // 由于数组项是对象，所以不能直接去重，先转换为字符串
-    aItemStr = aItem.map(item=>item[cata_node_name]+'-'+item.name);
+    // 由于数组项是对象，所以不能直接去重
+    aItemStr = aItem.map(item=>item['行政区划']+'-'+item.name);
 
     aItemStr.forEach((item, index)=>{
         nIndex = aItemStr.indexOf(item);
