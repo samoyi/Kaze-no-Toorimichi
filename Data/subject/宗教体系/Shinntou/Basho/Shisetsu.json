@@ -1,0 +1,272 @@
+[
+    {
+        "name": ["鳥居", ""],
+        "ch": "",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["参道", ""],
+        "ch": "",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["燈籠", ""],
+        "ch": "",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["狛犬", ""],
+        "ch": "",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["手水舎", ""],
+        "ch": "",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["拝殿", ""],
+        "ch": "",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["幣殿", ""],
+        "ch": "",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["本殿", ""],
+        "ch": "",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["神殿", ""],
+        "ch": "",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["神楽殿", ""],
+        "ch": "",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["舞殿", ""],
+        "ch": "",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["絵馬殿", ""],
+        "ch": "",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["摂社", ""],
+        "ch": "",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["末社", ""],
+        "ch": "",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["社務所", ""],
+        "ch": "",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["古札所", ""],
+        "ch": "",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["社庭", ""],
+        "ch": "",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["神門"],
+        "ch": "",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["随身門"],
+        "ch": "",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["随神門"],
+        "ch": "",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["楼門"],
+        "ch": "",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["干支恵方盤"],
+        "ch": "",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["注連柱"],
+        "ch": "",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["茅の輪"],
+        "ch": "",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["神馬・神馬像"],
+        "ch": "",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["猿田彦塔"],
+        "ch": "",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["庚申塔"],
+        "ch": "",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["道祖神塔"],
+        "ch": "",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["石祠"],
+        "ch": "",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["御饌殿"],
+        "ch": "",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["神式霊廟"],
+        "ch": "",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["祖霊殿"],
+        "ch": "",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["祖霊社"],
+        "ch": "",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["儀式殿"],
+        "ch": "",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["宝物殿"],
+        "ch": "",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["神輿殿"],
+        "ch": "",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["鐘楼"],
+        "ch": "",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["回廊"],
+        "ch": "",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["廻廊"],
+        "ch": "",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["玉垣"],
+        "ch": "",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["瑞垣"],
+        "ch": "",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["御旅所"],
+        "ch": "",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["遥拝所"],
+        "ch": "",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["頓宮"],
+        "ch": "",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["鳥居前町"],
+        "ch": "",
+        "intro": ["", ""],
+        "children": []
+    }
+]

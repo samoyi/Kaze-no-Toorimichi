@@ -19,5 +19,5 @@
     "test": "mocha"
   },
   "author": "",
-  "license": "ISC"
+  "license": "GPLv2"
 }
