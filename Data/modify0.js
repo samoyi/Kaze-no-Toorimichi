@@ -2,12 +2,13 @@
 
 const fs = require('fs');
 
-let oYoukai = JSON.parse(fs.readFileSync('Youkai0.json', 'utf8'));
-let oYiwen = JSON.parse(fs.readFileSync('yiwen.json', 'utf8'));
+let aOnsen = JSON.parse(fs.readFileSync('onsen.json', 'utf8'));
+aOnsen.forEach(onsen=>{
+    onsen.name = [onsen.name];
+    onsen.ch = '';
+    onsen.intro = ['', ''];
+    onsen.reference = {};
+    onsen.children = [];
+});
 
-let ch = '';
-oYoukai.children.forEach(youkai=>{
-    ch = oYiwen[youkai.name[0]] ;
-    youkai['ch'] = ch ? ch : '';
-})
-fs.writeFileSync('Youkai0.json', JSON.stringify(oYoukai, null, 4), 'utf8');
+fs.writeFileSync('onsen.json', JSON.stringify(aOnsen), 'utf8');

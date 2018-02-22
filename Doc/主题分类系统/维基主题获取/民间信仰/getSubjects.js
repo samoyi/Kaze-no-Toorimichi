@@ -70,15 +70,17 @@ function cataMode(aNode){
 }
 
 // 不分类，而是添加类别属性
-function attrMode(aNode, sTaxonomyName){
+function attrMode(aNode){
     let aItem = [], // 所有的主题
         oItem = {}, // 每一个主题
         sCata = ''; // 遍历过程中，当前的类别名
+
     aNode.forEach(node=>{
         if(node.nodeName === cata_node_name){
+        // if(node.className === 'h2'){
             // 如果当前节点是类别名节点
             sCata = node.textContent.slice(0, -4);
-            oItem[sTaxonomyName] = sCata;
+            oItem.cata = sCata;
         }
         else{
             // 当前节点是主题节点

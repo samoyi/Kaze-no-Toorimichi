@@ -2,187 +2,249 @@
     {
         "name": ["斎女"],
         "ch": "",
+        "cata":"",
         "intro": ["", ""],
+        "reference":{},
         "children":
     },
     {
         "name": ["犬神人"],
         "ch": "",
+        "cata":"",
         "intro": ["", ""],
+        "reference":{},
         "children":
     },
     {
         "name": ["御師"],
         "ch": "",
+        "cata":"",
         "intro": ["", ""],
+        "reference":{},
         "children":
     },
     {
         "name": ["宮司"],
         "ch": "",
+        "cata":"",
         "intro": ["", ""],
+        "reference":{},
         "children":
     },
     {
         "name": ["国造"],
         "ch": "",
+        "cata":"",
         "intro": ["", ""],
+        "reference":{},
         "children":
     },
     {
         "name": ["神人"],
         "ch": "",
+        "cata":"",
         "intro": ["", ""],
+        "reference":{},
         "children":
     },
     {
         "name": ["社家"],
         "ch": "",
+        "cata":"",
         "intro": ["", ""],
+        "reference":{},
         "children":
     },
     {
         "name": ["神官"],
         "ch": "",
+        "cata":"",
         "intro": ["", ""],
+        "reference":{},
         "children":
     },
     {
         "name": ["神祇官"],
         "ch": "",
+        "cata":"",
         "intro": ["", ""],
+        "reference":{},
         "children":
     },
     {
         "name": ["神祇管領長上"],
         "ch": "",
+        "cata":"",
         "intro": ["", ""],
+        "reference":{},
         "children":
     },
     {
         "name": ["神祇伯"],
         "ch": "",
+        "cata":"",
         "intro": ["", ""],
+        "reference":{},
         "children":
     },
     {
         "name": ["タマ", "多模", "玉", "魂", "霊", "多麻"],
         "ch": "",
+        "cata":"",
         "intro": ["", ""],
+        "reference":{},
         "children":
     },
     {
         "name": ["頭人"],
         "ch": "",
+        "cata":"",
         "intro": ["", ""],
+        "reference":{},
         "children":
     },
     {
         "name": ["刀禰", "トネ", "等禰", "止禰", "舎人"],
         "ch": "",
+        "cata":"",
         "intro": ["", ""],
+        "reference":{},
         "children":
     },
     {
         "name": ["内侍"],
         "ch": "",
+        "cata":"",
         "intro": ["", ""],
+        "reference":{},
         "children":
     },
     {
         "name": ["禰宜", "祢宜"],
         "ch": "",
+        "cata":"",
         "intro": ["", ""],
+        "reference":{},
         "children":
     },
     {
         "name": ["福男"],
         "ch": "",
+        "cata":"",
         "intro": ["", ""],
+        "reference":{},
         "children":
     },
     {
         "name": ["巫僧"],
         "ch": "",
+        "cata":"",
         "intro": ["", ""],
+        "reference":{},
         "children":
     },
     {
         "name": ["祝", "祝子", "祝部"],
         "ch": "",
+        "cata":"",
         "intro": ["", ""],
+        "reference":{},
         "children":
     },
     {
         "name": ["巫女", "神子", "舞姫", "御神子"],
         "ch": "",
+        "cata":"",
         "intro": ["", ""],
+        "reference":{},
         "children":
     },
     {
         "name": ["馬上役"],
         "ch": "",
+        "cata":"",
         "intro": ["", ""],
+        "reference":{},
         "children":
     },
     {
         "name": ["名誉宮司"],
         "ch": "",
+        "cata":"",
         "intro": ["", ""],
+        "reference":{},
         "children":
     },
     {
         "name": ["名誉庁長"],
         "ch": "",
+        "cata":"",
         "intro": ["", ""],
+        "reference":{},
         "children":
     },
     {
         "name": ["神主"],
         "ch": "",
+        "cata":"",
         "intro": ["", ""],
+        "reference":{},
         "children":
     },
     {
         "name": ["神官"],
         "ch": "",
+        "cata":"",
         "intro": ["", ""],
+        "reference":{},
         "children":
     },
     {
         "name": ["浄階"],
         "ch": "",
+        "cata":"",
         "intro": ["", ""],
+        "reference":{},
         "children":
     },
     {
         "name": ["明階"],
         "ch": "",
+        "cata":"",
         "intro": ["", ""],
+        "reference":{},
         "children":
     },
     {
         "name": ["正階"],
         "ch": "",
+        "cata":"",
         "intro": ["", ""],
+        "reference":{},
         "children":
     },
     {
         "name": ["権正階"],
         "ch": "",
+        "cata":"",
         "intro": ["", ""],
+        "reference":{},
         "children":
     },
     {
         "name": ["直階"],
         "ch": "",
+        "cata":"",
         "intro": ["", ""],
+        "reference":{},
         "children":
     },
     {
         "name": ["長老"],
         "ch": "",
+        "cata":"",
         "intro": ["", ""],
+        "reference":{},
         "children":
     }
 ]

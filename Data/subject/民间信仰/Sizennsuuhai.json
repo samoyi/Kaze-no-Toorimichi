@@ -1,30 +1,35 @@
 {
     "name": ["自然崇拝", "自然崇拜"],
     "ch": "自然崇拜",
+    "cata": "",
     "reference": {},
     "intro": ["", ""],
     "children": [
         {
             "name": ["植物崇拝", "植物崇拜"],
             "ch": "植物崇拜",
+            "cata": "",
             "reference": {},
             "intro": ["", ""],
             "children": [
                 {
                     "name": ["樹木崇拝", "树木崇拜"],
                     "ch": "树木崇拜",
+                    "cata": "",
                     "reference": {},
                     "intro": ["", ""],
                     "children": [
                         {
                             "name": ["精霊"],
                             "ch": "精灵",
+                            "cata": "",
                             "reference": {},
                             "intro": ["", ""],
                             "children": [
                                 {
                                     "name": ["木霊", "木精", "谺"],
                                     "ch": "木灵",
+                                    "cata": "",
                                     "reference": {
                                         "木霊": "https://ja.wikipedia.org/wiki/%E6%9C%A8%E9%9C%8A"
                                     },
@@ -36,6 +41,7 @@
                         {
                             "name": ["神木"],
                             "ch": "神木",
+                            "cata": "",
                             "reference": {},
                             "intro": ["", ""],
                             "children": []
@@ -47,6 +53,7 @@
         {
             "name": ["動物崇拝", "动物崇拜"],
             "ch": "动物崇拜",
+            "cata": "",
             "reference": {},
             "intro": ["", ""],
             "children": []
@@ -54,18 +61,21 @@
         {
             "name": ["星辰崇拝", "星辰崇拜", "天体崇拝", "天体崇拜"],
             "ch": "星辰崇拜",
+            "cata": "",
             "reference": {},
             "intro": ["", ""],
             "children": [
                 {
                     "name": ["実体"],
                     "ch": "实体",
+                    "cata": "",
                     "reference": {},
                     "intro": ["", ""],
                     "children": [
                         {
                             "name": ["太陽", "太阳", "太陽崇拝", "太阳崇拜", "日", "日の崇拝"],
                             "ch": "太阳",
+                            "cata": "",
                             "reference": {},
                             "intro": ["", ""],
                             "children": []
@@ -73,6 +83,7 @@
                         {
                             "name": ["太陰", "太阴", "太陰崇拝", "月亮", "月亮崇拜", "月の崇拝", "月"],
                             "ch": "太阴",
+                            "cata": "",
                             "reference": {},
                             "intro": ["", ""],
                             "children": []
@@ -80,12 +91,14 @@
                         {
                             "name": ["北極星", "北极星"],
                             "ch": "北极星",
+                            "cata": "",
                             "reference": {},
                             "intro": ["", ""],
                             "children": [
                                 {
                                     "name": ["妙見菩薩", "妙见菩萨", "妙見信仰", "妙见信仰"],
                                     "ch": "妙见菩萨",
+                                    "cata": "",
                                     "reference": {
                                         "妙見菩薩": "https://kotobank.jp/word/%E5%A6%99%E8%A6%8B%E8%8F%A9%E8%96%A9-139760",
                                         "妙見信仰": "https://kotobank.jp/word/%E5%A6%99%E8%A6%8B%E4%BF%A1%E4%BB%B0-139759"
@@ -95,6 +108,7 @@
                                         {
                                             "name": ["能勢妙見", "能勢妙見山", "妙見山", "能勢妙見堂", "能势妙见", "能势妙见山", "妙见山", "能势妙见堂", "妙見講"],
                                             "ch": "能势妙见",
+                                            "cata": "",
                                             "reference": {
                                                 "能勢妙見山 (日蓮宗)": "https://ja.wikipedia.org/wiki/%E8%83%BD%E5%8B%A2%E5%A6%99%E8%A6%8B%E5%B1%B1_(%E6%97%A5%E8%93%AE%E5%AE%97)",
                                                 "妙見山 (能勢)": "https://ja.wikipedia.org/wiki/%E5%A6%99%E8%A6%8B%E5%B1%B1_(%E8%83%BD%E5%8B%A2)"
@@ -113,6 +127,7 @@
         {
             "name": ["山岳崇拝", "山岳崇拜", "山岳信仰"],
             "ch": "山岳崇拜",
+            "cata": "",
             "sanngaku": [],
             "reference": {
                 "山岳信仰": "https://ja.wikipedia.org/wiki/%E5%B1%B1%E5%B2%B3%E4%BF%A1%E4%BB%B0"
@@ -122,12 +137,14 @@
                 {
                     "name": ["精霊"],
                     "ch": "精灵",
+                    "cata": "",
                     "reference": {},
                     "intro": ["", ""],
                     "children":[
                         {
                             "name": ["山彦"],
                             "ch": "山彦",
+                            "cata": "",
                             "reference": {
                                 "山彦": "https://ja.wikipedia.org/wiki/%E5%B1%B1%E5%BD%A6"
                             },
@@ -139,12 +156,14 @@
                 {
                     "name": ["実体"],
                     "ch": "实体",
+                    "cata": "",
                     "reference": {},
                     "intro": ["", ""],
                     "children":[
                         {
                             "name": ["富士信仰", "富士山信仰", "富士山"],
                             "ch": "富士信仰",
+                            "cata": "",
                             "sanngaku": [],
                             "reference": {
                                 "富士信仰": "https://ja.wikipedia.org/wiki/%E5%AF%8C%E5%A3%AB%E4%BF%A1%E4%BB%B0"
@@ -154,6 +173,7 @@
                                 {
                                     "name": ["富士講"],
                                     "ch": "",
+                                    "cata": "",
                                     "sanngaku": [],
                                     "reference": {
                                         "富士講": "https://ja.wikipedia.org/wiki/%E5%AF%8C%E5%A3%AB%E8%AC%9B"
@@ -166,6 +186,7 @@
                         {
                             "name": ["阿蘇山信仰", "阿苏山信仰", "阿蘇山", "阿苏山"],
                             "ch": "阿苏山信仰",
+                            "cata": "",
                             "sanngaku": [],
                             "reference": {
                                 "阿蘇山": "https://ja.wikipedia.org/wiki/%E9%98%BF%E8%98%87%E5%B1%B1"
@@ -178,6 +199,7 @@
                         {
                             "name": ["鳥海山信仰", "鸟海山信仰", "鳥海山", "鸟海山"],
                             "ch": "鸟海山信仰",
+                            "cata": "",
                             "sanngaku": [],
                             "reference": {
                                 "鳥海山": "https://ja.wikipedia.org/wiki/%E9%B3%A5%E6%B5%B7%E5%B1%B1"
@@ -190,6 +212,7 @@
                         {
                             "name": ["白山信仰", "白山"],
                             "ch": "白山信仰",
+                            "cata": "",
                             "sanngaku": [],
                             "reference": {
                                 "白山信仰": "https://ja.wikipedia.org/wiki/%E7%99%BD%E5%B1%B1%E4%BF%A1%E4%BB%B0"
@@ -202,6 +225,7 @@
                         {
                             "name": ["恐山信仰", "恐山"],
                             "ch": "恐山信仰",
+                            "cata": "",
                             "sanngaku": [],
                             "reference": {
                                 "恐山": "https://ja.wikipedia.org/wiki/%E6%81%90%E5%B1%B1"
@@ -214,6 +238,7 @@
                         {
                             "name": ["立山信仰", "立山"],
                             "ch": "立山信仰",
+                            "cata": "",
                             "sanngaku": [],
                             "reference": {
                                 "立山": "https://ja.wikipedia.org/wiki/%E7%AB%8B%E5%B1%B1#%E4%BA%BA%E3%81%AB%E9%96%A2%E3%82%8F%E3%82%8B%E6%AD%B4%E5%8F%B2"
@@ -226,6 +251,7 @@
                         {
                             "name": ["御許山信仰", "御许山信仰", "御許山", "御许山"],
                             "ch": "御许山信仰",
+                            "cata": "",
                             "sanngaku": [],
                             "reference": {
                                 "比売神": "https://ja.wikipedia.org/wiki/%E6%AF%94%E5%A3%B2%E7%A5%9E"
@@ -238,6 +264,7 @@
                         {
                             "name": ["三輪山信仰", "三轮山信仰", "三輪山", "三轮山"],
                             "ch": "三轮山信仰",
+                            "cata": "",
                             "sanngaku": [],
                             "reference": {
                                 "三輪山": "https://ja.wikipedia.org/wiki/%E4%B8%89%E8%BC%AA%E5%B1%B1"
@@ -249,6 +276,7 @@
                         {
                             "name": ["大峰山信仰", "大峰山"],
                             "ch": "大峰山信仰",
+                            "cata": "",
                             "sanngaku": [],
                             "reference": {
                                 "大峰山": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%B3%B0%E5%B1%B1"
@@ -260,6 +288,7 @@
                         {
                             "name": ["出羽三山信仰", "出羽三山", "月山", "羽黒山", "羽黑山", "湯殿山", "汤殿山"],
                             "ch": "出羽三山信仰",
+                            "cata": "",
                             "sanngaku": [],
                             "reference": {
                                 "出羽三山": "https://ja.wikipedia.org/wiki/%E5%87%BA%E7%BE%BD%E4%B8%89%E5%B1%B1",
@@ -272,6 +301,7 @@
                         {
                             "name": ["日光信仰", "日光山", "日光修験"],
                             "ch": "日光信仰",
+                            "cata": "",
                             "sanngaku": [],
                             "reference": {
                                 "日光修験": "https://ja.wikipedia.org/wiki/%E6%97%A5%E5%85%89%E4%BF%AE%E9%A8%93"
@@ -283,6 +313,7 @@
                         {
                             "name": ["大山信仰", "大山"],
                             "ch": "大山信仰",
+                            "cata": "",
                             "sanngaku": [],
                             "reference": {
                                 "大山 (神奈川県)": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%B1%B1_(%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C)"
@@ -294,6 +325,7 @@
                         {
                             "name": ["御嶽信仰", "御嶽山", "御岳信仰", "御岳山"],
                             "ch": "御岳山",
+                            "cata": "",
                             "sanngaku": [],
                             "reference": {
                                 "御嶽山": "https://ja.wikipedia.org/wiki/%E5%BE%A1%E5%B6%BD%E5%B1%B1"
@@ -305,6 +337,7 @@
                         {
                             "name": ["七面山信仰", "七面山"],
                             "ch": "七面山",
+                            "cata": "",
                             "sanngaku": [],
                             "reference": {
                                 "七面山": "https://ja.wikipedia.org/wiki/%E4%B8%83%E9%9D%A2%E5%B1%B1"
@@ -316,6 +349,7 @@
                         {
                             "name": ["吉野山信仰", "吉野山"],
                             "ch": "吉野山",
+                            "cata": "",
                             "sanngaku": [],
                             "reference": {
                                 "吉野山": "https://ja.wikipedia.org/wiki/%E5%90%89%E9%87%8E%E5%B1%B1"
@@ -327,6 +361,7 @@
                         {
                             "name": ["熊野信仰", "熊野三山", "紀伊山地", "纪伊山地"],
                             "ch": "熊野信仰",
+                            "cata": "",
                             "sanngaku": [],
                             "reference": {
                                 "熊野三山": "https://ja.wikipedia.org/wiki/%E7%86%8A%E9%87%8E%E4%B8%89%E5%B1%B1",
@@ -340,6 +375,7 @@
                         {
                             "name": ["大山信仰", "大山"],
                             "ch": "大山信仰",
+                            "cata": "",
                             "sanngaku": [],
                             "reference": {
                                 "大山 (鳥取県)": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%B1%B1_(%E9%B3%A5%E5%8F%96%E7%9C%8C)",
@@ -352,6 +388,7 @@
                         {
                             "name": ["石鎚信仰", "石鎚山"],
                             "ch": "石鎚信仰",
+                            "cata": "",
                             "sanngaku": [],
                             "reference": {
                                 "石鎚山": "https://ja.wikipedia.org/wiki/%E7%9F%B3%E9%8E%9A%E5%B1%B1"
@@ -363,6 +400,7 @@
                         {
                             "name": ["英彦山信仰", "英彦山"],
                             "ch": "英彦山信仰",
+                            "cata": "",
                             "sanngaku": [],
                             "reference": {
                                 "英彦山": "https://ja.wikipedia.org/wiki/%E8%8B%B1%E5%BD%A6%E5%B1%B1"
@@ -374,6 +412,7 @@
                         {
                             "name": ["霧島山信仰", "雾岛山信仰", "霧島山", "雾岛山"],
                             "ch": "雾岛山信仰",
+                            "cata": "",
                             "sanngaku": [],
                             "reference": {
                                 "霧島山": "https://ja.wikipedia.org/wiki/%E9%9C%A7%E5%B3%B6%E5%B1%B1"

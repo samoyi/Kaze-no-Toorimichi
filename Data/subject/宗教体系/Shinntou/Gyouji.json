@@ -1,143 +1,155 @@
-{
-    "四月": [
-        {
-            "name": ["稲荷祭"],
-            "ch": "",
-            "intro": ["", ""],
-            "children": []
-        }
-    ],
-    "五月": [
-        {
-            "name": ["葵祭"],
-            "ch": "",
-            "intro": ["", ""],
-            "children": []
-        },
-        {
-            "name": ["神田祭"],
-            "ch": "",
-            "intro": ["", ""],
-            "children": []
-        },
-        {
-            "name": ["三社祭"],
-            "ch": "",
-            "intro": ["", ""],
-            "children": []
-        }
-    ],
-    "六月": [
-        {
-            "name": ["管絃祭"],
-            "ch": "",
-            "intro": ["", ""],
-            "children": []
-        },
-        {
-            "name": ["山王祭", "日枝神社大祭"],
-            "ch": "",
-            "intro": ["", ""],
-            "children": []
-        },
-        {
-            "name": ["大祓"],
-            "ch": "",
-            "intro": ["", ""],
-            "children": []
+[
+    {
+        "name": ["稲荷祭"],
+        "ch": "",
+        "cata": "四月",
+        "intro": ["", ""],
+        "reference": {},
+        "children": []
+    },
+    {
+        "name": ["葵祭"],
+        "ch": "",
+        "cata": "五月",
+        "intro": ["", ""],
+        "reference": {},
+        "children": []
+    },
+    {
+        "name": ["神田祭"],
+        "ch": "",
+        "cata": "五月",
+        "intro": ["", ""],
+        "reference": {},
+        "children": []
+    },
+    {
+        "name": ["三社祭"],
+        "ch": "",
+        "cata": "五月",
+        "intro": ["", ""],
+        "reference": {},
+        "children": []
+    },
+    {
+        "name": ["管絃祭"],
+        "ch": "",
+        "cata": "六月",
+        "intro": ["", ""],
+        "reference": {},
+        "children": []
+    },
+    {
+        "name": ["山王祭", "日枝神社大祭"],
+        "ch": "",
+        "cata": "六月",
+        "intro": ["", ""],
+        "reference": {},
+        "children": []
+    },
+    {
+        "name": ["大祓"],
+        "ch": "",
+        "cata": "六月",
+        "intro": ["", ""],
+        "reference": {},
+        "children": []
 
-        }
-    ],
-    "七月": [
-        {
-            "name": ["祇園祭"],
-            "ch": "",
-            "intro": ["", ""],
-            "children": []
-        },
-        {
-            "name": ["那智火祭り", "扇祭"],
-            "ch": "",
-            "intro": ["", ""],
-            "children": []
-        },
-        {
-            "name": ["天神祭"],
-            "ch": "",
-            "intro": ["", ""],
-            "children": []
-        }
-    ],
-    "八月": [
-        {
-            "name": ["北野神社例祭", "北野天満宮例祭", "北野祭"],
-            "ch": "",
-            "intro": ["", ""],
-            "children": []
-        }
-    ],
-    "九月": [
-        {
-            "name": ["石清水八幡宮例祭", "石清水祭"],
-            "ch": "",
-            "intro": ["", ""],
-            "children": []
-        },
-        {
-            "name": ["鶴岡八幡宮例祭", "鶴岡八幡宮例大祭"],
-            "ch": "",
-            "intro": ["", ""],
-            "children": []
-        }
-    ],
-    "十月": [
-        {
-            "name": ["金刀比羅宮例祭", "金刀比羅宮例大祭"],
-            "ch": "",
-            "intro": ["", ""],
-            "children": []
-        }
-    ],
-    "十一月": [
-        {
-            "name": ["一条大祭"],
-            "ch": "",
-            "intro": ["", ""],
-            "children": []
-        }
-    ],
-    "十二月": [
-        {
-            "name": ["春日若宮おん祭"],
-            "ch": "",
-            "intro": ["", ""],
-            "children": []
-        }
-    ],
-    "一月": [
-        {
-            "name": ["うそかえ", "鷽替え"],
-            "ch": "",
-            "intro": ["", ""],
-            "children": []
-        },
-        {
-            "name": ["恵方参り"],
-            "ch": "",
-            "intro": ["", ""],
-            "children": []
-        },
-        {
-            "name": ["十日戎", "えべっさん"],
-            "ch": "",
-            "intro": ["", ""],
-            "children": []
-        }
-    ],
-    "二月": [
-    ],
-    "三月": [
-    ],
-    "不定": [
-    ]
-}
+    },
+    {
+        "name": ["祇園祭"],
+        "ch": "",
+        "cata": "七月",
+        "intro": ["", ""],
+        "reference": {},
+        "children": []
+    },
+    {
+        "name": ["那智火祭り", "扇祭"],
+        "ch": "",
+        "cata": "七月",
+        "intro": ["", ""],
+        "reference": {},
+        "children": []
+    },
+    {
+        "name": ["天神祭"],
+        "ch": "",
+        "cata": "七月",
+        "intro": ["", ""],
+        "reference": {},
+        "children": []
+    },
+    {
+        "name": ["北野神社例祭", "北野天満宮例祭", "北野祭"],
+        "ch": "",
+        "cata": "八月",
+        "intro": ["", ""],
+        "reference": {},
+        "children": []
+    },
+    {
+        "name": ["石清水八幡宮例祭", "石清水祭"],
+        "ch": "",
+        "cata": "九月",
+        "intro": ["", ""],
+        "reference": {},
+        "children": []
+    },
+    {
+        "name": ["鶴岡八幡宮例祭", "鶴岡八幡宮例大祭"],
+        "ch": "",
+        "cata": "九月",
+        "intro": ["", ""],
+        "reference": {},
+        "children": []
+    },
+    {
+        "name": ["金刀比羅宮例祭", "金刀比羅宮例大祭"],
+        "ch": "",
+        "cata": "十月",
+        "intro": ["", ""],
+        "reference": {},
+        "children": []
+    },
+    {
+        "name": ["一条大祭"],
+        "ch": "",
+        "cata": "十一月",
+        "intro": ["", ""],
+        "reference": {},
+        "children": []
+    },
+    {
+        "name": ["春日若宮おん祭"],
+        "ch": "",
+        "cata": "十二月",
+        "intro": ["", ""],
+        "reference": {},
+        "children": []
+    },
+    {
+        "name": ["うそかえ", "鷽替え"],
+        "ch": "",
+        "cata": "一月",
+        "intro": ["", ""],
+        "reference": {},
+        "children": []
+    },
+    {
+        "name": ["恵方参り"],
+        "ch": "",
+        "cata": "一月",
+        "intro": ["", ""],
+        "reference": {},
+        "children": []
+    },
+    {
+        "name": ["十日戎", "えべっさん"],
+        "ch": "",
+        "cata": "一月",
+        "intro": ["", ""],
+        "reference": {},
+        "children": []
+    }
+]

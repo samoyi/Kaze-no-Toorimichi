@@ -1,149 +1,149 @@
 [
     {
-        "name": ["妻入様式"],
+        "name": ["大社造"],
         "ch": "",
+        "cata": "妻入様式",
         "intro": ["", ""],
-        "children": [
-            {
-                "name": ["大社造"],
-                "ch": "",
-                "intro": ["", ""],
-                "children": []
-            },
-            {
-                "name": ["春日造"],
-                "ch": "",
-                "intro": ["", ""],
-                "children": []
-            },
-            {
-                "name": ["住吉造"],
-                "ch": "",
-                "intro": ["", ""],
-                "children": []
-            },
-            {
-                "name": ["大鳥造"],
-                "ch": "",
-                "intro": ["", ""],
-                "children": []
-            }
-        ]
+        "children": []
     },
     {
-        "name": ["平入様式"],
+        "name": ["春日造"],
         "ch": "",
+        "cata": "妻入様式",
         "intro": ["", ""],
-        "children": [
-            {
-                "name": ["神明造"],
-                "ch": "",
-                "intro": ["", ""],
-                "children": []
-            },
-            {
-                "name": ["流造"],
-                "ch": "",
-                "intro": ["", ""],
-                "children": []
-            },
-            {
-                "name": ["両流造"],
-                "ch": "",
-                "intro": ["", ""],
-                "children": []
-            },
-            {
-                "name": ["入母屋造"],
-                "ch": "",
-                "intro": ["", ""],
-                "children": []
-            },
-            {
-                "name": ["日吉造"],
-                "ch": "",
-                "intro": ["", ""],
-                "children": []
-            },
-            {
-                "name": ["八幡造"],
-                "ch": "",
-                "intro": ["", ""],
-                "children": []
-            }
-        ]
+        "children": []
     },
     {
-        "name": ["他の様式"],
+        "name": ["住吉造"],
         "ch": "",
+        "cata": "妻入様式",
         "intro": ["", ""],
-        "children": [
-            {
-                "name": ["祇園造"],
-                "ch": "",
-                "intro": ["", ""],
-                "children": []
-            },
-            {
-                "name": ["権現造"],
-                "ch": "",
-                "intro": ["", ""],
-                "children": []
-            },
-            {
-                "name": ["浅間造"],
-                "ch": "",
-                "intro": ["", ""],
-                "children": []
-            },
-            {
-                "name": ["寝殿造"],
-                "ch": "",
-                "intro": ["", ""],
-                "children": []
-            },
-            {
-                "name": ["隠岐造"],
-                "ch": "",
-                "intro": ["", ""],
-                "children": []
-            },
-            {
-                "name": ["吉備津造"],
-                "ch": "",
-                "intro": ["", ""],
-                "children": []
-            },
-            {
-                "name": ["織田造"],
-                "ch": "",
-                "intro": ["", ""],
-                "children": []
-            },
-            {
-                "name": ["尾張造"],
-                "ch": "",
-                "intro": ["", ""],
-                "children": []
-            },
-            {
-                "name": ["大縣造"],
-                "ch": "",
-                "intro": ["", ""],
-                "children": []
-            },
-            {
-                "name": ["三棟造"],
-                "ch": "",
-                "intro": ["", ""],
-                "children": []
-            },
-            {
-                "name": ["水分造"],
-                "ch": "",
-                "intro": ["", ""],
-                "children": []
-            }
-        ]
+        "children": []
+    },
+    {
+        "name": ["大鳥造"],
+        "ch": "",
+        "cata": "妻入様式",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["神明造"],
+        "ch": "",
+        "cata": "平入様式",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["流造"],
+        "ch": "",
+        "cata": "平入様式",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["両流造"],
+        "ch": "",
+        "cata": "平入様式",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["入母屋造"],
+        "ch": "",
+        "cata": "平入様式",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["日吉造"],
+        "ch": "",
+        "cata": "平入様式",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["八幡造"],
+        "ch": "",
+        "cata": "平入様式",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["祇園造"],
+        "ch": "",
+        "cata": "他の様式",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["権現造"],
+        "ch": "",
+        "cata": "他の様式",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["浅間造"],
+        "ch": "",
+        "cata": "他の様式",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["寝殿造"],
+        "ch": "",
+        "cata": "他の様式",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["隠岐造"],
+        "ch": "",
+        "cata": "他の様式",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["吉備津造"],
+        "ch": "",
+        "cata": "他の様式",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["織田造"],
+        "ch": "",
+        "cata": "他の様式",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["尾張造"],
+        "ch": "",
+        "cata": "他の様式",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["大縣造"],
+        "ch": "",
+        "cata": "他の様式",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["三棟造"],
+        "ch": "",
+        "cata": "他の様式",
+        "intro": ["", ""],
+        "children": []
+    },
+    {
+        "name": ["水分造"],
+        "ch": "",
+        "cata": "他の様式",
+        "intro": ["", ""],
+        "children": []
     }
 ]
