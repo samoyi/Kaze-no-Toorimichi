@@ -1,0 +1,758 @@
+[
+    {
+        "name": ["赤城神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["足手荒神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["アラハバキ神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["池生神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["池若御子神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["石神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["伊豆速布留神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["出早雄命"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["出早比売命"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["犬神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["茨田神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["宇恵春神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["宇賀神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["内県神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["姥神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["廐神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["宇良古比売"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["浦島太郎"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["うわばみ"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["愛遲子神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["胞衣神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["恵奈武耳命"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["えびす"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["大県神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["大橡神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["大嶋辺神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["意岐萩命"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["奥津石建神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["鬼"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["竟富角神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["おしら様"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["蚕神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["案山子神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["風の三郎様"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["片倉辺命"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["河童"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["神坂雄神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["倉稲主神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["草奈井比売命"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["久留須神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["黒姫命"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["高志奈男"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["児玉彦命"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["駒弓神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["金精神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["前玉彦神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["笹山彦命"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["座敷小僧"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["座敷童子"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["佐那都良比売神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["シーサー"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["志多羅神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["七福神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["柴神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["菅根神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["須波若彦命"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["ソソウ神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["底多久神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["高石比売神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["高杜命"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["武居夷神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["武彦根神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["建御名方彦神別命"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["辰子姫"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["多津若比売神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["蓼科神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["多満留姫"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["垂比売神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["千鹿頭神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["智奴神　"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["岐の神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["付喪神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["妻岐萩命"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["妻科比売命"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["都麻耶美豆比売神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["天狗"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["天道"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["天女"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["天白神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["道祖神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["常世神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["外県神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["庭津女神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["比良父神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["ビリケン"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["貧乏神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["船霊"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["箒神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["疱瘡神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["麻背神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["ミシャグジ"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["美射津彦神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["美津多麻比売命"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["むかで神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["洩矢神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["守達神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["洩宅神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["八杵命"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["屋敷神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["八須良雄神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["八立神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["八櫛神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["疫病神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["夜刀神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["矢奈比売命"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["屋根神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["ヤマドッサン"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    },
+    {
+        "name": ["若木比売神"],
+        "ch":"",
+        "intro": ["", ""],
+        "reference":{},
+        "children":[]
+    }
+]

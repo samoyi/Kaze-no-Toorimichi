@@ -1,0 +1,416 @@
+[
+    {
+        "name": ["形式"],
+        "ch": "形式",
+        "intro": ["", ""],
+        "reference": {
+            "日本の民家": "https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E3%81%AE%E6%B0%91%E5%AE%B6"
+        },
+        "children": [
+            {
+                "name": ["草を植えた棟"],
+                "ch": "",
+                "intro": ["", ""],
+                "reference": {},
+                "children": []
+            },
+            {
+                "name": ["曲り家", "曲家", "曲屋", "曲り屋", "曲がり屋", "曲り家", "曲がり家"],
+                "ch": "",
+                "intro": ["", ""],
+                "reference": {},
+                "children": []
+            },
+            {
+                "name": ["中門造", "中門造（秋田県）"],
+                "ch": "",
+                "intro": ["", ""],
+                "reference": {},
+                "children": []
+            },
+            {
+                "name": ["中門造", "中門造（新潟県）"],
+                "ch": "",
+                "intro": ["", ""],
+                "reference": {},
+                "children": []
+            },
+            {
+                "name": ["本棟造"],
+                "ch": "",
+                "intro": ["", ""],
+                "reference": {},
+                "children": []
+            },
+            {
+                "name": ["つきあげ屋根"],
+                "ch": "",
+                "intro": ["", ""],
+                "reference": {},
+                "children": []
+            },
+            {
+                "name": ["赤城棟"],
+                "ch": "",
+                "intro": ["", ""],
+                "reference": {},
+                "children": []
+            },
+            {
+                "name": ["入母屋", "入母屋造"],
+                "ch": "",
+                "intro": ["", ""],
+                "reference": {},
+                "children": []
+            },
+            {
+                "name": ["寄棟", "寄棟造"],
+                "ch": "",
+                "intro": ["", ""],
+                "reference": {},
+                "children": []
+            },
+            {
+                "name": ["別当造"],
+                "ch": "",
+                "intro": ["", ""],
+                "reference": {},
+                "children": []
+            },
+            {
+                "name": ["兜造"],
+                "ch": "",
+                "intro": ["", ""],
+                "reference": {},
+                "children": []
+            },
+            {
+                "name": ["合掌造", "合掌造り"],
+                "ch": "合掌造",
+                "intro": ["", ""],
+                "reference": {},
+                "children": []
+            },
+            {
+                "name": ["湖北型"],
+                "ch": "",
+                "intro": ["", ""],
+                "reference": {},
+                "children": []
+            },
+            {
+                "name": ["大和棟", "高塀造"],
+                "ch": "",
+                "intro": ["", ""],
+                "reference": {},
+                "children": []
+            },
+            {
+                "name": ["四方ぶた造"],
+                "ch": "",
+                "intro": ["", ""],
+                "reference": {},
+                "children": []
+            },
+            {
+                "name": ["そり棟"],
+                "ch": "",
+                "intro": ["", ""],
+                "reference": {},
+                "children": []
+            },
+            {
+                "name": ["箱棟"],
+                "ch": "",
+                "intro": ["", ""],
+                "reference": {},
+                "children": []
+            },
+            {
+                "name": ["くど造"],
+                "ch": "",
+                "intro": ["", ""],
+                "reference": {},
+                "children": []
+            },
+            {
+                "name": ["鍵屋型"],
+                "ch": "",
+                "intro": ["", ""],
+                "reference": {},
+                "children": []
+            },
+            {
+                "name": ["二棟造"],
+                "ch": "",
+                "intro": ["", ""],
+                "reference": {},
+                "children": []
+            },
+            {
+                "name": ["チセ"],
+                "ch": "",
+                "intro": ["", ""],
+                "reference": {},
+                "children": []
+            },
+            {
+                "name": ["別当型"],
+                "ch": "",
+                "intro": ["", ""],
+                "reference": {},
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": ["区域"],
+        "ch": "区域",
+        "intro": ["", ""],
+        "reference": {
+            "日本の民家": "https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E3%81%AE%E6%B0%91%E5%AE%B6"
+        },
+        "children": [
+            {
+                "name": ["みちのく民俗村"],
+                "ch": "",
+                "intro":["", ""],
+                "reference": {},
+                "chiku": "岩手県北上市",
+                "children": []
+            },
+            {
+                "name": ["伝承園"],
+                "ch": "",
+                "intro":["", ""],
+                "reference": {},
+                "chiku": "岩手県遠野市",
+                "children": []
+            },
+            {
+                "name": ["遠野ふるさと村"],
+                "ch": "",
+                "intro":["", ""],
+                "reference": {},
+                "chiku": "岩手県遠野市",
+                "children": []
+            },
+            {
+                "name": ["福島市民家園"],
+                "ch": "",
+                "intro":["", ""],
+                "reference": {},
+                "chiku": "福島県福島市",
+                "children": []
+            },
+            {
+                "name": ["郡山市開成館"],
+                "ch": "",
+                "intro":["", ""],
+                "reference": {},
+                "chiku": "福島県郡山市",
+                "children": []
+            },
+            {
+                "name": ["浦和くらしの博物館民家園"],
+                "ch": "",
+                "intro":["", ""],
+                "reference": {},
+                "chiku": "埼玉県さいたま市",
+                "children": []
+            },
+            {
+                "name": ["岡本公園民家園"],
+                "ch": "",
+                "intro":["", ""],
+                "reference": {},
+                "chiku": "東京都世田谷区",
+                "children": []
+            },
+            {
+                "name": ["次大夫堀公園民家園"],
+                "ch": "",
+                "intro":["", ""],
+                "reference": {},
+                "chiku": "東京都世田谷区",
+                "children": []
+            },
+            {
+                "name": ["江戸東京たてもの園"],
+                "ch": "",
+                "intro":["", ""],
+                "reference": {},
+                "chiku": "東京都小金井市",
+                "children": []
+            },
+            {
+                "name": ["府中市郷土の森博物館"],
+                "ch": "",
+                "intro":["", ""],
+                "reference": {},
+                "chiku": "東京都府中市",
+                "children": []
+            },
+            {
+                "name": ["立川市歴史民俗資料館・古民家園"],
+                "ch": "",
+                "intro":["", ""],
+                "reference": {},
+                "chiku": "東京都立川市",
+                "children": []
+            },
+            {
+                "name": ["くにたち郷土文化館"],
+                "ch": "",
+                "intro":["", ""],
+                "reference": {},
+                "chiku": "東京都国立市",
+                "children": []
+            },
+            {
+                "name": ["小平ふるさと村"],
+                "ch": "",
+                "intro":["", ""],
+                "reference": {},
+                "chiku": "東京都小平市",
+                "children": []
+            },
+            {
+                "name": ["日本民家園"],
+                "ch": "",
+                "intro":["", ""],
+                "reference": {},
+                "chiku": "神奈川県川崎市",
+                "children": []
+            },
+            {
+                "name": ["郷土民家園"],
+                "ch": "",
+                "intro":["", ""],
+                "reference": {},
+                "chiku": "神奈川県大和市",
+                "children": []
+            },
+            {
+                "name": ["都筑民家園"],
+                "ch": "",
+                "intro":["", ""],
+                "reference": {},
+                "chiku": "神奈川県横浜市",
+                "children": []
+            },
+            {
+                "name": ["相模原市古民家園"],
+                "ch": "",
+                "intro":["", ""],
+                "reference": {},
+                "chiku": "神奈川県相模原市",
+                "children": []
+            },
+            {
+                "name": ["相模田名民家資料館"],
+                "ch": "",
+                "intro":["", ""],
+                "reference": {},
+                "chiku": "神奈川県相模原市",
+                "children": []
+            },
+            {
+                "name": ["金沢湯涌江戸村"],
+                "ch": "",
+                "intro":["", ""],
+                "reference": {},
+                "chiku": "石川県金沢市",
+                "children": []
+            },
+            {
+                "name": ["飛騨民俗村"],
+                "ch": "",
+                "intro":["", ""],
+                "reference": {},
+                "chiku": "岐阜県高山市",
+                "children": []
+            },
+            {
+                "name": ["飛騨荘川の里"],
+                "ch": "",
+                "intro":["", ""],
+                "reference": {},
+                "chiku": "岐阜県高山市",
+                "children": []
+            },
+            {
+                "name": ["合掌造り民家園 "],
+                "ch": "",
+                "intro":["", ""],
+                "reference": {},
+                "chiku": "岐阜県白川村",
+                "children": []
+            },
+            {
+                "name": ["黒壁スクエア"],
+                "ch": "",
+                "intro":["", ""],
+                "reference": {},
+                "chiku": "滋賀県長浜市",
+                "children": []
+            },
+            {
+                "name": ["池田町洋館街"],
+                "ch": "",
+                "intro":["", ""],
+                "reference": {},
+                "chiku": "滋賀県近江八幡市",
+                "children": []
+            },
+            {
+                "name": ["日本民家集落博物館"],
+                "ch": "",
+                "intro":["", ""],
+                "reference": {},
+                "chiku": "大阪府豊中市",
+                "children": []
+            },
+            {
+                "name": ["奈良県立民俗博物館"],
+                "ch": "",
+                "intro":["", ""],
+                "reference": {},
+                "chiku": "奈良県大和郡山市",
+                "children": []
+            },
+            {
+                "name": ["和歌山県立紀伊風土記の丘"],
+                "ch": "",
+                "intro":["", ""],
+                "reference": {},
+                "chiku": "和歌山県和歌山市",
+                "children": []
+            },
+            {
+                "name": ["相楽園"],
+                "ch": "",
+                "intro":["", ""],
+                "reference": {},
+                "chiku": "兵庫県神戸市",
+                "children": []
+            },
+            {
+                "name": ["四国村, 四国民家博物館"],
+                "ch": "",
+                "intro":["", ""],
+                "reference": {},
+                "chiku": "香川県高松市",
+                "children": []
+            },
+            {
+                "name": ["石垣やいま村"],
+                "ch": "",
+                "intro":["", ""],
+                "reference": {},
+                "chiku": "沖縄県石垣市",
+                "children": []
+            }
+        ]
+    }
+]
