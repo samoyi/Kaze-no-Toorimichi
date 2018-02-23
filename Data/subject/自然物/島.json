@@ -20,15 +20,9 @@
         "name": ["天売島"],
         "ch": "",
         "intro": ["",""],
-        "reference":{},
-        "children":[]
-    },
-    {
-        "cata": "北海道",
-        "name": ["天売島"],
-        "ch": "",
-        "intro": ["",""],
-        "reference":{},
+        "reference":{
+            "天売島": "https://ja.wikipedia.org/wiki/%E5%A4%A9%E5%A3%B2%E5%B3%B6"
+        },
         "children":[]
     },
     {
@@ -274,14 +268,6 @@
     {
         "cata": "東北",
         "name": ["椿島 (陸前高田市)"],
-        "ch": "",
-        "intro": ["",""],
-        "reference":{},
-        "children":[]
-    },
-    {
-        "cata": "東北",
-        "name": ["歌川広重"],
         "ch": "",
         "intro": ["",""],
         "reference":{},
@@ -865,14 +851,6 @@
     },
     {
         "cata": "関東",
-        "name": ["歌川広重"],
-        "ch": "",
-        "intro": ["",""],
-        "reference":{},
-        "children":[]
-    },
-    {
-        "cata": "関東",
         "name": ["江ノ島"],
         "ch": "",
         "intro": ["",""],
@@ -1268,23 +1246,9 @@
         "name": ["友ヶ島"],
         "ch": "",
         "intro": ["",""],
-        "reference":{},
-        "children":[]
-    },
-    {
-        "cata": "近畿",
-        "name": ["友ヶ島"],
-        "ch": "",
-        "intro": ["",""],
-        "reference":{},
-        "children":[]
-    },
-    {
-        "cata": "近畿",
-        "name": ["友ヶ島"],
-        "ch": "",
-        "intro": ["",""],
-        "reference":{},
+        "reference":{
+            "友ヶ島":"https://ja.wikipedia.org/wiki/%E5%8F%8B%E3%83%B6%E5%B3%B6"
+        },
         "children":[]
     },
     {
@@ -2937,14 +2901,6 @@
     },
     {
         "cata": "九州",
-        "name": ["福江島"],
-        "ch": "",
-        "intro": ["",""],
-        "reference":{},
-        "children":[]
-    },
-    {
-        "cata": "九州",
         "name": ["堂崎天主堂"],
         "ch": "",
         "intro": ["",""],
@@ -2964,7 +2920,9 @@
         "name": ["福江島"],
         "ch": "",
         "intro": ["",""],
-        "reference":{},
+        "reference":{
+            "福江島": "https://ja.wikipedia.org/wiki/%E7%A6%8F%E6%B1%9F%E5%B3%B6"
+        },
         "children":[]
     },
     {

@@ -1,5 +1,6 @@
 'use strict';
 const util = require('util');
+const myUtil = require('./MyUtil');
 
 function Tree(oTree){
     this.tree = oTree;
@@ -38,8 +39,29 @@ function Tree(oTree){
                             + util.inspect(aBadSubjects));
     }
 
-    
+
 }
+
+
+// 私有
+
+// aName.forEach((name,index)=>{
+//     let firstIndex = aName.indexOf(name),
+//         lastIndex = aName.lastIndexOf(name);
+//     if(index===firstIndex && firstIndex!==lastIndex){
+//         oSame[name] = [aChildren[firstIndex]];
+//         let nNextIndex = firstIndex + 1;
+//         while(nNextIndex!==lastIndex){
+//             if(aName[nNextIndex]===aName[firstIndex]){
+//                 oSame[name].push(aChildren[nNextIndex]);
+//             }
+//             nNextIndex++;
+//         }
+//         oSame[name].push(aChildren[lastIndex]);
+//     }
+// });
+
+
 
 Tree.prototype = {
     constructor: Tree,
@@ -47,22 +69,7 @@ Tree.prototype = {
     traverseBranch(oNode, fn){
         let aSubject = [];
         function traverse(oNode, fn){
-
-            // if(!oNode.children) console.log(oNode);
-            //
-            // if(typeof oNode.children.forEach !== 'function') {
-            //     console.log(oNode.name);
-            //     console.log(Object.prototype.toString.call(oNode.children));
-            // };
-            //
-            // if(!Array.isArray(oNode.name)) console.log(oNode.name);
-
-
             oNode.children.forEach(child=>{
-
-                // if(!child.name) console.log(child);
-
-                // aSubject.push(child.name[0]);
                 fn(child);
                 traverse(child, fn);
             });
@@ -77,6 +84,62 @@ Tree.prototype = {
             aName.push(subject.name[0]);
         });
         return aName;
+    },
+
+    getSubjectByID(){
+
+    },
+
+    getSubjectByFirstName(sFirstName){
+        sFirstName = sFirstName.trim();
+        let aSubject = [];
+        this.traverseBranch(this.tree, (subject)=>{
+            if(subject.name[0]===sFirstName){
+                aSubject.push(subject);
+            }
+        });
+        return aSubject;
+    },
+
+    findSameNameChildren(oNode){
+        let oSame = {},
+            aChildren = oNode.children;
+        let aName = aChildren.map(child=>child.name[0]);
+        let oSameIndexes = myUtil.findDuplicateIndexes(aName);
+        for(let key in oSameIndexes){
+            oSame[key] = oSameIndexes[key].map(i=>aChildren[i]);
+        }
+        return oSame;
+    },
+
+    getSubjectRouteByFirstName(sFirstName){
+        let aRoutes = [];
+
+        foo(this.tree, sFirstName);
+        function foo(oNode, sFirstName, aCurRoute=[]){
+            aCurRoute.push(oNode.name[0]);
+            if(oNode.name[0]===sFirstName){
+                aRoutes.push(aCurRoute);
+                return true;
+            }
+            else if(oNode.children.length){
+                let result = oNode.children.some(child=>{
+                    return foo(child, sFirstName, aCurRoute);
+                });
+                if(result){
+                    return true;
+                }
+                else{
+                    aCurRoute.pop();
+                    return false;
+                }
+            }
+            else{
+                aCurRoute.pop();
+                return false;
+            }
+        }
+        return aRoutes;
     },
 }
 

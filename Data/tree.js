@@ -39,7 +39,7 @@ function makeTree(dir, obj){
             makeTree(dir+'/'+name, oItem);
         }
         else{
-            oItem.name.push(path.basename(name, 'json'));
+            oItem.name.push(path.basename(name, '.json'));
             console.log(name);
             oItem.children = JSON.parse(fs.readFileSync(dir+'/'+name))
         }
