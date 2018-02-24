@@ -6,13 +6,13 @@
         "reference": {},
         "children": [
             {
-                "name": ["北海道"],
+                "name": ["北海道（地方）", "北海道"],
                 "ch": "北海道",
                 "intro": ["", ""],
                 "reference": {},
                 "children": [
                     {
-                        "name": ["北海道"],
+                        "name": ["北海道（道）"],
                         "ch": "北海道",
                         "intro": ["", ""],
                         "reference": {},
@@ -400,7 +400,7 @@
         "reference": {},
         "children": [
             {
-                "name": ["北海道"],
+                "name": ["北海道（律令制）"],
                 "ch": "北海道",
                 "intro": ["", ""],
                 "reference": {},
@@ -521,13 +521,6 @@
                     {
                         "name": ["下野", "下野国"],
                         "ch": "下野",
-                        "intro": ["", ""],
-                        "reference": {},
-                        "children": []
-                    },
-                    {
-                        "name": ["武蔵", "武蔵国"],
-                        "ch": "武蔵",
                         "intro": ["", ""],
                         "reference": {},
                         "children": []
@@ -1016,7 +1009,7 @@
                         "children":[]
                     },
                     {
-                        "name": ["対馬", "対馬国", "对马", "对马国"],
+                        "name": ["対馬（令制国）", "対馬", "対馬国", "对马", "对马国"],
                         "ch":  "对马",
                         "intro": ["", ""],
                         "reference": {},

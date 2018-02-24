@@ -1644,30 +1644,6 @@
         ]
     },
     {
-        "cata": "い",
-        "name": [
-            "甑島列島"
-        ],
-        "ch": "犬的亡灵",
-        "reference": {},"children":[],
-        "intro": [
-            "",
-            ""
-        ]
-    },
-    {
-        "cata": "う",
-        "name": [
-            "粟島 (新潟県)"
-        ],
-        "ch": "",
-        "reference": {},"children":[],
-        "intro": [
-            "",
-            ""
-        ]
-    },
-    {
         "cata": "う",
         "name": [
             "ウグメ"
@@ -5678,7 +5654,7 @@
     {
         "cata": "し",
         "name": [
-            "伊雑宮"
+            "七本鮫"
         ],
         "ch": "",
         "reference": {},"children":[],
@@ -11345,18 +11321,6 @@
             "太三郎狸"
         ],
         "ch": "",
-        "reference": {},"children":[],
-        "intro": [
-            "",
-            ""
-        ]
-    },
-    {
-        "cata": "や",
-        "name": [
-            "八咫烏"
-        ],
-        "ch": "八咫乌",
         "reference": {},"children":[],
         "intro": [
             "",

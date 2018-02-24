@@ -11,9 +11,11 @@ const oTree = JSON.parse(fs.readFileSync('./test/data/tree.json'));
 
 const tree = new Tree(oTree);
 
-
-let aSubjectName = tree.getSubjectRouteByFirstName('宇賀神');
-console.log(aSubjectName);
+let result = tree.getAllSubjectNames();
+console.log(result.length);
+let set = new Set(result);
+console.log(set.size);
+console.log(myUtil.findDuplicateIndexes(result));
 
 
 describe('Tree', ()=>{
