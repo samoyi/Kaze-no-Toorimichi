@@ -119,10 +119,12 @@
         "children":[]
     },
     {
-        "name": ["うわばみ"],
+        "name": ["うわばみ","蟒蛇", "大蛇"],
         "ch":"",
         "intro": ["", ""],
-        "reference":{},
+        "reference":{
+            "うわばみ":"https://ja.wikipedia.org/wiki/%E3%81%86%E3%82%8F%E3%81%B0%E3%81%BF"
+        },
         "children":[]
     },
     {
@@ -147,10 +149,12 @@
         "children":[]
     },
     {
-        "name": ["えびす"],
+        "name": ["えびす（神）", "えびす"],
         "ch":"",
         "intro": ["", ""],
-        "reference":{},
+        "reference":{
+            "えびす":"https://ja.wikipedia.org/wiki/%E3%81%88%E3%81%B3%E3%81%99"
+        },
         "children":[]
     },
     {
@@ -217,11 +221,15 @@
         "children":[]
     },
     {
-        "name": ["案山子神"],
-        "ch":"",
-        "intro": ["", ""],
-        "reference":{},
-        "children":[]
+        "name": [
+            "田の神", "案山子神"
+        ],
+        "ch": "",
+        "reference": {},"children":[],
+        "intro": [
+            "",
+            ""
+        ]
     },
     {
         "name": ["風の三郎様"],
@@ -232,13 +240,6 @@
     },
     {
         "name": ["片倉辺命"],
-        "ch":"",
-        "intro": ["", ""],
-        "reference":{},
-        "children":[]
-    },
-    {
-        "name": ["河童"],
         "ch":"",
         "intro": ["", ""],
         "reference":{},
@@ -323,13 +324,6 @@
     },
     {
         "name": ["座敷小僧"],
-        "ch":"",
-        "intro": ["", ""],
-        "reference":{},
-        "children":[]
-    },
-    {
-        "name": ["座敷童子"],
         "ch":"",
         "intro": ["", ""],
         "reference":{},
@@ -476,7 +470,7 @@
         "children":[]
     },
     {
-        "name": ["智奴神　"],
+        "name": ["智奴神"],
         "ch":"",
         "intro": ["", ""],
         "reference":{},
@@ -484,13 +478,6 @@
     },
     {
         "name": ["岐の神"],
-        "ch":"",
-        "intro": ["", ""],
-        "reference":{},
-        "children":[]
-    },
-    {
-        "name": ["付喪神"],
         "ch":"",
         "intro": ["", ""],
         "reference":{},
@@ -521,7 +508,9 @@
         "name": ["天狗"],
         "ch":"",
         "intro": ["", ""],
-        "reference":{},
+        "reference":{
+            "天狗": "https://ja.wikipedia.org/wiki/%E5%A4%A9%E7%8B%97"
+        },
         "children":[]
     },
     {
@@ -546,11 +535,18 @@
         "children":[]
     },
     {
-        "name": ["道祖神"],
-        "ch":"",
-        "intro": ["", ""],
-        "reference":{},
-        "children":[]
+        "name": [
+            "道祖神"
+        ],
+        "ch": "道祖神",
+        "reference": {
+            "道祖神": "https://ja.wikipedia.org/wiki/%E9%81%93%E7%A5%96%E7%A5%9E"
+        },
+        "children":[],
+        "intro": [
+            "",
+            ""
+        ]
     },
     {
         "name": ["常世神"],
@@ -589,9 +585,11 @@
     },
     {
         "name": ["貧乏神"],
-        "ch":"",
+        "ch":"贫乏神",
         "intro": ["", ""],
-        "reference":{},
+        "reference":{
+            "貧乏神": "https://ja.wikipedia.org/wiki/%E8%B2%A7%E4%B9%8F%E7%A5%9E"
+        },
         "children":[]
     },
     {
@@ -605,14 +603,18 @@
         "name": ["箒神"],
         "ch":"",
         "intro": ["", ""],
-        "reference":{},
+        "reference":{
+            "箒神":"https://kotobank.jp/word/%E7%AE%92%E7%A5%9E-627296"
+        },
         "children":[]
     },
     {
         "name": ["疱瘡神"],
-        "ch":"",
+        "ch":"疱疮神",
         "intro": ["", ""],
-        "reference":{},
+        "reference":{
+            "疱瘡神":"https://ja.wikipedia.org/wiki/%E7%96%B1%E7%98%A1%E7%A5%9E"
+        },
         "children":[]
     },
     {
@@ -707,10 +709,12 @@
         "children":[]
     },
     {
-        "name": ["疫病神"],
-        "ch":"",
+        "name": ["疫病神", "厄病神", "疫神", "厄神"],
+        "ch":"疫病神",
         "intro": ["", ""],
-        "reference":{},
+        "reference":{
+            "疫病神": "https://ja.wikipedia.org/wiki/%E7%96%AB%E7%97%85%E7%A5%9E"
+        },
         "children":[]
     },
     {

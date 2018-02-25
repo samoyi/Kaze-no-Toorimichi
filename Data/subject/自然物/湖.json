@@ -398,10 +398,12 @@
             "",
             ""
         ],
-        "reference": {},
+        "reference": {
+            "チョマトー":"https://ja.wikipedia.org/wiki/%E3%83%81%E3%83%A7%E3%83%9E%E3%83%88%E3%83%BC"
+        },
         "children": [],
         "name": [
-            "チョマトー"
+            "チョマトー", "血妖魔沼"
         ]
     },
     {
@@ -1936,12 +1938,14 @@
     },
     {
         "cata": "中部",
-        "ch": "",
+        "ch": "野尻湖",
         "intro": [
             "",
             ""
         ],
-        "reference": {},
+        "reference": {
+            "野尻湖":"https://ja.wikipedia.org/wiki/%E9%87%8E%E5%B0%BB%E6%B9%96"
+        },
         "children": [],
         "name": [
             "野尻湖"

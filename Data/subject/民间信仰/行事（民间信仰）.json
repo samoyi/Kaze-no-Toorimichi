@@ -126,7 +126,9 @@
         "ch": "",
         "cata": "十月",
         "intro": ["", ""],
-        "reference": {},
+        "reference": {
+            "七五三":"https://ja.wikipedia.org/wiki/%E4%B8%83%E4%BA%94%E4%B8%89"
+        },
         "children": []
     },
     {
@@ -150,7 +152,9 @@
         "ch": "",
         "cata": "十一月",
         "intro": ["", ""],
-        "reference": {},
+        "reference": {
+            "七五三":"https://ja.wikipedia.org/wiki/%E4%B8%83%E4%BA%94%E4%B8%89"
+        },
         "children": []
     },
     {
@@ -190,7 +194,9 @@
         "ch": "",
         "cata": "十二月",
         "intro": ["", ""],
-        "reference": {},
+        "reference": {
+            "事八日":"https://ja.wikipedia.org/wiki/%E4%BA%8B%E5%85%AB%E6%97%A5"
+        },
         "children": []
     },
     {
@@ -198,7 +204,9 @@
         "ch": "",
         "cata": "十二月",
         "intro": ["", ""],
-        "reference": {},
+        "reference": {
+            "針供養":"https://ja.wikipedia.org/wiki/%E9%87%9D%E4%BE%9B%E9%A4%8A"
+        },
         "children": []
     },
     {
@@ -278,7 +286,9 @@
         "ch": "",
         "cata": "二月",
         "intro": ["", ""],
-        "reference": {},
+        "reference": {
+            "事八日":"https://ja.wikipedia.org/wiki/%E4%BA%8B%E5%85%AB%E6%97%A5"
+        },
         "children": []
     },
     {
@@ -294,7 +304,9 @@
         "ch": "",
         "cata": "二月",
         "intro": ["", ""],
-        "reference": {},
+        "reference": {
+            "針供養":"https://ja.wikipedia.org/wiki/%E9%87%9D%E4%BE%9B%E9%A4%8A"
+        },
         "children": []
     },
     {

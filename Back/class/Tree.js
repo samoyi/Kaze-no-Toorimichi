@@ -69,6 +69,17 @@ Tree.prototype = {
     traverseBranch(oNode, fn){
         let aSubject = [];
         function traverse(oNode, fn){
+            fn(oNode);
+            oNode.children.forEach(child=>{
+                traverse(child, fn);
+            });
+        }
+        traverse(oNode, fn);
+        return aSubject;
+    },
+    traverseBranch1(oNode, fn){
+        let aSubject = [];
+        function traverse(oNode, fn){
             oNode.children.forEach(child=>{
                 fn(child);
                 traverse(child, fn);
@@ -81,6 +92,13 @@ Tree.prototype = {
     getAllSubjectNames(){
         let aName = [];
         this.traverseBranch(this.tree, (subject)=>{
+            aName.push(subject.name[0]);
+        });
+        return aName;
+    },
+    getAllSubjectNames1(){
+        let aName = [];
+        this.traverseBranch1(this.tree, (subject)=>{
             aName.push(subject.name[0]);
         });
         return aName;
@@ -147,7 +165,7 @@ Tree.prototype = {
                  });
              }
          }
-         
+
          let aRoutes = [];
          checkFirstName(oStartNode, sFirstName);
          return aRoutes;
