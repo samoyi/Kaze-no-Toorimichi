@@ -1,0 +1,134 @@
+[
+    {
+        "name": ["神楽"],
+        "ch": "神乐",
+        "intro": ["神楽（かぐら）は、日本の神道の神事において神に奉納するため奏される歌舞。", ""],
+        "reference": {
+            "神楽": "https://ja.wikipedia.org/wiki/%E7%A5%9E%E6%A5%BD"
+        },
+        "children": []
+    },
+    {
+        "name": [
+            "田楽（舞踊）",
+            "田楽"
+        ],
+        "ch": "",
+        "intro": ["田楽（でんがく）は、平安時代中期に成立した日本の伝統芸能。", ""],
+        "reference": {
+            "田楽": "https://ja.wikipedia.org/wiki/%E7%94%B0%E6%A5%BD"
+        },
+        "children": []
+    },
+    {
+        "name": ["雅楽"],
+        "ch": "",
+        "intro": ["雅楽（ががく）は、中国、朝鮮半島を経て、日本で花開いた伝統的な音楽の一つ", ""],
+        "reference": {
+            "雅楽": "https://ja.wikipedia.org/wiki/%E9%9B%85%E6%A5%BD"
+        },
+        "children": []
+    },
+    {
+        "name": ["舞楽", "舞"],
+        "ch": "",
+        "intro": ["舞（まい）とは、日本舞踊のうちメロディに合わせた旋回運動を主としたもの。", ""],
+        "reference": {
+            "舞": "https://ja.wikipedia.org/wiki/%E8%88%9E"
+        },
+        "children": []
+    },
+    {
+        "name": ["猿楽"],
+        "ch": "",
+        "intro": ["猿楽（さるがく、猿樂）は、平安時代に成立した日本の伝統芸能。", ""],
+        "reference": {
+            "猿楽": "https://ja.wikipedia.org/wiki/%E7%8C%BF%E6%A5%BD"
+        },
+        "children": []
+    },
+    {
+        "name": ["白拍子", "素拍子"],
+        "ch": "",
+        "intro": ["", ""],
+        "reference": {
+            "白拍子": "https://ja.wikipedia.org/wiki/%E7%99%BD%E6%8B%8D%E5%AD%90"
+        },
+        "children": []
+    },
+    {
+        "name": ["延年"],
+        "ch": "延年",
+        "intro": ["延年（えんねん）は、寺院において大法会の後に僧侶や稚児によって演じられた日本の芸能。", ""],
+        "reference": {
+            "延年": "https://ja.wikipedia.org/wiki/%E5%BB%B6%E5%B9%B4"
+        },
+        "children": []
+    },
+    {
+        "name": ["曲舞", "久世舞", "九世舞"],
+        "ch": "曲舞",
+        "intro": ["曲舞（くせまい）は、中世に端を発する日本の踊り芸能のひとつで、南北朝時代から室町時代にかけて流行した。", ""],
+        "reference": {
+            "曲舞": "https://ja.wikipedia.org/wiki/%E6%9B%B2%E8%88%9E"
+        },
+        "children": []
+    },
+    {
+        "name": ["上方舞"],
+        "ch": "上方舞",
+        "intro": ["上方舞（かみがたまい）とは、江戸時代中期（1800年頃）から末期にかけて上方で発生した日本舞踊の一種。", ""],
+        "reference": {
+            "上方舞": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%96%B9%E8%88%9E"
+        },
+        "children": []
+    },
+    {
+        "name": ["大黒舞"],
+        "ch": "",
+        "intro": ["", ""],
+        "reference": {},
+        "children": []
+    },
+    {
+        "name": ["恵比寿舞"],
+        "ch": "",
+        "intro": ["", ""],
+        "reference": {},
+        "children": []
+    },
+    {
+        "name": ["纏舞"],
+        "ch": "",
+        "intro": ["", ""],
+        "reference": {},
+        "children": []
+    },
+    {
+        "name": ["念仏踊り"],
+        "ch": "",
+        "intro": ["念仏踊り（ねんぶつおどり）は、念仏を唱えながら踊る日本の伝統芸能で、さまざまな様式で全国に分布している。", ""],
+        "reference": {
+            "念仏踊り": "https://ja.wikipedia.org/wiki/%E5%BF%B5%E4%BB%8F%E8%B8%8A%E3%82%8A"
+        },
+        "children": []
+    },
+    {
+        "name": ["盆踊り"],
+        "ch": "",
+        "intro": ["盆踊り（ぼんおどり）は、盆の時期に死者を供養するための行事、またその行事内で行なわれる踊り。", ""],
+        "reference": {
+            "盆踊り": "https://ja.wikipedia.org/wiki/%E7%9B%86%E8%B8%8A%E3%82%8A"
+        },
+        "children": []
+    },
+    {
+        "name": ["歌舞伎舞踊"],
+        "ch": "",
+        "intro": ["", ""],
+        "reference": {
+            "歌舞伎舞踊": "https://ja.wikipedia.org/wiki/%E6%AD%8C%E8%88%9E%E4%BC%8E%E8%88%9E%E8%B8%8A"
+        },
+        "children": []
+    }
+]
