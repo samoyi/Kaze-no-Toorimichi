@@ -7,8 +7,9 @@ function Item(){
 Item.prototype = {
     contructor: Item,
 
-    addItem(){
-        
+    // addItem
+    addBook(sISBN, sTitle, sAuthor){
+
     },
 
     modifyItem(){
