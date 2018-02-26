@@ -143,6 +143,31 @@ Tree.prototype = {
          checkFirstName(oStartNode, sFirstName);
          return aRoutes;
      },
+
+     /**
+      * 根据一个主题的ID，查询该主题在ID树的路径。
+      * 参考 getSubjectRouteByFirstName 方法
+      */
+     getSubjectRouteByID: P_bIsSubjectTree
+                                ? undefined
+                                : function(nID, oStartNode=this.tree){
+        function checkID(oNode, nID, aCurRoute=[]){
+            aCurRoute.push(oNode.id);
+            if(oNode.id===nID){
+                aRoutes.push(JSON.parse(JSON.stringify(aCurRoute)));
+            }
+            else if(oNode.children.length){
+                oNode.children.forEach(child=>{
+                    checkID(child, nID, aCurRoute);
+                    aCurRoute.pop();
+                });
+            }
+        }
+
+        let aRoutes = [];
+        checkID(oStartNode, nID);
+        return aRoutes;
+    },
 }
 
 

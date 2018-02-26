@@ -1,7 +1,7 @@
 'use strict';
 
 const assert = require('assert');
-const Kukaku = require('../class/Kukaku/index');
+const Kukaku = require('../module/Kukaku/index');
 
 // 从地方级别直到县下一级(aValidDivision)的所有区划单位
 const fs = require('fs');
@@ -12,7 +12,7 @@ const aValidDivision = ['市', '郡', '区', '庁'];
 const kukaku = new Kukaku(oToCityLevel, aValidDivision);
 
 
-describe('Kukaku', ()=>{
+describe('检查Kukaku模块', ()=>{
 
     describe('getChihouByProvince', ()=>{
         it('局：上川総合振興局', ()=>{

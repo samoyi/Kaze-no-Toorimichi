@@ -14,7 +14,7 @@ let oTree = {
 
 let aFile = [];
 buildTree(dir, oTree);
-fs.writeFileSync('subjectTree.json', JSON.stringify(oTree, null, 4));
+fs.writeFileSync('SubjectTree.json', JSON.stringify(oTree, null, 4));
 
 
 function createItem(){
