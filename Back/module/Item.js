@@ -8,7 +8,7 @@ Item.prototype = {
     contructor: Item,
 
     // addItem
-    addBookItem(sISBN, sTitle, sAuthor, sOfficialSite='', aSubjects){
+    addBookItem(sISBN, sTitle, aSubject, aAuthor, sOfficialSite=''){
         // {
         //     ISBN: '',
         //     title: [''],
@@ -27,7 +27,7 @@ Item.prototype = {
         // }
 
     },
-    addPeriodicalItem(sTitle, sIssue='', sOfficialSite='', aSubjects){
+    addPeriodicalItem(sTitle, aSubject, sIssue='', sOfficialSite=''){
         // {
         //     title: [''],
         //     sIssue:'',
@@ -45,7 +45,7 @@ Item.prototype = {
         // }
 
     },
-    addVideoItem(sTitle, aSubjects, sCataID, sIMDb='', sOfficialSite=''){
+    addVideoItem(sTitle, aSubject, sCataID, sIMDb='', sOfficialSite=''){
         // {
         //     IMDb: '',
         //     title: [''],
@@ -63,10 +63,82 @@ Item.prototype = {
         // }
     },
 
-    addMusic(sTitle, aSubjects, sCataID, sIMDb='', sOfficialSite=''){
+    addMusicItem(sTitle, aSubject, aMusician, sOfficialSite=''){
         // {
-        //     IMDb: '',
         //     title: [''],
+        //     aMusician: [''],
+        //     sOfficialSite: '',
+        //     subjects: [
+        //         {
+        //             route: [],
+        //             des: '',
+        //         },
+        //         {
+        //             route: [],
+        //             des: '',
+        //         }
+        //     ]
+        // }
+    },
+
+    addGameItem(sTitle, aSubject, sCataID, aDeveloper=[], sOfficialSite=''){
+        // {
+        //     title: [''],
+        //     aDeveloper: [''],
+        //     sOfficialSite: '',
+        //     subjects: [
+        //         {
+        //             route: [],
+        //             des: '',
+        //         },
+        //         {
+        //             route: [],
+        //             des: '',
+        //         }
+        //     ]
+        // }
+    },
+
+    addPerformanceItem(sTitle, aSubject, aPerformer, sOfficialSite=''){
+        // {
+        //     title: [''],
+        //     aPerformer: [''],
+        //     sOfficialSite: '',
+        //     subjects: [
+        //         {
+        //             route: [],
+        //             des: '',
+        //         },
+        //         {
+        //             route: [],
+        //             des: '',
+        //         }
+        //     ]
+        // }
+    },
+
+    addInternetMediaItem(sTitle, aSubject, sURL='', sAPP=''){
+        // {
+        //     sURL: '',
+        //     title: [''],
+        //     sAPP: '',
+        //     subjects: [
+        //         {
+        //             route: [],
+        //             des: '',
+        //         },
+        //         {
+        //             route: [],
+        //             des: '',
+        //         }
+        //     ]
+        // }
+    },
+
+    addPaintingOrPhotographyItem(sTitle, aSubject, aCreator, sOfficialSite=''){
+        // {
+        //     title: [''],
+        //     aCreator: [''],
         //     sOfficialSite: '',
         //     subjects: [
         //         {
