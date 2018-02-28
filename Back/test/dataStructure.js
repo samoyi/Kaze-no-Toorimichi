@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const assert = require('assert');
+const {inspect} = require('util');
 
 const oIDTree = JSON.parse(fs.readFileSync('../DataBase/IDTree.json'));
 const aIDSubject = JSON.parse(fs.readFileSync('../DataBase/ID-Subject.json'));
@@ -18,6 +19,67 @@ const nSubjectAmount = aIDSubject.length;
 
 
 describe('检查数据结构', ()=>{
+    describe('每种数据结构应该结构完整且类型正确', ()=>{
+        it('ID-FirstName映射', ()=>{
+            // 整体为一个非空数组，且每个数组项为非空字符串
+            assert.ok((()=>{
+                if( !Array.isArray(aIDFirstName) || aIDFirstName.length===0 ){
+                    console.log('ID-FirstName映射必须是非空数组');
+                    return false;
+                }
+                return aIDFirstName.every((item, index)=>{
+                    if( typeof item !== 'string' || item.trim().length===0 ){
+                        console.log('ID-FirstName映射数组的数组项必须为非空非空白'
+                                        + '字符串，但第' +index+ '项为'
+                                        , inspect(item));
+                        return false;
+                    }
+                    return true;
+                });
+            })());
+        });
+        it('ID-Routes映射', ()=>{
+            // 整体为一个数组（A)，每个数组项也为一个数组（B），B数组内部是一个或多个
+            // 数组（C），每个C数组的数组项为一个或多个不小于0的整数
+            assert.ok((()=>{
+                if( !Array.isArray(aIDRoutes) || aIDRoutes.length===0){
+                    console.log('ID-Routes映射必须是非空数组');
+                    return false;
+                }
+
+                return aIDRoutes.every((B, indexB)=>{
+                    if(!Array.isArray(B) || B.length===0){
+                        console.log('ID-Routes映射数组的数组项必须为非空数组，但第'
+                                        +indexB+ '项为：', inspect(B));
+                        return false;
+                    }
+                    return B.every(C=>{
+                        if(!Array.isArray(C) || C.length===0){
+                            console.log('ID-Routes映射数组的第' +indexB+ '项内部'
+                                            + '的数组项必须为非空数组，实际为：'
+                                            , inspect(C));
+                            return false;
+                        }
+                        return C.every(n=>{
+                            if(!Number.isInteger(n) || (n<0)){
+                                console.log('ID-Routes映射数组的第' +indexB+ '项'
+                                                + '内部的路径节点必须为非负整数，'
+                                                + '实际为：', inspect(n));
+                                return false;
+                            }
+                            return true;
+                        });
+                    })
+                });
+            })());
+        });
+    });
+    describe('不应该出现重复值的情况', ()=>{
+        it('ID-FirstName映射的数组项不应该有重复值', ()=>{
+            assert.strictEqual(aIDFirstName.length
+                                , (new Set(aIDFirstName)).size);
+        });
+    });
     describe('数据条数应该相等的各数据结构', ()=>{
         it('各主题ID相关映射数组的长度应该相等', ()=>{
             assert.ok( aIDSubject.length === aIDFirstName.length
