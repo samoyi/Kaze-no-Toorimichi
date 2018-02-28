@@ -17,11 +17,18 @@ Item.prototype = {
         //     subjects: [
         //         {
         //             route: [],
-        //             des: '',
+        //             info: {
+        //                  isWhole: true,
+        //                  des: '',
+        //             },
         //         },
         //         {
         //             route: [],
-        //             des: '',
+        //             info: {
+        //                  isWhole: false,
+        //                  part: '第三章和第八章',
+        //                  des: '',
+        //             },
         //         }
         //     ]
         // }
@@ -35,11 +42,18 @@ Item.prototype = {
         //     subjects: [
         //         {
         //             route: [],
-        //             des: '',
+        //             info: {
+        //                  isWhole: true,
+        //                  des: '',
+        //             },
         //         },
         //         {
         //             route: [],
-        //             des: '',
+        //             info: {
+        //                  isWhole: false,
+        //                  issue: '2017年9月',
+        //                  des: '',
+        //             },
         //         }
         //     ]
         // }
@@ -53,11 +67,11 @@ Item.prototype = {
         //     subjects: [
         //         {
         //             route: [],
-        //             des: '',
+        //             info: '',
         //         },
         //         {
         //             route: [],
-        //             des: '',
+        //             info: '',
         //         }
         //     ]
         // }
@@ -71,11 +85,11 @@ Item.prototype = {
         //     subjects: [
         //         {
         //             route: [],
-        //             des: '',
+        //             info: '',
         //         },
         //         {
         //             route: [],
-        //             des: '',
+        //             info: '',
         //         }
         //     ]
         // }
@@ -89,11 +103,11 @@ Item.prototype = {
         //     subjects: [
         //         {
         //             route: [],
-        //             des: '',
+        //             info: '',
         //         },
         //         {
         //             route: [],
-        //             des: '',
+        //             info: '',
         //         }
         //     ]
         // }
@@ -107,11 +121,11 @@ Item.prototype = {
         //     subjects: [
         //         {
         //             route: [],
-        //             des: '',
+        //             info: '',
         //         },
         //         {
         //             route: [],
-        //             des: '',
+        //             info: '',
         //         }
         //     ]
         // }
@@ -125,11 +139,11 @@ Item.prototype = {
         //     subjects: [
         //         {
         //             route: [],
-        //             des: '',
+        //             info: '',
         //         },
         //         {
         //             route: [],
-        //             des: '',
+        //             info: '',
         //         }
         //     ]
         // }
@@ -143,11 +157,11 @@ Item.prototype = {
         //     subjects: [
         //         {
         //             route: [],
-        //             des: '',
+        //             info: '',
         //         },
         //         {
         //             route: [],
-        //             des: '',
+        //             info: '',
         //         }
         //     ]
         // }
