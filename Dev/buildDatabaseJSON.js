@@ -7,10 +7,10 @@ const myUtil = require('../Back/module/MyUtil');
 const fs = require('fs');
 const oSubjectTree = JSON.parse(fs.readFileSync('./SubjectTree.json'));
 
-const subjectTree = new Tree(oSubjectTree, true);
+const subjectTree = new Tree(oSubjectTree);
 
-
-// buildIDSubjectMap();
+// console.log(subjectTree.getSubjectByFirstName)
+buildIDSubjectMap();
 // buildIDFirstNameMap();
 // buildIDTree();
 // buildIDRoutesMap();
@@ -18,6 +18,7 @@ const subjectTree = new Tree(oSubjectTree, true);
 
 
 // 生成ID和主题映射
+
 function buildIDSubjectMap(){
     let result = subjectTree.getAllSubjectNames();
     let set = new Set(result);
@@ -27,9 +28,9 @@ function buildIDSubjectMap(){
             console.log(subjectTree.getSubjectByFirstName(name));
         }
         return {
-            name: subject.name,
-            ch: subject.ch,
-            intro: subject.intro,
+            name: subject.name.filter(name=>name.trim()!==''),
+            ch: subject.ch.trim(),
+            intro: subject.intro.map(intro=>intro.trim()),
             reference: subject.reference,
         };
     });

@@ -3,10 +3,8 @@ const util = require('util');
 const myUtil = require('./MyUtil');
 
 
-let P_bIsSubjectTree = false;
 function Tree(oTree, bIsSubjectTree=false){
     this.tree = oTree;
-    P_bIsSubjectTree = bIsSubjectTree;
 
     // 检查有没有不符合规则的主题
     if(bIsSubjectTree){
@@ -43,7 +41,8 @@ function Tree(oTree, bIsSubjectTree=false){
         }
     }
 
-
+    Object.defineProperties(Tree.prototype, {
+    });
 }
 
 
@@ -63,7 +62,7 @@ Tree.prototype = {
         return aSubject;
     },
 
-    getAllSubjectNames: P_bIsSubjectTree ? undefined : function(){
+    getAllSubjectNames(){
         let aName = [];
         this.traverseBranch(this.tree, (subject)=>{
             aName.push(subject.name[0]);
@@ -71,13 +70,11 @@ Tree.prototype = {
         return aName;
     },
 
-    getSubjectByID: P_bIsSubjectTree ? undefined : function(){
+    getSubjectByID(){
 
     },
 
-    getSubjectByFirstName: !P_bIsSubjectTree
-                            ? undefined
-                            : function(sFirstName){
+    getSubjectByFirstName(sFirstName){
         sFirstName = sFirstName.trim();
         let aSubject = [];
         this.traverseBranch(this.tree, (subject)=>{
@@ -88,9 +85,7 @@ Tree.prototype = {
         return aSubject;
     },
 
-    findSameNameChildren: !P_bIsSubjectTree
-                            ? undefined
-                            : function(oNode){
+    findSameNameChildren(oNode){
         let oSame = {},
             aChildren = oNode.children;
         let aName = aChildren.map(child=>child.name[0]);
@@ -112,9 +107,7 @@ Tree.prototype = {
      *                                    找到一条或多条路径，则返回的数组中包含相
      *                                    应条数的路径数组
      */
-     getSubjectRouteByFirstName: !P_bIsSubjectTree
-                                ? undefined
-                                : function(sFirstName, oStartNode=this.tree){
+     getSubjectRouteByFirstName(sFirstName, oStartNode=this.tree){
          // checkFirstName函数检查一个主题的首名称是否与提供的相同。
          // 第一次执行该函数时，还没有路径，使用默认的空数组。之后递归时，会把当前的路
          // 径数组作为第三个参数传入。
@@ -148,9 +141,7 @@ Tree.prototype = {
       * 根据一个主题的ID，查询该主题在ID树的路径。
       * 参考 getSubjectRouteByFirstName 方法
       */
-     getSubjectRouteByID: P_bIsSubjectTree
-                                ? undefined
-                                : function(nID, oStartNode=this.tree){
+     getSubjectRouteByID(nID, oStartNode=this.tree){
         function checkID(oNode, nID, aCurRoute=[]){
             aCurRoute.push(oNode.id);
             if(oNode.id===nID){

@@ -38,6 +38,7 @@ describe('检查数据结构', ()=>{
                 });
             })());
         });
+
         it('ID-Routes映射', ()=>{
             // 整体为一个数组（A)，每个数组项也为一个数组（B），B数组内部是一个或多个
             // 数组（C），每个C数组的数组项为一个或多个不小于0的整数
@@ -73,13 +74,141 @@ describe('检查数据结构', ()=>{
                 });
             })());
         });
+
+        it('ID-Subject映射', ()=>{
+            // 整体为一个非空数组，每个数组项为plain object，每个plain object包含4
+            // 个属性：
+            // name属性为一个数组，数组项至少一个，全部为非空非空白字符串
+            // ch属性为字符串，可以为空，但不能为空白
+            // intro属性为一个两项数组，每一项都是字符串。可以为空但不能为空白
+            // reference属性为plain object
+            assert.ok((()=>{
+                if( !Array.isArray(aIDSubject) || aIDSubject.length===0 ){
+                    console.log('ID-Subject映射必须是非空数组');
+                    return false;
+                }
+                return aIDSubject.every((item, index)=>{
+                    if(Object.prototype.toString.call(item)!=='[object Object]'){
+                        console.log('ID-Subject映射数组项必须是Plain Object类型。'
+                                    + '出错的数组项为：', inspect(item));
+                        return false;
+                    }
+                    if(Array.isArray(item.name) && item.name.length>0){
+                        let bNamesRight = item.name.every(name=>{
+                            if(typeof name !== 'string'
+                                || name.trim().length===0){
+                                    console.log('ID-Subject映射数组项的name属性'
+                                                + '数组的项必须是非空字符串。出错'
+                                                + '的数组项为：', inspect(item));
+                                    return false;
+                            }
+                            return true;
+                        });
+                        if(!bNamesRight){
+                            return false;
+                        }
+                    }
+                    else{
+                        console.log('ID-Subject映射数组项的name属性必须是非空数组'
+                                    + '。出错的数组项为：', inspect(item));
+                        return false;
+                    }
+                    if(typeof item.ch !== 'string' || item.ch.trim()!==item.ch){
+                        console.log('ID-Subject映射数组项的ch属性的值必须为字符串'
+                                    + '。出错的数组项为：'
+                                    , inspect(item));
+                        return false;
+                    }
+                    if(Array.isArray(item.intro) && item.intro.length===2){
+                        let bIntrosRight = item.intro.every(intro=>{
+                            if(typeof intro !== 'string'
+                                || intro.trim()!==intro){
+                                    console.log('ID-Subject映射数组项的intro属性'
+                                                + '数组的项必须是字符串。可以为空'
+                                                + '但不能为空白。出错的数组项为：'
+                                                , inspect(item));
+                                    return false;
+                            }
+                            return true;
+                        });
+                        if(!bIntrosRight){
+                            return false;
+                        }
+                    }
+                    else{
+                        console.log('ID-Subject映射数组项的intro属性必须是两项数'
+                                    + '组。出错的数组项为：', inspect(item));
+                        return false;
+                    }
+                    if(Object.prototype.toString.call(item.reference)
+                        !=='[object Object]'){
+                        console.log('ID-Subject映射数组项的reference属性必须是'
+                                        + 'Plain Object类型。出错的数组项为：'
+                                        , inspect(item));
+                        return false;
+                    }
+                    return true;
+                });
+            })());
+        });
+
+        it('IDTree对象', ()=>{
+            // 整体为一个plain object，每个节点都有id属性和children属性。id属性必须
+            // 是非负整数，children属性必须是数组，且数组项都为plain object
+            assert.ok((()=>{
+                if(Object.prototype.toString.call(oIDTree)!=='[object Object]'){
+                    console.log('IDTree对象必须是Plain Object类型');
+                    return false;
+                }
+                return traverse(oIDTree);
+                function traverse(oNode){
+                    if(checkNode(oNode)){
+                        return oNode.children.every(child=>traverse(child));
+                    }
+                    else{
+                        return false;
+                    }
+                }
+                function checkNode(oNode){
+                    if(!Number.isInteger(oNode.id) || (oNode.id<0)){
+                        console.log('IDTree对象的节点必须包含id属性，'
+                                        + '且值为非负整数。出错节点为：'
+                                        , inspect(oNode));
+                        return false;
+                    }
+                    if(Array.isArray(oNode.children)){
+                        return oNode.children.every(child=>{
+                            if(Object.prototype.toString.call(child)
+                                    !=='[object Object]'){
+                                console.log('IDTree对象的节点children属性数组的'
+                                                +'数组项必须是Plain Object类型。'
+                                                +'出错节点为：', inspect(oNode));
+                                return false;
+                            }
+                            return true;
+                        });
+                    }
+                    else{
+                        console.log('IDTree对象的节点必须包含children属性，'
+                                    + '且值为数组。出错节点为：'
+                                    , inspect(oNode));
+                        return false;
+                    }
+                }
+            })());
+        });
+
     });
+
+
     describe('不应该出现重复值的情况', ()=>{
         it('ID-FirstName映射的数组项不应该有重复值', ()=>{
             assert.strictEqual(aIDFirstName.length
                                 , (new Set(aIDFirstName)).size);
         });
     });
+
+
     describe('数据条数应该相等的各数据结构', ()=>{
         it('各主题ID相关映射数组的长度应该相等', ()=>{
             assert.ok( aIDSubject.length === aIDFirstName.length
@@ -99,6 +228,8 @@ describe('检查数据结构', ()=>{
             assert.strictEqual(mRouteItemID.size, nRouteAmountInIDRoutes);
         });
     });
+
+
     describe('各个数据结构中同一个ID的对应关系应该正确', ()=>{
         it('ID-FirstName应该和ID-Subject中对应的主题首名称相同', ()=>{
             let bHasWrong = false;
