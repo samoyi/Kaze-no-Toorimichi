@@ -209,7 +209,7 @@ describe('检查数据结构', ()=>{
     });
 
 
-    describe('数据条数应该相等的各数据结构', ()=>{
+    describe('数据条数应该相等或有确定大小关系的各数据结构', ()=>{
         it('各主题ID相关映射数组的长度应该相等', ()=>{
             assert.ok( aIDSubject.length === aIDFirstName.length
                         &&
@@ -219,13 +219,14 @@ describe('检查数据结构', ()=>{
                     );
         });
         it('各路径相关映射的总路径数应该相等', ()=>{
-            let nRouteAmountInIDRoutes = 0;
-            aIDRoutes.forEach((routes, index)=>{
-                routes.forEach(route=>{
-                    nRouteAmountInIDRoutes++;
-                });
-            });
+            const nRouteAmountInIDRoutes = aIDRoutes.reduce((acc, cur)=>{
+                return acc+cur.length;
+            }, 0);
             assert.strictEqual(mRouteItemID.size, nRouteAmountInIDRoutes);
+        });
+        it('主题路径数量应该大于主题ID数量', ()=>{
+            // 虽然理论上可以等于，但实际上肯定要大于
+            assert.ok(mRouteItemID.size > aIDSubject.length);
         });
     });
 
