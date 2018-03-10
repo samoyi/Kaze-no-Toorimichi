@@ -20,6 +20,20 @@ function findDuplicateIndexes(arr){
     return oSameIndexes;
 }
 
+
+function deepFreeze(obj){
+    Object.freeze(obj);
+    Object.keys(obj).forEach(key=>{
+        if(typeof obj[key] === 'object'){
+          deepFreeze( obj[key] );
+        }
+    });
+}
+
+
+
 module.exports = {
-    findDuplicateIndexes
+    findDuplicateIndexes,
+    deepFreeze,
+    ArgumentsChecker,
 };

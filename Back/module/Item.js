@@ -1,40 +1,58 @@
+// 条目操作类
+
 'use strict';
+
+const MyUtil = require('./MyUtil');
+const DB = require('./Database');
+const checker = new MyUtil.ArgumentsChecker();
+
 
 function Item(){
 
 }
 
+// 对已有条目的修改，包括添加subject
 Item.prototype = {
     contructor: Item,
 
-    // addItem
-    addBookItem(sISBN, sTitle, aSubject, aAuthor, sOfficialSite=''){
-        // {
-        //     ISBN: '',
-        //     title: [''],
-        //     author:[''],
-        //     sOfficialSite: '',
-        //     subjects: [
-        //         {
-        //             route: [],
-        //             info: {
-        //                  isWhole: true,
-        //                  des: '',
-        //             },
-        //         },
-        //         {
-        //             route: [],
-        //             info: {
-        //                  isWhole: false,
-        //                  part: '第三章和第八章',
-        //                  des: '',
-        //             },
-        //         }
-        //     ]
-        // }
+    isISBNExists(sISBN){ // 链接ISBN数据接口进行查询
+        checker.get(arguments).types(['isbn']);
 
     },
-    addPeriodicalItem(sTitle, aSubject, sIssue='', sOfficialSite=''){
+
+    // addItem
+    addBookItem(sISBN, aTitle, aSubject, aAuthor, sOfficialSite=''){
+        checker.get(arguments)
+                        .types(['isbn', 'strArr', 'array', 'strArr', 'string']);
+
+        let item = {
+            ISBN: sISBN.trim(),
+            title: aTitle.map(title=>title),
+            author: aAuthor,
+            sOfficialSite: sOfficialSite,
+            subjects: aSubject,
+            // subjects: [
+            //     {
+            //         route: [],
+            //         info: {
+            //              isWhole: true,
+            //              des: '',
+            //         },
+            //     },
+            //     {
+            //         route: [],
+            //         info: {
+            //              isWhole: false,
+            //              part: '第三章和第八章',
+            //              des: '',
+            //         },
+            //     }
+            // ]
+        };
+
+        DB.addItemToDB(item, 0, 0);
+    },
+    addPeriodicalItem(aTitle, aSubject, sIssue='', sOfficialSite=''){
         // {
         //     title: [''],
         //     sIssue:'',
@@ -59,7 +77,7 @@ Item.prototype = {
         // }
 
     },
-    addVideoItem(sTitle, aSubject, sCataID, sIMDb='', sOfficialSite=''){
+    addVideoItem(aTitle, aSubject, sCataID, sIMDb='', sOfficialSite=''){
         // {
         //     IMDb: '',
         //     title: [''],
@@ -77,7 +95,7 @@ Item.prototype = {
         // }
     },
 
-    addMusicItem(sTitle, aSubject, aMusician, sOfficialSite=''){
+    addMusicItem(aTitle, aSubject, aMusician, sOfficialSite=''){
         // {
         //     title: [''],
         //     aMusician: [''],
@@ -95,7 +113,7 @@ Item.prototype = {
         // }
     },
 
-    addGameItem(sTitle, aSubject, sCataID, aDeveloper=[], sOfficialSite=''){
+    addGameItem(aTitle, aSubject, sCataID, aDeveloper=[], sOfficialSite=''){
         // {
         //     title: [''],
         //     aDeveloper: [''],
@@ -113,7 +131,7 @@ Item.prototype = {
         // }
     },
 
-    addPerformanceItem(sTitle, aSubject, aPerformer, sOfficialSite=''){
+    addPerformanceItem(aTitle, aSubject, aPerformer, sOfficialSite=''){
         // {
         //     title: [''],
         //     aPerformer: [''],
@@ -131,7 +149,7 @@ Item.prototype = {
         // }
     },
 
-    addInternetMediaItem(sTitle, aSubject, sURL='', sAPP=''){
+    addInternetMediaItem(aTitle, aSubject, sURL='', sAPP=''){
         // {
         //     sURL: '',
         //     title: [''],
@@ -149,7 +167,7 @@ Item.prototype = {
         // }
     },
 
-    addPaintingOrPhotographyItem(sTitle, aSubject, aCreator, sOfficialSite=''){
+    addPaintingOrPhotographyItem(aTitle, aSubject, aCreator, sOfficialSite=''){
         // {
         //     title: [''],
         //     aCreator: [''],
@@ -175,3 +193,5 @@ Item.prototype = {
 
     }
 };
+
+module.exports = Item;

@@ -10,6 +10,10 @@
 ## kukaku
 `getDivisions`对`東京都府中市`的处理
 
+## Item类
+* 对ISBN的检查
+* 对IMDb的检查
+
 ## Data
 多个名字的神社
 
