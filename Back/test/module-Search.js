@@ -16,7 +16,7 @@ const oItems = JSON.parse(fs.readFileSync('../DataBase/Items.json'));
 const Search = require('../module/Search');
 const search = new Search(aIDFirstName, aIDSubject, mRouteItemID, oItems);
 
-let aRoute = aIDRoutes[aIDFirstName.indexOf('雛祭り')];
+// let aRoute = aIDRoutes[aIDFirstName.indexOf('雛祭り')];
 // console.log(aRoute);
 // console.log(aRoute[0][aRoute[0].length-1]);
 // let result = search.getSubjects('人形');

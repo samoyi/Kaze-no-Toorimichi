@@ -7,35 +7,69 @@ const {inspect} = require('util');
 const Item = require('../module/Item');
 const item = new Item();
 
+// 所有的添加条目测试都是添加成功之后再删除
+describe('检查条目操作类 Item.js', ()=>{
+    describe('添加书刊', ()=>{
+        it('添加书籍，整本符合某主题', ()=>{
+            const sISBN = '9784048839266',
+                aTitle = ['日本妖怪大事典'],
+                aSubject = [
+                    {
+                        route: [
+                            [ 0, 4394, 4395 ], // 妖鬼霊
+                        ],
+                        info: {
+                             isWhole: true,
+                             des: '',
+                        },
+                    }
+                ],
+                aAuthor = ['水木しげる', '村上健司 '],
+                sOfficialSite = 'https://book.douban.com/subject/6023928/';
 
-let sISBN = '9787563391882',
-    aTitle = ['字解日本：十二岁时'],
-    aSubject = [
-        {
-            route: [
-                [0, 4394, 5532, 5567],
-            ],
-            info: {
-                 isWhole: true,
-                 des: '十二岁时年中行事',
-            },
-        }
-    ],
-    aAuthor = ['茂吕美耶'],
-    sOfficialSite = 'https://book.douban.com/subject/4164041/';
+            assert.doesNotThrow(()=>{
+                let promise = item.addBookItem(sISBN, aTitle, aSubject, aAuthor
+                                                            , sOfficialSite);
+                promise.then((index)=>{
+                    item.removeItem(0, 0, index);
+                })
+                .catch((err)=>{
+                    throw err;
+                });
+            });
+        });
+        it('添加书籍，部分章节符合某主题', ()=>{
+            const sISBN = '9787563391882',
+                aTitle = ['字解日本：十二岁时'],
+                aSubject = [
+                    {
+                        route: [
+                            [0, 4394, 5532, 5567], // 雛祭り
+                        ],
+                        info: {
+                             isWhole: false,
+                             des: '春篇，三月，雛祭り',
+                        },
+                    }
+                ],
+                aAuthor = ['茂吕美耶'],
+                sOfficialSite = 'https://book.douban.com/subject/4164041/';
 
-// let result = item.addBookItem(sISBN, aTitle, aSubject, aAuthor, sOfficialSite);
-// let nSuccess = 0;
-// result.then((res)=>{
-//     nSuccess++;
-// })
-// .catch((err)=>{
-//     throw err;
-// });
-console.log(666);
-console.log(item.removeItem);
-item.removeItem(0, 0, 1);
-console.log(777);
+            assert.doesNotThrow(()=>{
+                let promise = item.addBookItem(sISBN, aTitle, aSubject, aAuthor
+                                                            , sOfficialSite);
+                promise.then((index)=>{
+                    item.removeItem(0, 0, index);
+                })
+                .catch((err)=>{
+                    throw err;
+                });
+            });
+        });
+    });
+});
+
+
 // console.log(JSON.stringify(result, null, 4));
 
 // let aTitle = ['知日'],

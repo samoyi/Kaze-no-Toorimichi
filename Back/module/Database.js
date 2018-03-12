@@ -4,13 +4,15 @@ const fs = require('fs');
 const readFile = util.promisify(fs.readFile);
 const writeFile = util.promisify(fs.writeFile);
 
+// 添加条目成功后返回条目的类别内ID
 async function addItem(oItem, nLevel1ID, nLevel2ID){
     try{
         let data = await readFile(ItemsDoc, 'utf8');
         let oItems = JSON.parse(data);
-        oItems[nLevel1ID]['children'][nLevel2ID]['children'].push(oItem);
-        console.log(oItems);
+        const len = oItems[nLevel1ID]['children'][nLevel2ID]['children']
+                                                                .push(oItem);
         await writeFile(ItemsDoc, JSON.stringify(oItems));
+        return len-1;
     }
     catch(err){
         throw err;

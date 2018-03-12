@@ -21,17 +21,6 @@ Item.prototype = {
 
     },
 
-    removeItem: async function(nLevel1ID, nLevel2ID, nInnerID){
-        console.log('itemljs');
-        // try{
-        //     await DB.removeItem(nLevel1ID, nLevel2ID, nInnerID);
-        //     return true;
-        // }
-        // catch(err){
-        //     console.log('outer: ', err);
-        // }
-    },
-
     // addItem
     addBookItem: async function(sISBN, aTitle, aSubject, aAuthor, sOfficialSite=''){
         const item = {
@@ -59,8 +48,7 @@ Item.prototype = {
             // ]
         };
         try{
-            await DB.addItem(item, 0, 0);
-            return true;
+            return await DB.addItem(item, 0, 0);
         }
         catch(err){
             console.log('outer: ', err);
@@ -222,9 +210,15 @@ Item.prototype = {
 
     },
 
-    removeItem(){
-
-    }
+    removeItem:  async function(nLevel1ID, nLevel2ID, nInnerID){
+        try{
+            await DB.removeItem(nLevel1ID, nLevel2ID, nInnerID);
+            return true;
+        }
+        catch(err){
+            console.log('outer: ', err);
+        }
+    },
 };
 
 module.exports = Item;
