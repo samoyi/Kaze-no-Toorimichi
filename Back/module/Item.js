@@ -2,9 +2,10 @@
 
 'use strict';
 
-const MyUtil = require('./MyUtil');
+const AC = require('./ArgumentsChecker/index');
+const checker = new AC();
+
 const DB = require('./Database');
-const checker = new MyUtil.ArgumentsChecker();
 
 
 function Item(){
@@ -20,16 +21,24 @@ Item.prototype = {
 
     },
 
-    // addItem
-    addBookItem(sISBN, aTitle, aSubject, aAuthor, sOfficialSite=''){
-        checker.get(arguments)
-                        .types(['isbn', 'strArr', 'array', 'strArr', 'string']);
+    removeItem: async function(nLevel1ID, nLevel2ID, nInnerID){
+        console.log('itemljs');
+        // try{
+        //     await DB.removeItem(nLevel1ID, nLevel2ID, nInnerID);
+        //     return true;
+        // }
+        // catch(err){
+        //     console.log('outer: ', err);
+        // }
+    },
 
-        let item = {
+    // addItem
+    addBookItem: async function(sISBN, aTitle, aSubject, aAuthor, sOfficialSite=''){
+        const item = {
             ISBN: sISBN.trim(),
-            title: aTitle.map(title=>title),
+            title: aTitle,
             author: aAuthor,
-            sOfficialSite: sOfficialSite,
+            officialSite: sOfficialSite,
             subjects: aSubject,
             // subjects: [
             //     {
@@ -49,14 +58,24 @@ Item.prototype = {
             //     }
             // ]
         };
-
-        DB.addItemToDB(item, 0, 0);
+        try{
+            await DB.addItem(item, 0, 0);
+            return true;
+        }
+        catch(err){
+            console.log('outer: ', err);
+        }
     },
-    addPeriodicalItem(aTitle, aSubject, sIssue='', sOfficialSite=''){
+    addPeriodicalItem(aTitle, aSubject, sOfficialSite=''){
+        const item = {
+            title: aTitle,
+            officialSite: sOfficialSite,
+            subjects: aSubject,
+        };
         // {
         //     title: [''],
         //     sIssue:'',
-        //     sOfficialSite: '',
+        //     officialSite: '',
         //     subjects: [
         //         {
         //             route: [],
@@ -69,37 +88,51 @@ Item.prototype = {
         //             route: [],
         //             info: {
         //                  isWhole: false,
-        //                  issue: '2017年9月',
+        //                  issue: '2017年9月', // 当期的副标题或期号
         //                  des: '',
         //             },
         //         }
         //     ]
         // }
-
+        DB.addItem(item, 0, 1);
     },
-    addVideoItem(aTitle, aSubject, sCataID, sIMDb='', sOfficialSite=''){
+    addLiveActionVideoItem(aTitle, aSubject, sIMDb='', sOfficialSite=''){
+        const item = {
+            title: aTitle,
+            IMDb: sIMDb,
+            officialSite: sOfficialSite,
+            subjects: aSubject,
+        };
         // {
         //     IMDb: '',
         //     title: [''],
-        //     sOfficialSite: '',
+        //     officialSite: '',
         //     subjects: [
         //         {
         //             route: [],
-        //             info: '',
+        //             info: {
+        //                  isWhole: true,
+        //                  des: '',
+        //             },
         //         },
         //         {
         //             route: [],
-        //             info: '',
+        //             info: {
+        //                  isWhole: false,
+        //                  issue: '第一季第二集',
+        //                  des: '',
+        //             },
         //         }
         //     ]
         // }
+        DB.addItem(item, 1, 0);
     },
 
     addMusicItem(aTitle, aSubject, aMusician, sOfficialSite=''){
         // {
         //     title: [''],
         //     aMusician: [''],
-        //     sOfficialSite: '',
+        //     officialSite: '',
         //     subjects: [
         //         {
         //             route: [],
@@ -117,7 +150,7 @@ Item.prototype = {
         // {
         //     title: [''],
         //     aDeveloper: [''],
-        //     sOfficialSite: '',
+        //     officialSite: '',
         //     subjects: [
         //         {
         //             route: [],
@@ -135,7 +168,7 @@ Item.prototype = {
         // {
         //     title: [''],
         //     aPerformer: [''],
-        //     sOfficialSite: '',
+        //     officialSite: '',
         //     subjects: [
         //         {
         //             route: [],
@@ -171,7 +204,7 @@ Item.prototype = {
         // {
         //     title: [''],
         //     aCreator: [''],
-        //     sOfficialSite: '',
+        //     officialSite: '',
         //     subjects: [
         //         {
         //             route: [],

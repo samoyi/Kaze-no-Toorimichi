@@ -13,6 +13,8 @@ const aIDFirstName = JSON.parse(fs.readFileSync('../DataBase/ID-FirstName.json')
 
 const idTree = new Tree(oIDTree);
 
+// console.log(idTree.getSubjectRouteByID(aIDFirstName.indexOf('神社')));
+// console.log(idTree.getSubjectRouteByID(aIDFirstName.indexOf('ひな人形')));
 
 describe('检查Tree模块', ()=>{
     describe('getSubjectRouteByID', ()=>{

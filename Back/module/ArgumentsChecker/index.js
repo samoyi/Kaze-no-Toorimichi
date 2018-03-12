@@ -8,28 +8,19 @@ function ArgumentsChecker(oCustomTypes={})
 																.toLowerCase();
 	}
 
-	// Throw Error
-	if(Error.captureStackTrace){
-		let oForStack = {};
-		this.throwErr = (sErr, fnCaller)=>{
-			Error.captureStackTrace(oForStack, fnCaller);
-			throw new TypeError(sErr, '\n', oForStack.stack);
-		}
-	}
-	else{
-		this.throwErr = (sErr)=>{
-			throw new TypeError(sErr);
-		}
-	}
-
 	// Complex custom types.
 	this.customTypes = oCustomTypes;
 }
 
 
 ArgumentsChecker.prototype = {
+	constructor: ArgumentsChecker,
+
 	// Get arguments object or rest parameters
 	get(args){
+		if(!args[Symbol.iterator]){
+			args = [args];
+		}
 		this.args = [...args];
 		return this;
 	},
@@ -39,7 +30,7 @@ ArgumentsChecker.prototype = {
 	amount(nExpected){
 		let nArgumentsLength = this.args.length;
 		if(nArgumentsLength < nExpected){
-			this.throwErr('ArgumentsChecker: Expects at least ' + nExpected + ' arguments, ' + nArgumentsLength + ' given.', ArgumentsChecker.prototype.amount);
+			throw new TypeError('ArgumentsChecker: Expects at least ' + nExpected + ' arguments, ' + nArgumentsLength + ' given.');
 		}
 		return this;
 	},
@@ -61,10 +52,13 @@ ArgumentsChecker.prototype = {
 				sExpectedType = '';
 
 			if(this.customTypes.hasOwnProperty(type)){
-				if( !this.customTypes[type](this.args[index]) ){
-					this.throwErr('ArgumentsChecker: argument ' + (index+1)
-								+ ' expects ' + type + '.'
-								, ArgumentsChecker.prototype.types);
+				// Use call method here, because:
+				// if a custom type method is a nested type checker, and if it
+				// is anarrow function, `this` keyword in the function will be
+				// bind to ArgumentsChecker instance.
+				if( !this.customTypes[type].call(this, this.args[index]) ){
+					throw new TypeError('ArgumentsChecker: argument '
+					 			+ (index+1) + ' expects ' + type + '.');
 				}
 			}
 			else if(type){
@@ -72,9 +66,8 @@ ArgumentsChecker.prototype = {
 
 				// Number type does not include NaN
 				if(Number.isNaN(this.args[index]) && type==='number'){
-					this.throwErr('ArgumentsChecker: argument ' + (index+1)
-								+ ' expects number, NaN given.'
-								, ArgumentsChecker.prototype.types);
+					throw new TypeError('ArgumentsChecker: argument '
+					 			+ (index+1) + ' expects number, NaN given.');
 				}
 
 				if(type !== sGivenType){
@@ -86,10 +79,9 @@ ArgumentsChecker.prototype = {
 					}
 					if(sGivenType==='object'){sGivenType='plain object'};
 
-					this.throwErr('ArgumentsChecker: argument ' + (index+1)
-								+ ' expects ' + type + ', '
-								+ sGivenType + ' given.'
-								, ArgumentsChecker.prototype.types);
+					throw new TypeError('ArgumentsChecker: argument '
+					 			+ (index+1) + ' expects ' + type + ', '
+								+ sGivenType + ' given.');
 				}
 			}
 		});

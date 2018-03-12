@@ -35,5 +35,4 @@ function deepFreeze(obj){
 module.exports = {
     findDuplicateIndexes,
     deepFreeze,
-    ArgumentsChecker,
 };

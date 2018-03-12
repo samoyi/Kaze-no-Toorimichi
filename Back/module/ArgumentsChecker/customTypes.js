@@ -21,6 +21,9 @@ module.exports = {
         }
         return arg.every(item=>Number.isInteger(item));
     },
+    nonEmptyArr(arg){
+        return Array.isArray(arg) && arg.length>0;
+    },
     int(arg){
         return Number.parseInt(arg) === arg;
     },
@@ -51,27 +54,5 @@ module.exports = {
         // return Array.isArray(arg) && arg.length===3;
 
     },
-    subjectArrayForAddBookItem(arg){
-        if(!Array.isArray(arg) || arg.length===0){
-            return false;
-        }
-        // 怎么在这里使用checker？
-        // subjects: [
-        //     {
-        //         route: [],
-        //         info: {
-        //              isWhole: true,
-        //              des: '',
-        //         },
-        //     },
-        //     {
-        //         route: [],
-        //         info: {
-        //              isWhole: false,
-        //              part: '第三章和第八章',
-        //              des: '',
-        //         },
-        //     }
-        // ]
-    },
+
 };
