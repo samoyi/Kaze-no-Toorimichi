@@ -8,10 +8,36 @@ const checker = new AC();
 const DB = require('./Database');
 
 
+// Private methods
+// 这个函数调用DB，修改Items和Route-ItemID
+async function addItem(oItem, aRoutes, nLevel1ID, nLevel2ID){
+    try{
+        const nIndex = await DB.addItem(oItem, nLevel1ID, nLevel2ID);
+        const sLevel1ID = nLevel1ID<10 ? '0'+nLevel1ID : ''+nLevel1ID;
+        const sLevel2ID = nLevel2ID<10 ? '0'+nLevel2ID : ''+nLevel2ID;
+        const sItemID = sLevel1ID + sLevel2ID + '' + nIndex;
+        await DB.addItemIDToRoute(sItemID, aRoutes);
+        return true;
+    }
+    catch(err){
+        console.log('private: ', err);
+    }
+}
+// 这个函数调用DB，修改Items和Route-ItemID
+function removeItem(){
+
+}
+
+
+
+// Constructor
 function Item(){
 
 }
 
+
+
+// Prototype
 // 对已有条目的修改，包括添加subject
 Item.prototype = {
     contructor: Item,
@@ -23,7 +49,7 @@ Item.prototype = {
 
     // addItem
     addBookItem: async function(sISBN, aTitle, aSubject, aAuthor, sOfficialSite=''){
-        const item = {
+        const oItem = {
             ISBN: sISBN.trim(),
             title: aTitle,
             author: aAuthor,
@@ -47,8 +73,15 @@ Item.prototype = {
             //     }
             // ]
         };
+        let aRoutes = [];
+        aSubject.forEach(subject=>{
+            subject.routes.forEach(route=>{
+                aRoutes.push(route);
+            })
+        })
         try{
-            return await DB.addItem(item, 0, 0);
+            // return await DB.addItem(oItem, 0, 0);
+            return await addItem(oItem, aRoutes, 0, 0);
         }
         catch(err){
             console.log('outer: ', err);

@@ -1,4 +1,5 @@
 const ItemsDoc = '../DataBase/Items.json';
+const RouteItemIDDoc = '../DataBase/Route-ItemID.json';
 const util = require('util');
 const fs = require('fs');
 const readFile = util.promisify(fs.readFile);
@@ -13,6 +14,22 @@ async function addItem(oItem, nLevel1ID, nLevel2ID){
                                                                 .push(oItem);
         await writeFile(ItemsDoc, JSON.stringify(oItems));
         return len-1;
+    }
+    catch(err){
+        throw err;
+    }
+}
+
+async function addItemIDToRoute(sItemID, aRoutes){
+    try{
+        let data = await readFile(RouteItemIDDoc, 'utf8');
+        let map = new Map(JSON.parse(data));
+        console.log(map.get([0,4394,4395]));
+        aRoutes.forEach(route=>{
+            console.log(Array.isArray(route));
+            const aItemID = map.get(route).push(sItemID);
+            map.set(route, aItemID);
+        });
     }
     catch(err){
         throw err;
@@ -63,5 +80,6 @@ function getBookByISBN(sISBN){
 
 module.exports = {
     addItem,
+    addItemIDToRoute,
     removeItem,
 };

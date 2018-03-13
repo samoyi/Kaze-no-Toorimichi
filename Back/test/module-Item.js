@@ -7,75 +7,104 @@ const {inspect} = require('util');
 const Item = require('../module/Item');
 const item = new Item();
 
-// 所有的添加条目测试都是添加成功之后再删除
-describe('检查条目操作类 Item.js', ()=>{
-    describe('添加书刊', ()=>{
-        it('添加书籍，整本符合某主题', ()=>{
-            const sISBN = '9784048839266',
-                aTitle = ['日本妖怪大事典'],
-                aSubject = [
-                    {
-                        route: [
-                            [ 0, 4394, 4395 ], // 妖鬼霊
-                        ],
-                        info: {
-                             isWhole: true,
-                             des: '',
-                        },
-                    }
-                ],
-                aAuthor = ['水木しげる', '村上健司 '],
-                sOfficialSite = 'https://book.douban.com/subject/6023928/';
 
-            assert.doesNotThrow(()=>{
-                let promise = item.addBookItem(sISBN, aTitle, aSubject, aAuthor
-                                                            , sOfficialSite);
-                promise.then((index)=>{
-                    item.removeItem(0, 0, index);
-                })
-                .catch((err)=>{
-                    throw err;
-                });
-            });
-        });
-        it('添加书籍，部分章节符合某主题', ()=>{
-            const sISBN = '9787563391882',
-                aTitle = ['字解日本：十二岁时'],
-                aSubject = [
-                    {
-                        route: [
-                            [0, 4394, 5532, 5567], // 雛祭り
-                        ],
-                        info: {
-                             isWhole: false,
-                             des: '春篇，三月，雛祭り',
-                        },
-                    }
-                ],
-                aAuthor = ['茂吕美耶'],
-                sOfficialSite = 'https://book.douban.com/subject/4164041/';
+const sISBN = '9784048839266',
+    aTitle = ['日本妖怪大事典?'],
+    aSubject = [
+        {
+            routes: [
+                [ 0, 4394, 4395 ], // 妖鬼霊
+            ],
+            info: {
+                 isWhole: true,
+                 des: '',
+            },
+        }
+    ],
+    aAuthor = ['水木しげる', '村上健司 '],
+    sOfficialSite = 'https://book.douban.com/subject/6023928/';
 
-            assert.doesNotThrow(()=>{
-                let promise = item.addBookItem(sISBN, aTitle, aSubject, aAuthor
-                                                            , sOfficialSite);
-                promise.then((index)=>{
-                    item.removeItem(0, 0, index);
-                })
-                .catch((err)=>{
-                    throw err;
-                });
-            });
-        });
-    });
+
+let promise = item.addBookItem(sISBN, aTitle, aSubject, aAuthor
+                                            , sOfficialSite);
+promise.then((index)=>{
+    item.removeItem(0, 0, index);
+    console.log('done');
+})
+.catch((err)=>{
+    throw err;
 });
 
 
-// console.log(JSON.stringify(result, null, 4));
+
+// 所有的添加条目测试都是添加成功之后再删除
+// describe('检查条目操作类 Item.js', ()=>{
+//     describe('添加书刊', ()=>{
+//         it('添加书籍，整本符合某主题', ()=>{
+//             const sISBN = '9784048839266',
+//                 aTitle = ['日本妖怪大事典'],
+//                 aSubject = [
+//                     {
+//                         routes: [
+//                             [ 0, 4394, 4395 ], // 妖鬼霊
+//                         ],
+//                         info: {
+//                              isWhole: true,
+//                              des: '',
+//                         },
+//                     }
+//                 ],
+//                 aAuthor = ['水木しげる', '村上健司 '],
+//                 sOfficialSite = 'https://book.douban.com/subject/6023928/';
+//
+//             assert.doesNotThrow(()=>{
+//                 let promise = item.addBookItem(sISBN, aTitle, aSubject, aAuthor
+//                                                             , sOfficialSite);
+//                 promise.then((index)=>{
+//                     item.removeItem(0, 0, index);
+//                 })
+//                 .catch((err)=>{
+//                     throw err;
+//                 });
+//             });
+//         });
+//         it('添加书籍，部分章节符合某主题', ()=>{
+//             const sISBN = '9787563391882',
+//                 aTitle = ['字解日本：十二岁时'],
+//                 aSubject = [
+//                     {
+//                         routes: [
+//                             [0, 4394, 5532, 5567], // 雛祭り
+//                         ],
+//                         info: {
+//                              isWhole: false,
+//                              des: '春篇，三月，雛祭り',
+//                         },
+//                     }
+//                 ],
+//                 aAuthor = ['茂吕美耶'],
+//                 sOfficialSite = 'https://book.douban.com/subject/4164041/';
+//
+//             assert.doesNotThrow(()=>{
+//                 let promise = item.addBookItem(sISBN, aTitle, aSubject, aAuthor
+//                                                             , sOfficialSite);
+//                 promise.then((index)=>{
+//                     item.removeItem(0, 0, index);
+//                 })
+//                 .catch((err)=>{
+//                     throw err;
+//                 });
+//             });
+//         });
+//     });
+// });
+
+
 
 // let aTitle = ['知日'],
 //     aSubject = [
 //         {
-//             route: [[ 0, 1315, 1980, 1981, 1982, 1994 ]],
+//             routes: [[ 0, 1315, 1980, 1981, 1982, 1994 ]],
 //             info: {
 //                  isWhole: false,
 //                  issue: '妖怪',
@@ -89,7 +118,7 @@ describe('检查条目操作类 Item.js', ()=>{
 // let aTitle = ['假设一本关于神社的杂志'],
 //     aSubject = [
 //         {
-//             route: [[ 0, 1, 17, 18, 83 ]],
+//             routes: [[ 0, 1, 17, 18, 83 ]],
 //             info: {
 //                  isWhole: true,
 //                  des: '《假设一本关于神社的杂志》是假设的一本专门介绍神社的杂志',
@@ -102,7 +131,7 @@ describe('检查条目操作类 Item.js', ()=>{
 // let aTitle = ['夢', '梦'],
 //     aSubject = [
 //         {
-//             route: [
+//             routes: [
 //                 [ 0, 4394, 5532, 5567 ],
 //                 [ 0, 1315, 4221, 4222, 4226, 4253 ]
 //             ],
