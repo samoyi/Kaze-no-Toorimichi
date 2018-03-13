@@ -206,6 +206,10 @@ describe('检查数据结构', ()=>{
             assert.strictEqual(aIDFirstName.length
                                 , (new Set(aIDFirstName)).size);
         });
+        it('Route-ItemID映射不应该有重复路径', ()=>{
+            assert.strictEqual([...mRouteItemID].length
+                                , (new Set(aIDFirstName)).size);
+        });
     });
 
 

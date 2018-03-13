@@ -10,11 +10,11 @@ const oSubjectTree = JSON.parse(fs.readFileSync('./SubjectTree.json'));
 const subjectTree = new Tree(oSubjectTree);
 
 // console.log(subjectTree.getSubjectByFirstName)
-buildIDSubjectMap();
+// buildIDSubjectMap();
 // buildIDFirstNameMap();
 // buildIDTree();
 // buildIDRoutesMap();
-// buildRouteItemIDMap();
+buildRouteItemIDMap();
 
 
 // 生成ID和主题映射
@@ -89,12 +89,12 @@ function buildIDRoutesMap(){
 function buildRouteItemIDMap(){
     const aIDRoutes = JSON.parse(fs.readFileSync('./DataBaseJSON/ID-Routes.json'
                                                 ,'utf8'));
-    let mRouteItemIDMap = new Map();
+    let oRouteItemIDMap = {};
     aIDRoutes.forEach(routes=>{
        routes.forEach(route=>{
-           mRouteItemIDMap.set(route, []);
+           oRouteItemIDMap[route.join()] = [];
        })
     });
     fs.writeFileSync('./DataBaseJSON/Route-ItemID.json'
-                        , JSON.stringify([...mRouteItemIDMap]), 'utf8');
+                        , JSON.stringify(oRouteItemIDMap), 'utf8');
 }
