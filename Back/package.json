@@ -8,7 +8,7 @@
     "koa-bodyparser": "^4.2.0",
     "koa-router": "^7.3.0",
     "koa-static": "^4.0.2",
-    "mongodb": "^2.2.33",
+    "mongodb": "^2.2.35",
     "mysql": "^2.15.0",
     "socket.io": "^2.0.4"
   },
