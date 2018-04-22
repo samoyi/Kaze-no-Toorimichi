@@ -3,8 +3,8 @@
 function findDuplicateIndexes(arr){
     let oSameIndexes = {};
     arr.forEach((item,index)=>{
-        let firstIndex = arr.indexOf(item),
-            lastIndex = arr.lastIndexOf(item);
+        let firstIndex = arr.indexOf(item);
+        let lastIndex = arr.lastIndexOf(item);
         if(index===firstIndex && firstIndex!==lastIndex){
             oSameIndexes[item] = [firstIndex];
             let nNextIndex = firstIndex + 1;
@@ -25,11 +25,10 @@ function deepFreeze(obj){
     Object.freeze(obj);
     Object.keys(obj).forEach(key=>{
         if(typeof obj[key] === 'object'){
-          deepFreeze( obj[key] );
+            deepFreeze( obj[key] );
         }
     });
 }
-
 
 
 module.exports = {

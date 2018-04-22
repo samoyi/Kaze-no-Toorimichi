@@ -22,15 +22,15 @@ Search.prototype = {
         }
         sKeyword = sKeyword.trim();
 
-        let aMatch1 = [], // 搜索词与主名称完全符合
-            aMatch2 = [], // 搜索词与别名或译名完全符合
-            aMatch3 = [], // 搜索词与主名称部分符合
-            aMatch4 = [], // 搜索词与别名或译名部分符合
-            aMatch5 = []; // 搜索词包含于主题或条目描述中
+        let aMatch1 = []; // 搜索词与主名称完全符合
+        let aMatch2 = []; // 搜索词与别名或译名完全符合
+        let aMatch3 = []; // 搜索词与主名称部分符合
+        let aMatch4 = []; // 搜索词与别名或译名部分符合
+        let aMatch5 = []; // 搜索词包含于主题或条目描述中
 
-        let sFirstName = '',
-            aAlias = [],
-            aIntro = [];
+        let sFirstName = '';
+        let aAlias = [];
+        let aIntro = [];
         this.IDSubject.forEach((subject,id)=>{
             sFirstName = subject.name[0];
             if(subject.ch){

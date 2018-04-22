@@ -28,7 +28,8 @@ const sISBN = '9784048839266',
 let promise = item.addBookItem(sISBN, aTitle, aSubject, aAuthor
                                             , sOfficialSite);
 promise.then((index)=>{
-    item.removeItem(0, 0, index);
+    // item.removeItem(0, 0, index);
+    console.log(index);
     console.log('done');
 })
 .catch((err)=>{
