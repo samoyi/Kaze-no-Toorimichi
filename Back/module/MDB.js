@@ -1,11 +1,5 @@
 'use strict';
 
-// var mongodb = require('mongodb');
-// var server = new mongodb.Server('127.0.0.1', 27017, {});
-// console.log(server);
-
-
-
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 
