@@ -12,4 +12,10 @@ async function getItemIDsByRoute(aRoute){
     }
 }
 
-getItemIDsByRoute([0, 4394, 4395]);
+getItemIDsByRoute([0, 4394, 4395])
+.then(res=>{
+    console.log(res);
+})
+.catch(err=>{
+    throw new Error(err);
+});

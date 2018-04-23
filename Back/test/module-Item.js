@@ -25,16 +25,31 @@ const sISBN = '9784048839266',
     sOfficialSite = 'https://book.douban.com/subject/6023928/';
 
 
-let promise = item.addBookItem(sISBN, aTitle, aSubject, aAuthor
-                                            , sOfficialSite);
-promise.then((index)=>{
-    // item.removeItem(0, 0, index);
+item.addBookItem(sISBN, aTitle, aSubject, aAuthor, sOfficialSite)
+.then((index)=>{
     console.log(index);
-    console.log('done');
 })
 .catch((err)=>{
     throw err;
 });
+
+// item.getItem(0, 0, 0)
+// .then((item)=>{
+//     console.log(JSON.stringify(item.subjects, null, 4));
+// })
+// .catch((err)=>{
+//     console.error(err);
+// });
+
+// item.removeItem(0, 0, 1)
+// .then(res=>{
+//     console.log('res');
+//     console.log(res);
+// })
+// .catch(err=>{
+//     console.error('err');
+//     console.error(err);
+// });
 
 
 
