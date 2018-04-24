@@ -12,26 +12,55 @@ const sISBN = '9784048839266',
     aTitle = ['日本妖怪大事典?'],
     aSubject = [
         {
-            routes: [
-                [ 0, 4394, 4395 ], // 妖鬼霊
-            ],
-            info: {
-                 isWhole: true,
-                 des: '',
-            },
-        }
+            route: [ 0, 4394, 4395 ], // 妖鬼霊
+            isWhole: true,
+            des: '11',
+        },
+        {
+            route: [0,1,17,18,83,170],
+            isWhole: false,
+            part: '第二章',
+            des: '22',
+        },
     ],
     aAuthor = ['水木しげる', '村上健司 '],
     sOfficialSite = 'https://book.douban.com/subject/6023928/';
 
 
-item.addBookItem(sISBN, aTitle, aSubject, aAuthor, sOfficialSite)
+// const oInfo = {
+//     ISBN: sISBN.trim() + 'wps',
+//     title: aTitle,
+//     author: aAuthor,
+//     officialSite: sOfficialSite,
+//     subjects: aSubject,
+// };
+//
+// item.modifyItemInfo(...[0, 0, 2], oInfo)
+// .catch((err)=>{
+//     throw err;
+// });
+
+const oInfo = {
+    ISBN: sISBN.trim() + 'two',
+    title: aTitle,
+    author: aAuthor,
+    officialSite: sOfficialSite,
+};
+item.addItem(oInfo, aSubject, 0, 0)
 .then((index)=>{
     console.log(index);
 })
 .catch((err)=>{
     throw err;
 });
+
+// item.addBookItem(sISBN, aTitle, aSubject, aAuthor, sOfficialSite)
+// .then((index)=>{
+//     console.log(index);
+// })
+// .catch((err)=>{
+//     throw err;
+// });
 
 // item.getItem(0, 0, 0)
 // .then((item)=>{
@@ -41,7 +70,30 @@ item.addBookItem(sISBN, aTitle, aSubject, aAuthor, sOfficialSite)
 //     console.error(err);
 // });
 
-// item.removeItem(0, 0, 1)
+// const subject = {
+//     route: [0,1,17,18,83,170],
+//     info: {
+//          isWhole: true,
+//          des: '描述chang',
+//     },
+// };
+// item.addSubject(0, 0, 4, subject)
+// .then((res)=>{
+//     console.log(res);
+// })
+// .catch((err)=>{
+//     console.error(err);
+// });
+
+// item.removeSubject(0, 0, 4, [0,1,17,18,83,170])
+// .then((res)=>{
+//     console.log(res);
+// })
+// .catch((err)=>{
+//     throw new Error(err);
+// });
+
+// item.removeItem([0, 0, 5])
 // .then(res=>{
 //     console.log('res');
 //     console.log(res);

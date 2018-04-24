@@ -5,7 +5,7 @@ function ArgumentsChecker(oCustomTypes={})
 	// Get type string of checked with lower case
 	this.getTypeWithLowerCase = (checked)=>{
 		return Object.prototype.toString.call(checked).slice(8, -1)
-		      .toLowerCase();
+																.toLowerCase();
 	}
 
 	// Complex custom types.
@@ -30,8 +30,7 @@ ArgumentsChecker.prototype = {
 	amount(nExpected){
 		let nArgumentsLength = this.args.length;
 		if(nArgumentsLength < nExpected){
-			throw new TypeError('ArgumentsChecker: Expects at least '
-                + nExpected + ' arguments, ' + nArgumentsLength + ' given.');
+			throw new TypeError('ArgumentsChecker: Expects at least ' + nExpected + ' arguments, ' + nArgumentsLength + ' given.');
 		}
 		return this;
 	},
@@ -46,7 +45,7 @@ ArgumentsChecker.prototype = {
 
 			if(typeof type !== 'string'){
 				throw new TypeError('Argument of ArgumentsChecker.types() '
-				    + 'must be a type string or null');
+									+ 'must be a type string or null');
 			}
 			type = type.trim();
 			let sGivenType =  this.getTypeWithLowerCase(this.args[index]),
