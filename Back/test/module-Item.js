@@ -1,60 +1,133 @@
 'use strict';
-
 const fs = require('fs');
 const assert = require('assert');
 const {inspect} = require('util');
 
 const Item = require('../module/Item');
-const item = new Item();
 
 
-const sISBN = '9784048839266',
-    aTitle = ['日本妖怪大事典?'],
-    aSubject = [
-        {
-            route: [ 0, 4394, 4395 ], // 妖鬼霊
-            isWhole: true,
-            des: '11',
-        },
-        {
-            route: [0,1,17,18,83,170],
-            isWhole: false,
-            part: '第二章',
-            des: '22',
-        },
-    ],
-    aAuthor = ['水木しげる', '村上健司 '],
-    sOfficialSite = 'https://book.douban.com/subject/6023928/';
+// const sISBN = '9784048839266';
+// const aTitle = ['日本妖怪大事典'];
+// const aAuthor = ['水木しげる', '村上健司 '];
+// const sOfficialSite = 'https://book.douban.com/subject/6023928/';
 
 
-// const oInfo = {
-//     ISBN: sISBN.trim() + 'wps',
-//     title: aTitle,
-//     author: aAuthor,
-//     officialSite: sOfficialSite,
-//     subjects: aSubject,
-// };
-//
-// item.modifyItemInfo(...[0, 0, 2], oInfo)
+// 填写
+let nExpectedInnerID = 8; // 本次测试添加一个条目后它的类别内ID
+
+
+// 通过添加这个方法，使得promise的错误可以被抛出到外部。否则现阶段的Nodejs不会抛出
+// Promise的错误，导致无法被断言。
+Promise.prototype.done = function (onFulfilled, onRejected) {
+    this.then(onFulfilled, onRejected)
+    .catch(function (reason) {
+        // 抛出一个全局错误
+        setTimeout(() => { throw reason });
+    });
+};
+
+
+const oInfo = {
+    ISBN: '9784048839266',
+    title: ['日本妖怪大事典'],
+    author: ['水木しげる', '村上健司 '],
+    officialSite: 'https://book.douban.com/subject/6023928/',
+};
+const aSubject = [
+    {
+        route: [ 0, 4394, 4395 ],
+        isWhole: true,
+        des: '11',
+    },
+    {
+        route: [0,1,17,18,83,170],
+        isWhole: false,
+        part: '第二章',
+        des: '22',
+    },
+];
+
+const oExpectedItem = {
+    info: oInfo,
+    subjects: aSubject,
+};
+
+
+let nActualInnerID = -1;
+
+describe('module-Item', ()=>{
+    // describe('addItem', ()=>{
+    //     it('add a book', ()=>{
+    //         assert.doesNotThrow(()=>{
+    //             Item.addItem(oInfo, aSubject, 0, 0)
+    //                 .then((nInnerID)=>{
+    //                     nActualInnerID = nInnerID;
+    //                     assert.strictEqual(nActualInnerID, nExpectedInnerID);
+    //                 })
+    //                 .catch((err)=>{
+    //                     throw err;
+    //                 });
+    //         });
+    //     });
+    // });
+
+    describe('getItem', ()=>{
+        it('get a book item', ()=>{
+            assert.doesNotThrow(()=>{
+                Item.getItem([0, 0, 19])
+                    .then((item)=>{
+                        nani
+                        assert.deepStrictEqual(item, oExpectedItem)
+                    })
+                    .catch((err)=>{
+                        throw new Error(err);
+                    });
+            });
+        });
+    });
+
+    // describe('modifyItemInfo', ()=>{
+    //     it('4', ()=>{
+    //         const expected = [0, Math.PI/2, Math.PI, Math.PI*1.5];
+    //         assert.deepStrictEqual(radiansOnRing(4), expected);
+    //     });
+    //
+    // });
+    //
+    // describe('addSubject', ()=>{
+    //     it('4', ()=>{
+    //         const expected = [0, Math.PI/2, Math.PI, Math.PI*1.5];
+    //         assert.deepStrictEqual(radiansOnRing(4), expected);
+    //     });
+    //
+    // });
+    //
+    // describe('removeSubject', ()=>{
+    //     it('4', ()=>{
+    //         const expected = [0, Math.PI/2, Math.PI, Math.PI*1.5];
+    //         assert.deepStrictEqual(radiansOnRing(4), expected);
+    //     });
+    //
+    // });
+    //
+    // describe('removeItem', ()=>{
+    //     it('4', ()=>{
+    //         const expected = [0, Math.PI/2, Math.PI, Math.PI*1.5];
+    //         assert.deepStrictEqual(radiansOnRing(4), expected);
+    //     });
+    // });
+});
+
+
+
+// Item.modifyItemInfo([0, 0, 6], oInfo)
 // .catch((err)=>{
 //     throw err;
 // });
 
-const oInfo = {
-    ISBN: sISBN.trim() + 'two',
-    title: aTitle,
-    author: aAuthor,
-    officialSite: sOfficialSite,
-};
-item.addItem(oInfo, aSubject, 0, 0)
-.then((index)=>{
-    console.log(index);
-})
-.catch((err)=>{
-    throw err;
-});
 
-// item.addBookItem(sISBN, aTitle, aSubject, aAuthor, sOfficialSite)
+
+// Item.addBookItem(sISBN, aTitle, aSubject, aAuthor, sOfficialSite)
 // .then((index)=>{
 //     console.log(index);
 // })
@@ -62,9 +135,9 @@ item.addItem(oInfo, aSubject, 0, 0)
 //     throw err;
 // });
 
-// item.getItem(0, 0, 0)
+// Item.getItem([0, 0, 8])
 // .then((item)=>{
-//     console.log(JSON.stringify(item.subjects, null, 4));
+//     console.log(item);
 // })
 // .catch((err)=>{
 //     console.error(err);
@@ -74,10 +147,10 @@ item.addItem(oInfo, aSubject, 0, 0)
 //     route: [0,1,17,18,83,170],
 //     info: {
 //          isWhole: true,
-//          des: '描述chang',
+//          des: '描述66666666',
 //     },
 // };
-// item.addSubject(0, 0, 4, subject)
+// Item.addSubject([0, 0, 20], subject)
 // .then((res)=>{
 //     console.log(res);
 // })
@@ -85,7 +158,7 @@ item.addItem(oInfo, aSubject, 0, 0)
 //     console.error(err);
 // });
 
-// item.removeSubject(0, 0, 4, [0,1,17,18,83,170])
+// Item.removeSubject([0, 0, 6], [0,1,17,18,83,170])
 // .then((res)=>{
 //     console.log(res);
 // })
@@ -93,7 +166,7 @@ item.addItem(oInfo, aSubject, 0, 0)
 //     throw new Error(err);
 // });
 
-// item.removeItem([0, 0, 5])
+// Item.removeItem([0, 0, 6])
 // .then(res=>{
 //     console.log('res');
 //     console.log(res);

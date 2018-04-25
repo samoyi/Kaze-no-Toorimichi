@@ -45,14 +45,14 @@ async function removeItemID(aRoutes, aItemID){
 }
 
 
-getItemIDsByRoute([0,1,17,18,83,170])
+// getItemIDsByRoute([0,1,17,18,83,170])
 // getItemIDsByRoute([0, 4394, 4395])
-.then(res=>{
-    console.log(res);
-})
-.catch(err=>{
-    throw new Error(err);
-});
+// .then(res=>{
+//     console.log(res);
+// })
+// .catch(err=>{
+//     throw new Error(err);
+// });
 
 
 // const aRoutes = [

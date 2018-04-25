@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
   "dependencies": {
     "koa": "^2.4.1",
     "koa-bodyparser": "^4.2.0",
