@@ -195,21 +195,21 @@ async function getRouteItemIDData(){
 }
 
 
-async function getItemIDs(aRoute){
-    try{
-        const {client, db} = await connectDB(url, dbName);
-        const docs = await findDocuments(db, 'Route-ItemID');
-        const map = docs[0].data;
-        const aRouteStr = map[aRoute.join()];
-        return aRouteStr.map(str=>{
-            return DU.itemIDString2Array(str);
-        });
-        client.close();
-    }
-    catch(err){
-        throw err;
-    }
-}
+// async function getItemIDs(aRoute){
+//     try{
+//         const {client, db} = await connectDB(url, dbName);
+//         const docs = await findDocuments(db, 'Route-ItemID');
+//         const map = docs[0].data;
+//         const aRouteStr = map[aRoute.join()];
+//         return aRouteStr.map(str=>{
+//             return DU.itemIDString2Array(str);
+//         });
+//         client.close();
+//     }
+//     catch(err){
+//         throw err;
+//     }
+// }
 
 
 /*
@@ -235,61 +235,8 @@ async function getItem(nLevel1ID, nLevel2ID, nInnerID){
     }
 }
 
-
-/*
- * 删除条目
- * 该方法首先删除items数据文档的条目，同时记录其所有的主题ID路径
- * 然后在Route-ItemID数据文档中以此查找上述每个主题ID路径，并删除其中的条目ID
- *
- * @param  {Number}  nLevel1ID      条目大类ID
- * @param  {Number}  nLevel2ID      条目子类ID
- * @param  {Number}  nInnerID       条目类别内ID
- */
-// async function removeItem(aItemID){
-//     console.log('你大爷你大爷你大爷你大爷你大爷你大爷你大爷你大爷你大爷你大爷你大爷');
-//     // try{
-//     //     const [nLevel1ID, nLevel2ID, nInnerID] = aItemID;
-//     //
-//     //     // 获取条目对象
-//     //     const aItems = await getItemsData();
-//     //     const oItem = aItems[nLevel1ID].children[nLevel2ID].children[nInnerID];
-//     //
-//     //     // 获取该条目包含的所有主题的所有主题路径
-//     //     const aRoutes = [];
-//     //     oItem.subjects.forEach(subject=>{
-//     //         aRoutes.push(subject.route);
-//     //     });
-//     //
-//     //     // 标记该条目为删除状态
-//     //     aItems[nLevel1ID].children[nLevel2ID].children[nInnerID] = null;
-//     //
-//     //     const sItemID = DU.itemIDArray2String(aItemID);
-//     //
-//     //     // 获取Route-ItemID对象数据
-//     //     const oRouteItemID = await getRouteItemIDData();
-//     //
-//     //     // 从oRouteItemID删除所有的条目ID
-//     //     aRoutes.forEach(route=>{
-//     //         let sRoute = route.join();
-//     //         let index = oRouteItemID[sRoute].indexOf(sItemID);
-//     //         if (index===-1){
-//     //             throw new Error('错误的条目ID字符串');
-//     //         }
-//     //         oRouteItemID[sRoute].splice(index, 1);
-//     //     });
-//     //
-//     //     // 更新数据库
-//     //     updateItemsDocument(aItems);
-//     //     updateRouteItemIDDocument(oRouteItemID);
-//     // }
-//     // catch(err){
-//     //     console.error(err);
-//     // }
-// }
-
 module.exports = {
     connectDB,
-    // connectDB1,
     closeDB,
     findDocuments,
     updateItemsDocument,
@@ -300,5 +247,5 @@ module.exports = {
     addItemIDToRoutes,
     // removeItem,
     getItem,
-    getItemIDs,
+    // getItemIDs,
 };

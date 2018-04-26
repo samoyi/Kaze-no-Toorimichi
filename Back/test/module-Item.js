@@ -1,8 +1,8 @@
+// 测试Item模块
+
 'use strict';
 
-const fs = require('fs');
 const assert = require('assert');
-const {inspect} = require('util');
 
 const Item = require('../module/Item');
 const Routes = require('../module/Routes');
@@ -10,6 +10,12 @@ const Routes = require('../module/Routes');
 
 
 // 测试数据 --------------------------------------------------------------------
+// 这里不要使用以下四个主题路径，会和Routes的测试数据冲突
+// [0, 1, 2, 3, 4]
+// [0, 1, 2, 3, 5]
+// [0, 1, 2, 3, 7]
+// [0, 1, 2, 3, 8]
+
 // 该本次测试添加一个条目后它的类别内ID
 const nExpectedInnerID = 9;
 
