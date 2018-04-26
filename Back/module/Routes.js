@@ -71,4 +71,5 @@ async function removeItemID(aRoutes, aItemID){
 
 module.exports = {
     removeItemID,
+    getItemIDsByRoute,
 };

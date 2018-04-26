@@ -70,7 +70,6 @@ async function updateDocument(db, name, data) {
             , { $set: {data} }, function(err, result) {
                 assert.equal(err, null);
                 assert.equal(1, result.result.n);
-                console.log("Updated the document with the field a equal to 2");
             });
     }
     catch(err){
