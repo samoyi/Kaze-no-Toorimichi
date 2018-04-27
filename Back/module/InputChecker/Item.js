@@ -21,7 +21,7 @@ console.log(checker);
 
 const DB = require('./Database');
 const Routes = require('./Routes');
-const DU = require('./DataUtils');
+const MU = require('./MyUtils');
 
 
 
@@ -359,7 +359,7 @@ Item.prototype = {
 
             aSubject.push(oSubject);
             await DB.updateItemsDocument(aItems);
-            const sItemID = DU.itemIDArray2String([nLevel1ID, nLevel2ID, nInnerID]);
+            const sItemID = MU.itemIDArray2String([nLevel1ID, nLevel2ID, nInnerID]);
             await DB.addItemIDToRoutes(sItemID, [oSubject.route]);
             return true;
         }

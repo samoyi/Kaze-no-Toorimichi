@@ -4,6 +4,7 @@
 
 const assert = require('assert');
 const Routes = require('../module/Routes');
+const MU = require('../module/MyUtils');
 
 
 
@@ -28,51 +29,59 @@ const aRoutesWithoutItemID = [ // 用来测试 不存在ItemID的主题路径
 
 describe('module-Routes', ()=>{
     describe('addItemIDToRoutes', ()=>{
-        // it('add item id to 2 given routes', async ()=>{
-        //     const result = await Routes.addItemIDToRoutes(aRoutes, aItemID);
-        //     assert.strictEqual(result, true);
-        // });
+        it('add item id to 2 given routes', async ()=>{
+            const result = await Routes.addItemIDToRoutes(aRoutes, aItemID);
+            assert.strictEqual(result, true);
+        });
         it('undefined route',()=>{
-            assert.throws(async ()=>{
-                Routes.addItemIDToRoutes(aRoutes.concat([[0, 0, 0]]), aItemID);
+            MU.assertThrowsAsync(
+                async ()=>{
+                    await Routes.addItemIDToRoutes(aRoutes.concat([[0, 0, 0]]), aItemID);
+                }
+            );
+        });
+    });
+
+    describe('getItemIDsByRoute', ()=>{
+        it('get item id from the 2 given routes', async ()=>{
+            const aItemID1 = await Routes.getItemIDsByRoute(aRoutes[0]);
+            const aItemID2 = await Routes.getItemIDsByRoute(aRoutes[1]);
+            assert.deepStrictEqual(aItemID1, aItemID2);
+            assert.deepStrictEqual(aItemID1, [[99, 88, 77]]);
+        });
+        it('routes without item id', async ()=>{
+            const aItemID1 = await Routes.getItemIDsByRoute(aRoutesWithoutItemID[0]);
+            const aItemID2 = await Routes.getItemIDsByRoute(aRoutesWithoutItemID[1]);
+            assert.deepStrictEqual(aItemID1, aItemID2);
+            assert.deepStrictEqual(aItemID1, []);
+        });
+        it('undefined route', ()=>{
+            MU.assertThrowsAsync(async ()=>{
+                Routes.getItemIDsByRoute([0, 0, 0]);
             });
         });
     });
 
-    // describe('getItemIDsByRoute', ()=>{
-    //     it('get item id from the 2 given routes', async ()=>{
-    //         const aItemID1 = await Routes.getItemIDsByRoute(aRoutes[0]);
-    //         const aItemID2 = await Routes.getItemIDsByRoute(aRoutes[1]);
-    //         assert.deepStrictEqual(aItemID1, aItemID2);
-    //         assert.deepStrictEqual(aItemID1, [99, 88, 77]);
-    //     });
-    //     it('routes without item id', async ()=>{
-    //         const aItemID1 = await Routes.getItemIDsByRoute(aRoutesWithoutItemID[0]);
-    //         const aItemID2 = await Routes.getItemIDsByRoute(aRoutesWithoutItemID[1]);
-    //         assert.deepStrictEqual(aItemID1, aItemID2);
-    //         assert.deepStrictEqual(aItemID1, []);
-    //     });
-    //     it('undefined route', ()=>{
-    //         assert.throws(async ()=>{
-    //             Routes.getItemIDsByRoute([0, 0, 0]);
-    //         });
-    //     });
-    // });
-    //
-    // describe('removeItemID', ()=>{
-    //     it('remove item id from the 2 given routes', async ()=>{
-    //         const result = await Routes.removeItemID(aRoutes, aItemID);
-    //         assert.deepStrictEqual(result, true);
-    //     });
-    //     it('some routes without item id', async ()=>{
-    //         const result = await Routes.removeItemID(
-    //             aRoutes.concat(aRoutesWithoutItemID), aItemID);
-    //         assert.deepStrictEqual(result, aRoutesWithoutItemID);
-    //     });
-    //     it('undefined route', ()=>{
-    //         assert.throws(async ()=>{
-    //             Routes.removeItemID(aRoutes.concat([0, 0, 0]), aItemID);
-    //         });
-    //     });
-    // });
+    describe('removeItemID', ()=>{
+        it('some routes without item id', async ()=>{
+            const result = await Routes.removeItemID(
+                aRoutes.concat(aRoutesWithoutItemID), aItemID);
+            assert.deepStrictEqual(result, aRoutesWithoutItemID);
+        });
+        it('remove item id from the 2 given routes', async ()=>{
+            const result = await Routes.removeItemID(aRoutes, aItemID);
+            assert.deepStrictEqual(result, true);
+        });
+        it('no route has this item id now', async ()=>{
+            const result = await Routes.removeItemID(
+                aRoutes.concat(aRoutesWithoutItemID), aItemID);
+            assert.deepStrictEqual(result, aRoutes
+                .concat(aRoutesWithoutItemID));
+        });
+        it('undefined route', ()=>{
+            MU.assertThrowsAsync(async ()=>{
+                Routes.removeItemID(aRoutes.concat([0, 0, 0]), aItemID);
+            });
+        });
+    });
 });

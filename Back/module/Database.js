@@ -1,7 +1,7 @@
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 
-const DU = require('./DataUtils');
+const MU = require('./MyUtils');
 
 const url = 'mongodb://localhost:27017';
 const dbName = 'project';
@@ -150,7 +150,7 @@ async function addItemIDToRoutes(aItemID, aRoutes){
 
         // 添加的条目可能同时有多个路径，在上述映射对象中，为每个路径项添加该条目ID
         aRoutes.forEach(route=>{
-            map[route].push(DU.itemIDArray2String(aItemID));
+            map[route].push(MU.itemIDArray2String(aItemID));
         });
 
         // 更新数据库
@@ -202,7 +202,7 @@ async function getRouteItemIDData(){
 //         const map = docs[0].data;
 //         const aRouteStr = map[aRoute.join()];
 //         return aRouteStr.map(str=>{
-//             return DU.itemIDString2Array(str);
+//             return MU.itemIDString2Array(str);
 //         });
 //         client.close();
 //     }

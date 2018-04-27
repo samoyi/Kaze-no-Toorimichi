@@ -6,7 +6,7 @@
 'use strict';
 
 const DB = require('./Database');
-const DU = require('./DataUtils');
+const MU = require('./MyUtils');
 
 
 /*
@@ -30,7 +30,7 @@ async function addItemIDToRoutes(aRoutes, aItemID){
                 throw new Error('主题路径 ' + aRoute + ' 不存在');
             }
             else {
-                aItemIDStr.push(DU.itemIDArray2String(aItemID));
+                aItemIDStr.push(MU.itemIDArray2String(aItemID));
             }
         });
 
@@ -65,7 +65,7 @@ async function getItemIDsByRoute(aRoute){
 
         // 将若干个条目ID字符串转化为数组的形式并返回
         return aItemIDStr.map(str=>{
-            return DU.itemIDString2Array(str);
+            return MU.itemIDString2Array(str);
         });
     }
     catch (err){
@@ -87,7 +87,7 @@ async function removeItemID(aRoutes, aItemID){
     // 获取Route-ItemID对象数据
     const oRouteItemID = await DB.getRouteItemIDData();
 
-    const sItemID = DU.itemIDArray2String(aItemID);
+    const sItemID = MU.itemIDArray2String(aItemID);
 
     // 如果传入的某些主题路径不包含待删除条目ID，则保存这些路径并返回
     let aRoutesWithoutItemID = [];
@@ -119,31 +119,6 @@ async function removeItemID(aRoutes, aItemID){
         return true;
     }
 }
-
-
-// getItemIDsByRoute([0,1,17,18,83,170])
-// getItemIDsByRoute([0,1,2])
-// getItemIDsByRoute([0, 4394, 4395])
-// .then(res=>{
-//     console.log(res);
-// })
-// .catch(err=>{
-//     throw new Error(err);
-// });
-
-
-// const aRoutes = [
-//     [0,1,17,18,83,170],
-//     [0, 4394, 4395]
-// ];
-// const aItemID = [0, 0, 4];
-// removeItemID(aRoutes, aItemID)
-// .then(res=>{
-//     console.log(res);
-// })
-// .catch(err=>{
-//     throw new Error(err);
-// });
 
 
 module.exports = {
