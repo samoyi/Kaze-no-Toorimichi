@@ -194,6 +194,54 @@ async function getRouteItemIDData(){
     }
 }
 
+/*
+ * 获取数据库中完整的ID-Subject数据数组
+ */
+async function getIDSubjectData(){
+    try{
+        const {client, db} = await connectDB(url, dbName);
+        const docs = await findDocuments(db, 'ID-Subject');
+        const arr = docs[0].data;
+        client.close();
+        return arr;
+    }
+    catch(err){
+        console.error(err);
+    }
+}
+
+/*
+ * 获取数据库中完整的ID-Routes数据数组
+ */
+async function getIDRoutesData(){
+    try{
+        const {client, db} = await connectDB(url, dbName);
+        const docs = await findDocuments(db, 'ID-Routes');
+        const arr = docs[0].data;
+        client.close();
+        return arr;
+    }
+    catch(err){
+        console.error(err);
+    }
+}
+
+/*
+ * 获取数据库中完整的IDTree数据对象
+ */
+async function getIDTreeData(){
+    try{
+        const {client, db} = await connectDB(url, dbName);
+        const docs = await findDocuments(db, 'IDTree');
+        const arr = docs[0].data;
+        client.close();
+        return arr;
+    }
+    catch(err){
+        console.error(err);
+    }
+}
+
 
 // async function getItemIDs(aRoute){
 //     try{
@@ -243,6 +291,9 @@ module.exports = {
     updateRouteItemIDDocument,
     getItemsData,
     getRouteItemIDData,
+    getIDSubjectData,
+    getIDRoutesData,
+    getIDTreeData,
     addItem,
     addItemIDToRoutes,
     // removeItem,

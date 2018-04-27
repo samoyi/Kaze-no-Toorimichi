@@ -1,7 +1,17 @@
 'use strict';
+
+
+
+const sDocName = 'ID-Routes'; // json文件名和数据doc名
+
+
+
+
+
 const fs = require('fs');
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
+const {resolve} = require('path');
 
 // Connection URL
 const url = 'mongodb://localhost:27017';
@@ -9,8 +19,10 @@ const url = 'mongodb://localhost:27017';
 // Database Name
 const dbName = 'project';
 
+const DBFileDir = resolve(__dirname, '../../DataBase/');
+
 function getDataObj(sName){
-    let json = fs.readFileSync('../../DataBase/' + sName + '.json', 'utf8');
+    let json = fs.readFileSync(DBFileDir + '/' + sName + '.json', 'utf8');
     return JSON.parse(json);
 }
 
@@ -20,7 +32,7 @@ const insertDocuments = function(db, callback){
     // Insert some documents
     collection.insertMany([
         // {a : 1}, {a : 2}, {a : 3},
-        {data: getDataObj('Route-ItemID'), name: 'Route-ItemID'},
+        {data: getDataObj(sDocName), name: sDocName},
     ], function(err, result){
         assert.equal(err, null);
         assert.equal(1, result.result.n);
