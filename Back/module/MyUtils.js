@@ -33,8 +33,26 @@ async function assertThrowsAsync(asyncFn, regExp) {
     }
 }
 
+// async forEach
+async function forEachAsync(arr, fn){
+    const len = arr.length;
+    for (let i=0; i<len; i++){
+        await fn(arr[i], i, arr);
+    }
+}
+
+
+function arrayDeduplicationForItemIDorRouteArray(arr){
+    arr = arr.map(item=>item.join())
+    const set = new Set(arr);
+    arr = [...set];
+    return arr.map(item=>item.split(','));
+}
+
 module.exports = {
     itemIDArray2String,
     itemIDString2Array,
     assertThrowsAsync,
+    forEachAsync,
+    arrayDeduplicationForItemIDorRouteArray,
 };

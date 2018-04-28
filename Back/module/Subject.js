@@ -32,6 +32,19 @@ async function getSubjectRoutesByID(nID){
 
 
 /*
+ * 根据主题ID获取主题
+ *
+ * @param  {Number}  nID               主题ID
+ * @return {Object|Null|Undefined}     如果主题已删除，返回null；如果主题不存在，返回undefined
+ *                                     ;否则返回主题对象
+ */
+async function getSubjectByID(nID){
+    const aIDRoutes = await DB.getIDSubjectData();
+    return aIDRoutes[nID];
+}
+
+
+/*
  * 获取一个主题的所有子主题ID
  *
  * @param  {Number}  nID            主题ID

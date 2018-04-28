@@ -17,7 +17,7 @@ const Routes = require('../module/Routes');
 // [0, 1, 2, 3, 8]
 
 // 该本次测试添加一个条目后它的类别内ID
-const nExpectedInnerID = 9;
+const nExpectedInnerID = 10;
 
 // 定义一个已删除的条目的类别内ID，用于查询时返回null
 const nRemovedInnerID = 0;
