@@ -1,26 +1,16 @@
-const Subject = require('./module/Subject');
-const DB = require('./module/Database');
-const Search = require('./module/Search');
+// 导入koa，和koa 1.x不同，在koa2中，我们导入的是一个class，因此用大写的Koa表示:
+const Koa = require('koa');
 
-async function getSubjectByID(){
-    const subject1 = await Subject.getSubjectByID(4395);
-    const subject2 = await Subject.getSubjectByID(170);
-    console.log(subject1);
-    console.log(subject2);
-}
+// 创建一个Koa对象表示web app本身:
+const app = new Koa();
 
-async function searchSubject(keyword){
-    const aIDSubject = await DB.getIDSubjectData();
-    const aIDRoutes = await DB.getIDRoutesData();
-    search = new Search(keyword, aIDSubject, aIDRoutes);
-    console.log(search.getSubjects());
-}
-// searchSubject('淡路島');
+// 对于任何请求，app将调用该异步函数处理请求：
+app.use(async (ctx, next) => {
+    await next();
+    ctx.response.type = 'text/html';
+    ctx.response.body = '<h1>Hello, koa2!</h1>';
+});
 
-async function getRouteGroup(keyword){
-    const aIDSubject = await DB.getIDSubjectData();
-    const aIDRoutes = await DB.getIDRoutesData();
-    search = new Search(keyword, aIDSubject, aIDRoutes);
-    console.log(JSON.stringify(search.getRouteGroup(), null, 4));
-}
-// getRouteGroup('淡路島');
+// 在端口3000监听:
+app.listen(3000);
+console.log('app started at port 3000...');

@@ -1,14 +1,12 @@
 <template>
-    <div id="app">
-        <router-view></router-view>
+    <div id="result">
+        “{{$route.params.keyword}}”的搜索结果
     </div>
 </template>
 
 <script>
 
-
 export default {
-    name: 'app',
     data () {
         return {
 
@@ -17,6 +15,6 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 </style>
