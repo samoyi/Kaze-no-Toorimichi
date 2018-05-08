@@ -22,12 +22,13 @@ function findDuplicateIndexes(arr){
 
 
 function deepFreeze(obj){
-    Object.freeze(obj);
-    Object.keys(obj).forEach(key=>{
-        if(typeof obj[key] === 'object'){
-            deepFreeze( obj[key] );
-        }
+    const propNames = Object.getOwnPropertyNames(obj);
+    propNames.forEach(name=>{
+        const prop = obj[name];
+        if (typeof prop === 'object' && prop !== null)
+        deepFreeze(prop);
     });
+    return Object.freeze(obj);
 }
 
 

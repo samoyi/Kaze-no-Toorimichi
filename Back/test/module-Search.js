@@ -15,8 +15,9 @@ describe('keyword search', ()=>{
     before(async ()=>{
         const aIDSubject = await DB.getIDSubjectData();
         const aIDRoutes = await DB.getIDRoutesData();
+        const aItems = await DB.getItemsData();
         const Search = require('../module/Search');
-        search = new Search(keyword, aIDSubject, aIDRoutes);
+        search = new Search(keyword, aIDSubject, aIDRoutes, aItems);
     });
 
     describe('search subjects', ()=>{

@@ -8,19 +8,19 @@ const MU = require('./MyUtils');
 const Routes = require('./Routes');
 
 // 搜索涉及4个数据doc，应该使用内存中的缓存
-function Search(keyword, aIDSubject, aIDRoutes){
+function Search(keyword, aIDSubject, aIDRoutes, aItems){
     this.keyword = keyword;
 
     // this.IDFirstName = aIDFirstName;
     this.IDSubject = aIDSubject;
     this.IDRoutes = aIDRoutes;
     // this.routeItemID = mRouteItemID;
-    // this.items = oItems;
+    this.items = aItems;
     // myUtil.deepFreeze(this.IDFirstName);
     myUtil.deepFreeze(this.IDSubject);
     myUtil.deepFreeze(this.IDRoutes);
     // myUtil.deepFreeze(this.routeItemID);
-    // myUtil.deepFreeze(this.items);
+    myUtil.deepFreeze(this.items);
 }
 
 Search.prototype = {
@@ -126,10 +126,11 @@ Search.prototype = {
     /*
      * 根据getRouteGroup返回的路径，查找对应的条目ID
      *
-     * @return {Array}    条目数组
+     * @return {Array}    若干个条目ID数组组成的数组
      */
      async getItemIDsByRouteGroup(){
          const aRouteGroup = this.getRouteGroup();
+
 
          let aAllRoute = [];
          let aAllItemID = [];
@@ -142,7 +143,6 @@ Search.prototype = {
                  });
              });
          });
-
         // 获取每一条主题路径对应的若干条条目ID
          await MU.forEachAsync(aAllRoute, async (route)=>{
              const aItemIDs = await Routes.getItemIDsByRoute(route);
@@ -153,6 +153,22 @@ Search.prototype = {
          // 到的条目ID去重
          return MU.arrayDeduplicationForItemIDorRouteArray(aAllItemID);
      },
+
+
+     /*
+      * 根据getItemIDsByRouteGroup返回的条目ID，查找对应的条目对象
+      *
+      * @return {Array}    条目对象数组
+      */
+      async getItems(){
+          const aItemIDs = await this.getItemIDsByRouteGroup();
+          let aItem = [];
+          aItemIDs.forEach(itemID=>{
+              aItem.push(this.items[itemID[0]].children[itemID[1]].children
+                  [itemID[2]]);
+          });
+          return aItem;
+      },
 };
 
 

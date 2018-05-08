@@ -8,6 +8,28 @@ const Routes = require('./Routes');
 const MU = require('./MyUtils');
 
 
+/*
+ * 获取条目总数量
+ *
+ * @return {Number}               条目总数量
+ */
+async function getItemAmount(){
+    const aItems = await DB.getItemsData();
+    let amount = 0;
+    aItems.forEach(level1=>{
+        level1.children.forEach(level2=>{
+            let aItem = level2.children.filter(item=>{
+                return item !== null;
+            });
+            if (aItem.length){
+                console.log(JSON.stringify(aItem));
+            }
+            amount += aItem.length;
+        });
+    });
+    return amount;
+}
+
 
 /*
  * 添加条目
@@ -239,6 +261,7 @@ async function removeItem(aItemID){
 
 
 module.exports = {
+    getItemAmount,
     addItem,
     getItem,
     modifyItemInfo,

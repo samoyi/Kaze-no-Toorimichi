@@ -22,8 +22,8 @@ const app = new Koa();
 
 
 // 判断是否是api请求，如果是则添加统一的回应的函数
-// const rest = require('./middlewares/forREST');
-// app.use(rest.restify());
+const rest = require('./middlewares/forREST');
+app.use(rest.restify());
 
 
 // app.use(bodyParser());
