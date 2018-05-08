@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="keywords" content="風の通り道 日本自然文化">
+        <meta name="description" content="以日本自然文化为主题的各类作品及艺术实体的资料库">
+        <title>風の通り道</title>
+  </head>
+  <body>
+      <h1>風の通り道</h1>
+      <section>
+          <h2>{{keyword}} 相关的条目，共 {{amount}} 个：</h2>
+          <div>
+              {% for item in result %}
+                  <li>{{item}}</li>
+              {% endfor %}
+          </div>
+      </section>
+  </body>
+</html>

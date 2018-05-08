@@ -13,11 +13,11 @@ module.exports = {
             const Search = require('../module/Search');
             const search = new Search(ctx.params.keyword, aIDSubject, aIDRoutes, aItems);
             const result = await search.getItems();
-            ctx.rest({
-                result,
-            });
+            // ctx.rest({
+            //     result,
+            // });
         }
-        catch(err){
+        catch (err){
             console.error(err);
         }
     },
