@@ -21,3 +21,6 @@
 * 行事主题记录行事场所ID。例如 祇園祭 主题会记录 八坂神社 的主题ID
 * 添加节气相关主题
 * 是否需要city属性
+
+## 其他
+用 `Object.defineProperty` 来给原型添加 `constructor` 属性
